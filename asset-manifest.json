@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sooyeunleanne/static/css/main.f3962942.css",
+    "main.js": "/sooyeunleanne/static/js/main.ae499ca4.js",
+    "index.html": "/sooyeunleanne/index.html",
+    "main.f3962942.css.map": "/sooyeunleanne/static/css/main.f3962942.css.map",
+    "main.ae499ca4.js.map": "/sooyeunleanne/static/js/main.ae499ca4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f3962942.css",
+    "static/js/main.ae499ca4.js"
+  ]
+}
