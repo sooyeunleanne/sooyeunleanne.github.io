@@ -5,11 +5,15 @@ const Leadership = () => {
   const navigate = useNavigate();
 
   const onHomeTextClick = useCallback(() => {
-    navigate("/home");
+    navigate("/");
   }, [navigate]);
 
   const onProjectsTextClick = useCallback(() => {
     navigate("/projects");
+  }, [navigate]);
+
+  const onLeadershipTextClick = useCallback(() => {
+    navigate("/leadership");
   }, [navigate]);
 
   const onTurtleHacksImageClick = useCallback(() => {
@@ -27,7 +31,9 @@ const Leadership = () => {
         <div className={styles.projects} onClick={onProjectsTextClick}>
           Projects
         </div>
-        <b className={styles.leadership1}>Leadership</b>
+        <div className={styles.leadership1} onClick={onLeadershipTextClick}>
+          Leadership
+        </div>
       </div>
       <div className={styles.texts}>
         <b className={styles.extracurriculars}>Extracurriculars</b>
@@ -39,16 +45,14 @@ const Leadership = () => {
           <p className={styles.sep2021}>Sep 2021 - Jun 2023</p>
         </div>
         <div className={styles.keyClubExecutiveContainer}>
-          <ul className={styles.logisticsExecutiveAtTurtleh}>
-            <li className={styles.keyClubExecutiveJun20201}>
-              <b className={styles.mathletesExecutive}>
-                <span className={styles.keyClubExecutive}>
-                  Key Club Executive
-                </span>
-                <span>{` (Jun 2020 - Jun 2023) `}</span>
-              </b>
-            </li>
-          </ul>
+          <p className={styles.keyClubInternationalGlobal}>
+            <b className={styles.mathletesExecutive}>
+              <span className={styles.keyClubExecutive}>
+                Key Club Executive
+              </span>
+              <span>{` (Jun 2020 - Jun 2023) `}</span>
+            </b>
+          </p>
           <p className={styles.keyClubInternationalGlobal}>
             <b className={styles.mathletesExecutive}>
               <span
@@ -89,23 +93,21 @@ const Leadership = () => {
               >{`I also served in the Global relations Committee of Key Club International, as an Eastern Canada District representative. I organized events to spread Key Club internationally and promote diversity and inclusion within Key Clubs. `}</span>
             </span>
           </p>
-          <p className={styles.blankLine}>
-            <b className={styles.mathletesExecutive}>
-              <span>&nbsp;</span>
-            </b>
+          <p className={styles.keyClubInternationalGlobal}>
+            <span>
+              <span className={styles.iHaveBeen}>&nbsp;</span>
+            </span>
           </p>
-          <ul className={styles.logisticsExecutiveAtTurtleh}>
-            <li className={styles.keyClubExecutiveJun20201}>
-              <b className={styles.mathletesExecutive}>
-                <span>{`Mathletes Executive `}</span>
-              </b>
-              <span>
-                <b className={styles.mathletesExecutive}>
-                  (Jun 2021 - Jun 2023)
-                </b>
-              </span>
-            </li>
-          </ul>
+          <p className={styles.keyClubInternationalGlobal}>
+            <b className={styles.mathletesExecutive}>
+              <span
+                className={styles.keyClubExecutive}
+              >{`Mathletes Executive `}</span>
+            </b>
+            <span>
+              <b className={styles.mathletesExecutive}>(Jun 2021 - Jun 2023)</b>
+            </span>
+          </p>
           <p className={styles.keyClubInternationalGlobal}>
             <span>
               <span
@@ -124,23 +126,21 @@ const Leadership = () => {
               </span>
             </span>
           </p>
-          <p className={styles.blankLine}>
-            <b className={styles.mathletesExecutive}>
-              <span>&nbsp;</span>
-            </b>
+          <p className={styles.keyClubInternationalGlobal}>
+            <span>
+              <span className={styles.iHaveBeen}>&nbsp;</span>
+            </span>
           </p>
-          <ul className={styles.logisticsExecutiveAtTurtleh}>
-            <li className={styles.keyClubExecutiveJun20201}>
-              <b className={styles.mathletesExecutive}>
-                <span>{`Logistics Executive at TurtleHacks `}</span>
-              </b>
-              <span>
-                <b className={styles.mathletesExecutive}>
-                  (Jun 2022 - May 2022)
-                </b>
-              </span>
-            </li>
-          </ul>
+          <p className={styles.keyClubInternationalGlobal}>
+            <b className={styles.mathletesExecutive}>
+              <span
+                className={styles.keyClubExecutive}
+              >{`Logistics Executive at TurtleHacks `}</span>
+            </b>
+            <span>
+              <b className={styles.mathletesExecutive}>(Jun 2022 - May 2022)</b>
+            </span>
+          </p>
           <p className={styles.keyClubInternationalGlobal}>
             <span>
               <span className={styles.iHaveBeen}>
@@ -166,20 +166,18 @@ const Leadership = () => {
           </p>
         </div>
         <div className={styles.gradWeekProjectContainer}>
-          <ul className={styles.logisticsExecutiveAtTurtleh}>
-            <li className={styles.keyClubExecutiveJun20201}>
+          <p className={styles.keyClubInternationalGlobal}>
+            <b className={styles.mathletesExecutive}>
+              <span
+                className={styles.keyClubExecutive}
+              >{`Grad Week Project Organizer `}</span>
+            </b>
+            <span>
               <b className={styles.mathletesExecutive}>
-                <span
-                  className={styles.keyClubExecutive}
-                >{`Grad Week Project Organizer `}</span>
+                (February - June 2023)
               </b>
-              <span>
-                <b className={styles.mathletesExecutive}>
-                  (February - June 2023)
-                </b>
-              </span>
-            </li>
-          </ul>
+            </span>
+          </p>
           <p className={styles.keyClubInternationalGlobal}>
             <span>
               <span>
@@ -200,18 +198,16 @@ const Leadership = () => {
               <span>&nbsp;</span>
             </span>
           </p>
-          <ul className={styles.logisticsExecutiveAtTurtleh}>
-            <li className={styles.keyClubExecutiveJun20201}>
-              <b className={styles.mathletesExecutive}>
-                <span className={styles.keyClubExecutive}>
-                  Horizons Leadership Conference Organizer
-                </span>
-              </b>
-              <span>
-                <b className={styles.mathletesExecutive}> (February 2023)</b>
+          <p className={styles.keyClubInternationalGlobal}>
+            <b className={styles.mathletesExecutive}>
+              <span className={styles.keyClubExecutive}>
+                Horizons Leadership Conference Organizer
               </span>
-            </li>
-          </ul>
+            </b>
+            <span>
+              <b className={styles.mathletesExecutive}> (February 2023)</b>
+            </span>
+          </p>
           <p className={styles.keyClubInternationalGlobal}>
             <span>
               <span className={styles.iHaveBeen}>
@@ -225,7 +221,7 @@ const Leadership = () => {
             </span>
           </p>
         </div>
-        <div className={styles.leadership2}>Leadership</div>
+        <b className={styles.leadership2}>Leadership</b>
       </div>
       <img
         className={styles.lineDecorationsIcon}

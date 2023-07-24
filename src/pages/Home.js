@@ -9,7 +9,7 @@ const Home = () => {
   }, [navigate]);
 
   const onLeadershipTextClick = useCallback(() => {
-    navigate("/");
+    navigate("/leadership");
   }, [navigate]);
 
   const onLinkedInButtonContainerClick = useCallback(() => {

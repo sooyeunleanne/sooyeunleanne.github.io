@@ -66,49 +66,37 @@
   font-weight: 700;
   font-family: var(--font-lora);
 }
-.foodiecoHighlanderEngineer2 {
+.foodiecoHighlanderEngineer1 {
   line-height: 40px;
+}
+.foodiecoHighlanderEngineer,
+.myFirstHackathon {
+  text-indent: 40px;
+  margin-block-start: 0;
+  margin-block-end: 5px;
 }
 .foodiecoHighlanderEngineer {
-  margin: 0;
-  display: block;
   font-size: var(--font-size-6xl);
-  padding-left: var(--padding-14xl);
 }
-.myFirstHackathonWhereIWon1 {
+.myFirstHackathon {
   line-height: 25px;
 }
-.myFirstHackathonWhereIWon {
+.inHackTheValley7AHackat1 {
+  line-height: 25px;
+}
+.blankLine2,
+.inHackTheValley7AHackat {
   text-indent: 40px;
   margin-block-start: 0;
   margin-block-end: 5px;
 }
-.blankLine {
-  margin-bottom: 0;
-}
-.hackTheValley {
-  font-family: var(--font-lora);
-}
-.readBetterJamhacks720232 {
-  font-size: var(--font-size-6xl);
-  line-height: 40px;
-}
-.readBetterJamhacks72023 {
-  margin: 0;
+.blankLine2 {
   font-size: var(--font-size-xl);
-  padding-left: var(--padding-14xl);
 }
-.atJamhacks7A,
 .bionicReadingIs {
   text-indent: 40px;
-  line-height: 25px;
-}
-.atJamhacks7A {
-  margin-block-start: 0;
-  margin-block-end: 5px;
-}
-.bionicReadingIs {
   margin: 0;
+  line-height: 25px;
 }
 .foodiecoHighlanderContainer {
   position: absolute;
@@ -120,10 +108,6 @@
   font-size: var(--font-size-lg);
   font-family: var(--font-lora);
 }
-.communityChangemakerChalleng {
-  margin: 0;
-  padding-left: var(--padding-14xl);
-}
 .inTheCommunity {
   text-indent: 40px;
   margin-block-start: 0;
@@ -134,10 +118,8 @@
 .bodyInDepth {
   font-weight: 700;
 }
-.bodyInDepth202302 {
-  margin: 0;
-  display: block;
-  padding-left: var(--padding-14xl);
+.b {
+  font-family: var(--font-lora);
 }
 .communityChangemakerChallengContainer {
   position: absolute;
@@ -154,7 +136,7 @@
   top: 281px;
   left: 140px;
   width: 987px;
-  height: 1798px;
+  height: 1817px;
   font-size: var(--font-size-13xl);
   color: var(--color-black);
 }
@@ -288,16 +270,23 @@
 .demoVideo1 {
   top: 0;
   left: 2.94px;
+  font-size: var(--font-size-xs);
   display: flex;
+  font-family: var(--font-cinzel);
+  color: var(--color-white);
+  text-align: center;
   align-items: center;
   justify-content: center;
   width: 147.06px;
 }
 .button2 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
   top: 211px;
   left: 200px;
   width: 150px;
-  cursor: pointer;
 }
 .foodieco1 {
   position: absolute;
@@ -418,7 +407,7 @@
 }
 .projects {
   position: relative;
-  background: linear-gradient(180deg, #dcf0f6, rgba(57, 110, 140, 0.15) 99.48%);
+  background-color: #dcf0f6;
   width: 100%;
   height: 2300px;
   overflow: hidden;
