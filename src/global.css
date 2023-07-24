@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-lora: Lora;
+  --font-cinzel: Cinzel;
+
+  /* font sizes */
+  --font-size-xs: 12px;
+  --font-size-6xl: 25px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-13xl: 32px;
+  --font-size-31xl: 50px;
+  --font-size-2xl: 21px;
+
+  /* Colors */
+  --color-black: #000;
+  --color-white: #fff;
+  --color-darkslateblue: #2d4a94;
+  --color-steelblue: #396e8c;
+
+  /* Paddings */
+  --padding-14xl: 33px;
+
+  /* border radiuses */
+  --br-11xl: 30px;
+}

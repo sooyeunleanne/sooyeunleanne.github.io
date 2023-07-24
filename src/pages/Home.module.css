@@ -1,0 +1,173 @@
+.headerBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-darkslateblue);
+  width: 1440px;
+  height: 100px;
+}
+.home1,
+.leadership,
+.projects {
+  position: absolute;
+  top: 34px;
+  display: inline-block;
+}
+.home1 {
+  left: 137px;
+  width: 80px;
+}
+.leadership,
+.projects {
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.projects {
+  left: 670px;
+  width: 100px;
+}
+.leadership {
+  right: 150px;
+  width: 200px;
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 100px;
+  font-size: var(--font-size-6xl);
+  color: var(--color-white);
+}
+.homeChild {
+  position: absolute;
+  top: 200px;
+  left: 220px;
+  background: radial-gradient(
+    50% 50%at 50% 50%,
+    #b8f33a 33.41%,
+    rgba(217, 217, 217, 0) 92.71%
+  );
+  filter: blur(4px);
+  width: 1000px;
+  height: 250px;
+  opacity: 0.5;
+  mix-blend-mode: normal;
+}
+.leanneKim {
+  position: absolute;
+  top: 281px;
+  left: 447px;
+  font-size: var(--font-size-31xl);
+  display: inline-block;
+  font-family: var(--font-cinzel);
+  width: 559px;
+  height: 89px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.aProspectiveSystemsContainer {
+  position: absolute;
+  top: 470px;
+  left: 327px;
+  display: inline-block;
+  width: 800px;
+}
+.email {
+  font-family: var(--font-lora);
+}
+.emailSooyeunleannegmailcom1 {
+  margin-block-start: 0;
+  margin-block-end: 2px;
+}
+.phone15197223291 {
+  margin: 0;
+}
+.emailSooyeunleannegmailcom,
+.sheher {
+  position: absolute;
+  top: 1200px;
+  left: 327px;
+  display: inline-block;
+  width: 800px;
+}
+.sheher {
+  top: 354px;
+}
+.linkedinButtonChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-darkslateblue);
+  width: 196.15px;
+  height: 53.16px;
+}
+.linkedin {
+  position: absolute;
+  top: 0;
+  left: 3.85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 192.31px;
+  height: 57.14px;
+}
+.devpostButton,
+.instagramButton,
+.linkedinButton,
+.resumeButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 196.15px;
+  height: 57.14px;
+  cursor: pointer;
+}
+.devpostButton,
+.instagramButton,
+.resumeButton {
+  top: 97.14px;
+}
+.instagramButton,
+.resumeButton {
+  top: 194.29px;
+}
+.resumeButton {
+  top: 291.43px;
+}
+.buttons,
+.resumeButton1 {
+  position: absolute;
+  top: 600px;
+  left: 620px;
+  width: 196.15px;
+  height: 399.57px;
+  font-size: var(--font-size-2xl);
+  color: var(--color-white);
+  font-family: var(--font-cinzel);
+}
+.resumeButton1 {
+  top: 989px;
+  height: 57.14px;
+  cursor: pointer;
+}
+.homeItem {
+  position: absolute;
+  top: 1159px;
+  left: 369px;
+  border-top: 2px solid var(--color-darkslateblue);
+  box-sizing: border-box;
+  width: 702px;
+  height: 2px;
+}
+.home {
+  position: relative;
+  background-color: #dfff9c;
+  width: 100%;
+  height: 1300px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-lora);
+}

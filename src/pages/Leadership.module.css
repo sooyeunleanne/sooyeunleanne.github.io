@@ -1,0 +1,222 @@
+.leadershipChild {
+  position: absolute;
+  top: 380px;
+  left: 1px;
+  width: 1440px;
+  height: 2000px;
+  opacity: 0.5;
+}
+.headerBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #054fbe;
+  width: 1440px;
+  height: 100px;
+}
+.home {
+  top: 34px;
+  left: 137px;
+  width: 80px;
+  cursor: pointer;
+}
+.home,
+.leadership1,
+.projects {
+  position: absolute;
+  display: inline-block;
+}
+.projects {
+  top: 34px;
+  left: 670px;
+  width: 100px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.leadership1 {
+  top: 281px;
+  left: 447px;
+  font-size: var(--font-size-31xl);
+  font-family: var(--font-cinzel);
+  color: var(--color-black);
+  width: 559px;
+  height: 89px;
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 370px;
+  color: var(--color-white);
+}
+.extracurriculars,
+.studentLeadership {
+  position: absolute;
+  top: 386px;
+  left: 227px;
+  display: inline-block;
+  width: 800px;
+}
+.studentLeadership {
+  top: 1474px;
+  left: 221px;
+}
+.laurelHeightsSecondary {
+  margin-block-start: 0;
+  margin-block-end: 2px;
+}
+.sep2021 {
+  margin: 0;
+}
+.laurelHeightsSecondaryContainer {
+  position: absolute;
+  top: 1517px;
+  left: 220px;
+  font-size: var(--font-size-xl);
+  display: inline-block;
+  width: 800px;
+}
+.keyClubExecutive {
+  font-size: var(--font-size-6xl);
+}
+.keyClubExecutiveJun20201 {
+  margin-bottom: 0;
+}
+.keyClubInternationalGlobal {
+  text-indent: 40px;
+  margin-block-start: 0;
+  margin-block-end: 5px;
+}
+.iHaveBeen {
+  line-height: 25px;
+}
+.blankLine {
+  text-indent: 40px;
+  margin-block-start: 0;
+  margin-block-end: 5px;
+  font-size: var(--font-size-6xl);
+}
+.mathletesExecutive {
+  line-height: 40px;
+}
+.logisticsExecutiveAtTurtleh {
+  margin: 0;
+  padding-left: var(--padding-14xl);
+}
+.servingInTheLogisticsTeam {
+  text-indent: 40px;
+  margin: 0;
+}
+.keyClubExecutiveContainer {
+  position: absolute;
+  top: 466px;
+  left: 380px;
+  text-align: left;
+  display: inline-block;
+  width: 875px;
+  font-size: var(--font-size-lg);
+  font-family: var(--font-lora);
+}
+.blankLine4 {
+  text-indent: 40px;
+  margin-block-start: 0;
+  margin-block-end: 5px;
+  font-size: var(--font-size-xl);
+}
+.gradWeekProjectContainer,
+.leadership2 {
+  position: absolute;
+  font-family: var(--font-lora);
+  display: inline-block;
+}
+.gradWeekProjectContainer {
+  top: 1605px;
+  left: 0;
+  text-align: left;
+  width: 800px;
+  font-size: var(--font-size-lg);
+}
+.leadership2 {
+  top: 0;
+  right: 65px;
+  font-size: var(--font-size-6xl);
+  color: var(--color-white);
+  width: 200px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.texts {
+  position: absolute;
+  top: 34px;
+  left: 100px;
+  width: 1255px;
+  height: 1982px;
+  font-size: var(--font-size-13xl);
+  font-family: var(--font-cinzel);
+}
+.lineDecorationsIcon,
+.mathletesIcon {
+  position: absolute;
+  top: 437px;
+  left: 0;
+  width: 1440px;
+  height: 1093px;
+}
+.mathletesIcon {
+  top: 340px;
+  width: 240.7px;
+  height: 240px;
+  object-fit: cover;
+}
+.keyClubIcon {
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 248.31px;
+}
+.keyClubIcon,
+.lhssIcon,
+.turtlehacksIcon {
+  position: absolute;
+  object-fit: cover;
+}
+.turtlehacksIcon {
+  top: 610px;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  cursor: pointer;
+}
+.lhssIcon {
+  top: 1059px;
+  left: 915px;
+  width: 300px;
+  height: 316.14px;
+}
+.labelTurtlehacks {
+  position: absolute;
+  top: 868px;
+  left: 0;
+  display: inline-block;
+  width: 250px;
+  height: 19px;
+}
+.images {
+  position: absolute;
+  top: 555px;
+  left: 100px;
+  width: 1215px;
+  height: 1375.14px;
+  font-size: var(--font-size-xs);
+}
+.leadership {
+  position: relative;
+  background-color: #f2ffbc;
+  width: 100%;
+  height: 2100px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-6xl);
+  color: var(--color-black);
+  font-family: var(--font-lora);
+}
