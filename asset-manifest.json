@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/sooyeunleanne/static/css/main.d28087f7.css",
-    "main.js": "/sooyeunleanne/static/js/main.44dba5fd.js",
-    "index.html": "/sooyeunleanne/index.html",
-    "main.d28087f7.css.map": "/sooyeunleanne/static/css/main.d28087f7.css.map",
-    "main.44dba5fd.js.map": "/sooyeunleanne/static/js/main.44dba5fd.js.map"
+    "main.css": "/static/css/main.d28087f7.css",
+    "main.js": "/static/js/main.44dba5fd.js",
+    "index.html": "/index.html",
+    "main.d28087f7.css.map": "/static/css/main.d28087f7.css.map",
+    "main.44dba5fd.js.map": "/static/js/main.44dba5fd.js.map"
   },
   "entrypoints": [
     "static/css/main.d28087f7.css",
