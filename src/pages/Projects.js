@@ -1,6 +1,17 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Projects.module.css";
+
+import projects_lines from '../images/projects_lines.svg';
+import foodieco1 from '../images/foodieco1.png';
+import foodieco2 from '../images/foodieco2.png';
+import lovethyhood from '../images/lovethyhood.png';
+import healthyme from '../images/healthyme.png';
+import readbetter from '../images/readbetter.png';
+import ccc from '../images/ccc.png';
+import bodyindepth1 from '../images/bodyindepth1.png';
+import bodyindepth2 from '../images/bodyindepth2.png';
+
 const Projects = () => {
   const navigate = useNavigate();
 
@@ -199,7 +210,7 @@ const Projects = () => {
         <img
           className={styles.lovethyhoodPitchVideo}
           alt=""
-          src="/lovethyhood-pitch-video@2x.png"
+          src={lovethyhood}
         />
         <div className={styles.button} onClick={onButtonContainerClick}>
           <div className={styles.buttonChild} />
@@ -207,8 +218,8 @@ const Projects = () => {
         </div>
       </div>
       <div className={styles.foodieco1}>
-        <img className={styles.imageIcon} alt="" src="/image@2x.png" />
-        <img className={styles.imageIcon1} alt="" src="/image1@2x.png" />
+        <img className={styles.imageIcon} alt="" src={foodieco1} />
+        <img className={styles.imageIcon1} alt="" src={foodieco2} />
         <div className={styles.button1} onClick={onButtonContainer1Click}>
           <div className={styles.buttonItem} />
           <b className={styles.demoVideo}>DeMo Video</b>
@@ -223,7 +234,7 @@ const Projects = () => {
         <img
           className={styles.cccOverallProject}
           alt=""
-          src="/ccc-overall-project@2x.png"
+          src={ccc}
         />
       </div>
       <div className={styles.readbetter}>
@@ -234,7 +245,7 @@ const Projects = () => {
         <img
           className={styles.readbetterDemoVideo}
           alt=""
-          src="/readbetter-demo-video@2x.png"
+          src={readbetter}
         />
       </div>
       <div className={styles.healthyme1}>
@@ -245,22 +256,22 @@ const Projects = () => {
         <img
           className={styles.healthymeDemonstrationPictur}
           alt=""
-          src="/healthyme-demonstration-picture@2x.png"
+          src={healthyme}
           onClick={onHealThymeDemonstrationPicturClick}
         />
       </div>
       <img
         className={styles.lineDecorationsIcon}
         alt=""
-        src="/line-decorations1.svg"
+        src={projects_lines}
       />
       <div className={styles.bodyindepth}>
         <div className={styles.button5} onClick={onButtonContainer4Click}>
           <div className={styles.buttonChild} />
           <b className={styles.pitchVideo}>Open Repository</b>
         </div>
-        <img className={styles.imageIcon2} alt="" src="/image2@2x.png" />
-        <img className={styles.imageIcon3} alt="" src="/image3@2x.png" />
+        <img className={styles.imageIcon2} alt="" src={bodyindepth1} />
+        <img className={styles.imageIcon3} alt="" src={bodyindepth2} />
       </div>
     </div>
   );
