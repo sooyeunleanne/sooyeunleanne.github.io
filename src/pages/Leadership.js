@@ -1,6 +1,14 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Leadership.module.css";
+
+import leadership_lines from '../images/leadership_lines.svg';
+import rectangle from '../images/rectangle.svg';
+import keyclub from '../images/keyclub.png';
+import mathletes from '../images/mathletes.png';
+import turtlehacks from '../images/turtlehacks.png';
+import lhss from '../images/lhss.png';
+
 const Leadership = () => {
   const navigate = useNavigate();
 
@@ -22,7 +30,7 @@ const Leadership = () => {
 
   return (
     <div className={styles.leadership}>
-      <img className={styles.leadershipChild} alt="" src="/rectangle-1.svg" />
+      <img className={styles.leadershipChild} alt="" src={rectangle} />
       <div className={styles.header}>
         <div className={styles.headerBackground} />
         <div className={styles.home} onClick={onHomeTextClick}>
@@ -226,18 +234,18 @@ const Leadership = () => {
       <img
         className={styles.lineDecorationsIcon}
         alt=""
-        src="/line-decorations.svg"
+        src={leadership_lines}
       />
       <div className={styles.images}>
-        <img className={styles.mathletesIcon} alt="" src="/mathletes@2x.png" />
-        <img className={styles.keyClubIcon} alt="" src="/key-club@2x.png" />
+        <img className={styles.mathletesIcon} alt="" src={mathletes} />
+        <img className={styles.keyClubIcon} alt="" src={keyclub} />
         <img
           className={styles.turtlehacksIcon}
           alt=""
-          src="/turtlehacks@2x.png"
+          src={turtlehacks}
           onClick={onTurtleHacksImageClick}
         />
-        <img className={styles.lhssIcon} alt="" src="/lhss@2x.png" />
+        <img className={styles.lhssIcon} alt="" src={lhss} />
         <div className={styles.labelTurtlehacks}>
           Click to visit our website
         </div>
