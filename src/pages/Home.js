@@ -13,7 +13,7 @@ const Home = () => {
   }, [navigate]);
 
   const onLinkedInButtonContainerClick = useCallback(() => {
-    window.open("https://www.linkedin.com/in/leanne-kim-aaa8a6242/");
+    window.open("https://www.linkedin.com/in/sooyeunleanne/");
   }, []);
 
   const onDevpostButtonContainerClick = useCallback(() => {
@@ -30,7 +30,7 @@ const Home = () => {
 
   const onResumeButtonContainer1Click = useCallback(() => {
     window.open(
-      "https://drive.google.com/file/d/1egKuzEmgkq6PqGjsX_1bmt9Ol7uPH_9w/view?usp=drive_link"
+      "https://drive.google.com/drive/folders/1Z4RtdjrIXqIc6ge516YFRHC2PeBl6dq7"
     );
   }, []);
 
