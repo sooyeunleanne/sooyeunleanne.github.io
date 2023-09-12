@@ -23,7 +23,7 @@ const Projects = () => {
     navigate("/leadership");
   }, [navigate]);
 
-  const onDevpostButtonContainerClick = useCallback(() => {
+  const onDevpostButtonClick = useCallback(() => {
     window.open("https://devpost.com/sooyeunleanne");
   }, []);
 
@@ -219,7 +219,7 @@ const Projects = () => {
       </div>
       <div
         className={styles.devpostButton}
-        onClick={onDevpostButtonContainerClick}
+        onClick={onDevpostButtonClick}
       >
         <div className={styles.devpostButtonChild} />
         <b className={styles.devpost}>Devpost</b>
@@ -230,22 +230,22 @@ const Projects = () => {
           alt=""
           src={lovethyhood}
         />
-        <div className={styles.button} onClick={onButtonContainerClick}>
+        {/* <div className={styles.button} onClick={onButtonContainerClick}>
           <div className={styles.buttonChild} />
           <b className={styles.pitchVideo}>Pitch Video</b>
-        </div>
+        </div> */}
       </div>
       <div className={styles.foodieco1}>
         <img className={styles.imageIcon} alt="" src={foodieco1} />
         <img className={styles.imageIcon1} alt="" src={foodieco2} />
-        <div className={styles.button1} onClick={onButtonContainer1Click}>
+        {/* <div className={styles.button1} onClick={onButtonContainer1Click}>
           <div className={styles.buttonItem} />
-          <b className={styles.demoVideo}>DeMo Video</b>
+          <b className={styles.demoVideo}>Demo Video</b>
         </div>
         <button className={styles.button2} onClick={onButtonClick}>
           <div className={styles.buttonInner} />
           <b className={styles.demoVideo1}>Pitch Video</b>
-        </button>
+        </button> */}
       </div>
       <div className={styles.ccc}>
         <div className={styles.ccc1}>Best Overall Project Certificate</div>
@@ -256,21 +256,21 @@ const Projects = () => {
         />
       </div>
       <div className={styles.readbetter}>
-        <div className={styles.button3} onClick={onButtonContainer2Click}>
-          <div className={styles.buttonChild} />
-          <b className={styles.pitchVideo}>Pitch/Demo Video</b>
-        </div>
         <img
-          className={styles.readbetterDemoVideo}
-          alt=""
-          src={readbetter}
-        />
+            className={styles.readbetterDemoVideo}
+            alt=""
+            src={readbetter}
+          />
+        {/* <div className={styles.button3} onClick={onButtonContainer2Click}>
+          <div className={styles.buttonChild} />
+          <b className={styles.pitchVideo} >Pitch/Demo Video</b>
+        </div> */}
       </div>
       <div className={styles.healthyme1}>
-        <div className={styles.button4} onClick={onButtonContainer3Click}>
-          <div className={styles.buttonChild} />
+        {/* <div className={styles.button4} onClick={onButtonContainer3Click}>
+          <div className={styles.buttonChild}/>
           <b className={styles.pitchVideo}>Demo Video</b>
-        </div>
+        </div> */}
         <img
           className={styles.healthymeDemonstrationPictur}
           alt=""
