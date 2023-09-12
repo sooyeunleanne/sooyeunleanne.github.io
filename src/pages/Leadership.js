@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Leadership.module.css";
 
 import leadership_lines from '../images/leadership_lines.svg';
-import rectangle from '../images/rectangle.svg';
 import keyclub from '../images/keyclub.png';
 import mathletes from '../images/mathletes.png';
 import turtlehacks from '../images/turtlehacks.png';
@@ -30,7 +29,6 @@ const Leadership = () => {
 
   return (
     <div className={styles.leadership}>
-      <img className={styles.leadershipChild} alt="" src={rectangle} />
       <div className={styles.header}>
         <div className={styles.headerBackground} />
         <div className={styles.home} onClick={onHomeTextClick}>

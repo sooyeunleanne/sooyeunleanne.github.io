@@ -1,8 +1,8 @@
 .leadershipChild {
   position: absolute;
   top: 380px;
-  left: 1px;
-  width: 2000px;
+  left: -500px;
+  width: 3500px;
   height: 2000px;
   opacity: 0.5;
 }
@@ -11,7 +11,7 @@
   top: 0;
   left: 0;
   background-color: #054fbe;
-  width: 1440px;
+  width: 2000px;
   height: 100px;
 }
 .home,
@@ -140,7 +140,7 @@
   position: absolute;
   top: 437px;
   left: 0;
-  width: 1440px;
+  width: 1480px;
   height: 1093px;
 }
 .mathletesIcon {

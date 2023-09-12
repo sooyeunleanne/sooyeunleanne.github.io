@@ -197,6 +197,24 @@ const Projects = () => {
             Java as its primary language. I also added a dictionary page and a
             unit converter to better the user experience.
           </p>
+          <p className={styles.inHackTheValley7AHackat}>
+            <span className={styles.foodiecoHighlanderEngineer1}>
+              <b>&nbsp;</b>
+            </span>
+          </p>
+          <p className={styles.inHackTheValley7AHackat}>
+            <span className={styles.foodiecoHighlanderEngineer1}>
+              <i className={styles.bodyInDepth}>StudySpace</i>
+              <b className={styles.b}> (2023/02)</b>
+            </span>
+          </p>
+          <p className={styles.inTheCommunity}>
+            In a 3-people team, I designed a study assistant program in Processing.
+            It has a stopwatch that measures your total time spent studying (along with a reminder 
+            for a break in every 30 mins), music/audio features to help you concentrate, and a 
+            checklist feature in which you list your finished/unfinished tasks. Once you are finished,
+            you can click the camera button to take a screenshot of your daily progress.
+          </p>
         </div>
       </div>
       <div
