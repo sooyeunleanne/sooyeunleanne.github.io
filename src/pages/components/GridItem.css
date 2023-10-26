@@ -1,0 +1,40 @@
+.grid-item {
+    display: grid;
+    position: static;
+    width: 100%;
+    top: 30%;
+    height: 300px;
+    text-align: center;
+    color: black;
+    font-size: 17px;
+}
+
+.role {
+    font-size: 20px;
+}
+
+.years {
+    font-size: 15px;
+}
+
+.pop-up-button {
+    height: 30px;
+    width: 150px;
+    color:  var(--color-steelblue);
+    font-family: var(--font-cinzel);
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: var(--br-11xl);
+    background-color: white;
+    border-color: var(--color-steelblue);
+}
+
+.pop-up-button:hover {
+    background-color: rgb(141, 187, 227);
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }

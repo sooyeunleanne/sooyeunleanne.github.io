@@ -1,12 +1,16 @@
-import { useCallback } from "react";
+import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Leadership.module.css";
+import PopupLeadership from './components/PopupLeadership.js';
+import './components/Popup.css';
+import GridItem from './components/GridItem';
 
-import leadership_lines from '../images/leadership_lines.svg';
 import keyclub from '../images/keyclub.png';
 import mathletes from '../images/mathletes.png';
 import turtlehacks from '../images/turtlehacks.png';
 import lhss from '../images/lhss.png';
+import akcse from '../images/akcse.png';
+import ksa from '../images/ksa.png';
 
 const Leadership = () => {
   const navigate = useNavigate();
@@ -23,9 +27,13 @@ const Leadership = () => {
     navigate("/leadership");
   }, [navigate]);
 
-  const onTurtleHacksImageClick = useCallback(() => {
-    window.open("https://www.turtlehacks.com/");
-  }, []);
+  const [popupKeyClub, openKeyClub] = useState(false);
+  const [popupKCI, openKCI] = useState(false);
+  const [popupMathletes, openMathletes] = useState(false);
+  const [popupStudentLeadership, openStudentLeadership] = useState(false);
+  const [popupTurtleHacks, openTurtleHacks] = useState(false);
+  const [popupAKCSE, openAKCSE] = useState(false);
+  const [popupKSA, openKSA] = useState(false);
 
   return (
     <div className={styles.leadership}>
@@ -36,217 +44,169 @@ const Leadership = () => {
         </div>
         <div className={styles.projects} onClick={onProjectsTextClick}>
           Projects
-        </div>
+          </div>
         <div className={styles.leadership1} onClick={onLeadershipTextClick}>
           Leadership
         </div>
+        
+      <div className={styles.text}>
+        <b className={styles.heading1}>Leadership</b>
+        <br/>
+        <b className={styles.heading2}>Experiences</b>
+
+        <div className = {styles.gridContainer} style = {{boxShadow: "10px 10px grey"}}>
+          <GridItem 
+          image = {keyclub}
+          name="LHSS Key Club"
+          role="President" 
+          startYear = "Jun 2020"
+          endYear = "Jun 2023"
+          trigger={popupKeyClub} 
+          setTrigger={openKeyClub} ></GridItem>
+
+          <GridItem 
+          image= {mathletes}
+          name="LHSS Mathletes"
+          role="Executive" 
+          startYear = "Jun 2021"
+          endYear = "Jun 2023"
+          trigger={popupMathletes} 
+          setTrigger={openMathletes}></GridItem>
+          
+          <GridItem 
+          image= {keyclub}
+          name="Key Club International"
+          role="Global Relations Committee" 
+          startYear = "Dec 2021"
+          endYear = "Jun 2022"
+          trigger={popupKCI} 
+          setTrigger={openKCI}></GridItem> 
+
+          <GridItem 
+          image= {lhss}
+          name="LHSS"
+          role="Student Leadership" 
+          startYear = "Sep 2021"
+          endYear = "Jun 2023" 
+          trigger={popupStudentLeadership} 
+          setTrigger={openStudentLeadership}></GridItem>
+
+          <GridItem 
+          image= {turtlehacks}
+          name="TurtleHacks"
+          role="Logistics Executive" 
+          startYear = "Jun 2022"
+          endYear = "May 2023" 
+          children="TurtleHacks: Logistics Executive" 
+          trigger={popupTurtleHacks} 
+          setTrigger={openTurtleHacks}></GridItem>
+          
+          <GridItem 
+          image= {akcse}
+          name="AKCSE UW"
+          role="Marketing Specialist" 
+          startYear = "Sep 2023"
+          endYear = "" 
+          trigger={popupAKCSE} setTrigger={openAKCSE}></GridItem> 
+
+          <GridItem 
+          image = {ksa}
+          name = "UW KSA"
+          role = "Public Relations Specialist" 
+          startYear = "Sep 2023"
+          endYear = "" 
+          trigger={popupKSA}
+          setTrigger={openKSA}></GridItem>
+        </div>
+        
+        <PopupLeadership 
+        trigger={popupKeyClub} 
+        setTrigger={openKeyClub}
+        image = {keyclub}
+        name="LHSS Key Club"
+        role="President" 
+        startYear = "Jun 2020"
+        endYear = "Jun 2023"       
+        description= {["Led 331 students to organize leadership workshops, divisional meetups, cultural potlucks, and volunteer opportunities.", 
+        "Maintained club engagement during the pandemic by introducing online volunteer/leadership opportunities in weekly meetings.",
+         "Coordinated an online communication skills workshop with Mike Farwell (a local talkshow host) and a club-wide meetup with Key Club alumni for post-secondary guidance."]}></PopupLeadership>
+
+        <PopupLeadership 
+        trigger={popupKCI} 
+        setTrigger={openKCI}
+        image = {keyclub}
+        name="Key Club International"
+        role="Global Relations Committee" 
+        startYear = "Dec 2021"
+        endYear = "Jun 2022"
+        description = {["Planned a Key Club Pledge Video project, a video in which club members from different countries do the Key Club pledge in their own language in front of their national flags.", 
+        "Pursued diversity/inclusion within the worldwide Key Club community.", 
+        "Worked as an Eastern Canada Representative"]}
+        ></PopupLeadership>
+
+        <PopupLeadership 
+        trigger={popupMathletes} 
+        setTrigger={openMathletes}
+        image = {mathletes}
+        name="LHSS Mathletes"
+        role="Executive" 
+        startYear = "Jun 2021"
+        endYear = "Jun 2023"
+        description = {["Taught mathematical concepts (probabilities, sequences and series, etc.) from math contests to students from grade 9 to 12.", 
+        "Organized Ontario Mathematics Competition 2023 (https://sites.google.com/view/ontariocmc/home) for 224 students from 10 Ontario schools.", 
+        "Worked as a Junior Executive in 2021-2022 and a Senior Executive in 2022-2023"]}></PopupLeadership>
+
+        <PopupLeadership 
+        trigger={popupStudentLeadership} 
+        setTrigger={openStudentLeadership}
+        image = {lhss}
+        name="Laurel Heights Secondary School"
+        role="Student Leadership" 
+        startYear = "Sep 2021"
+        endYear = "Jun 2023"
+        description = {["Organized Horizons Leadership Conference (March 22nd, 2023) for 200+ student leaders from different schools.", 
+        "Coordinated the Grad Week (backyard bash, grad breakfast, time capsule letters, and prom) for Class of 2023. Approximately 90% of the graduating class (400+ students) participated in this project.", 
+        "Received 90%+ positive feedback from the participants of both the Horizons Leadership Conference and Grad Week"]}
+        ></PopupLeadership>
+
+        <PopupLeadership 
+        trigger={popupTurtleHacks} 
+        setTrigger={openTurtleHacks}
+        image = {turtlehacks}
+        name = "TurtleHacks"
+        role = "Logistics Executive"
+        startYear = "Jun 2022"
+        endYear = "May 2023"
+        description = {["Helped organize the high-school led hybrid hackathon with 342 participants in the Logistics Team.", 
+        "Facilitated communication with sponsors and workshop leaders, planned food and venue, organized activities/events for hackers.", 
+        "Ensured that all events were happening in a timely manner with adequate resources."]}></PopupLeadership>
+
+        <PopupLeadership 
+        trigger={popupAKCSE} 
+        setTrigger={openAKCSE}
+        image = {akcse}
+        name = "Association of Korean Scientists and Engineers UW"
+        role = "Marketing Specialist"
+        startYear = "Sep 2023"
+        endYear = ""
+        description = {["Advertised club events (Midterm Emergency Kit give-outs, Resume Critique, etc.) by creating instagram posters, writing post captions, and planning marketing strategies.", 
+        "Resulted in a rapid sold-out of 40 midterm emergency kits within 48 hours after the instagram post.", 
+        "Represented the Faculty of Engineering at an open house presentation to 200+ parents and high school students."]}
+        ></PopupLeadership>
+
+        <PopupLeadership 
+        trigger={popupKSA} 
+        setTrigger={openKSA}
+        image = {ksa}
+        name = "Korean Student Association UW"
+        role = "Public Relations Specialist"
+        startYear = "Sep 2023"
+        endYear = ""
+        description = {["Wrote formal emails to potential sponsors/partners of the club for sponsorship/partnership.", 
+        "Brainstormed potential partnership events (e.g. school vs. school tournaments) in weekly team meetings.", 
+        "Developed/produced an official sponsorship package to reach out to sponsors."]}
+        ></PopupLeadership>
       </div>
-      <div className={styles.texts}>
-        <b className={styles.extracurriculars}>Extracurriculars</b>
-        <b className={styles.studentLeadership}>Student Leadership</b>
-        <div className={styles.laurelHeightsSecondaryContainer}>
-          <p className={styles.laurelHeightsSecondary}>
-            Laurel heights Secondary School
-          </p>
-          <p className={styles.sep2021}>Sep 2021 - Jun 2023</p>
-        </div>
-        <div className={styles.keyClubExecutiveContainer}>
-          <p className={styles.keyClubInternationalGlobal}>
-            <b className={styles.mathletesExecutive}>
-              <span className={styles.keyClubExecutive}>
-                Key Club Executive
-              </span>
-              <span>{` (Jun 2020 - Jun 2023) `}</span>
-            </b>
-          </p>
-          <p className={styles.keyClubInternationalGlobal}>
-            <b className={styles.mathletesExecutive}>
-              <span
-                className={styles.keyClubExecutive}
-              >{`Key Club International: Global Relations Committee `}</span>
-            </b>
-            <span>
-              <b className={styles.mathletesExecutive}>(Dec 2021 - Jun 2022)</b>
-            </span>
-          </p>
-          <p className={styles.keyClubInternationalGlobal}>
-            <span>
-              <span className={styles.iHaveBeen}>
-                I have been a Key Club executive since grade 10: Junior Exec in
-                grade 10, Vice President in grade 11, and President in grade 12.
-                Since Key Club focuses on inclusiveness and leadership,
-                providing an environment in which everyone is respected has
-                always been my priority. The 3 years developed me into a
-                committed leader who knows the value of diversity and respect.
-              </span>
-            </span>
-          </p>
-          <p className={styles.keyClubInternationalGlobal}>
-            <span>
-              <span className={styles.iHaveBeen}>
-                Over the past four years in Key Club, giving numerous leadership
-                workshops and activities, I constantly practiced host and
-                post-heroic leadership; specifically improving in my project and
-                team management skills along with interpersonal communication
-                skills. 
-              </span>
-            </span>
-          </p>
-          <p className={styles.keyClubInternationalGlobal}>
-            <span>
-              <span
-                className={styles.iHaveBeen}
-              >{`I also served in the Global relations Committee of Key Club International, as an Eastern Canada District representative. I organized events to spread Key Club internationally and promote diversity and inclusion within Key Clubs. `}</span>
-            </span>
-          </p>
-          <p className={styles.keyClubInternationalGlobal}>
-            <span>
-              <span className={styles.iHaveBeen}>&nbsp;</span>
-            </span>
-          </p>
-          <p className={styles.keyClubInternationalGlobal}>
-            <b className={styles.mathletesExecutive}>
-              <span
-                className={styles.keyClubExecutive}
-              >{`Mathletes Executive `}</span>
-            </b>
-            <span>
-              <b className={styles.mathletesExecutive}>(Jun 2021 - Jun 2023)</b>
-            </span>
-          </p>
-          <p className={styles.keyClubInternationalGlobal}>
-            <span>
-              <span
-                className={styles.iHaveBeen}
-              >{`Being a Mathletes executive was one of the most valuable experiences. Teaching math to grades nine to twelve over the years, I was learning. The students who were there needed my help and bought my sincerity. Preparing for and teaching lessons, I continuously developed my time management and coaching skills, along with my communication skills. `}</span>
-            </span>
-          </p>
-          <p className={styles.keyClubInternationalGlobal}>
-            <span>
-              <span className={styles.iHaveBeen}>
-                In 2022, apart from the weekly lessons, we hosted a Math
-                Olympiad targeted towards our school students who are interested
-                in learning mathematics. As one of the organizers, I improved a
-                lot in project management, interpersonal communication,
-                accountability, and emotional intelligence.
-              </span>
-            </span>
-          </p>
-          <p className={styles.keyClubInternationalGlobal}>
-            <span>
-              <span className={styles.iHaveBeen}>&nbsp;</span>
-            </span>
-          </p>
-          <p className={styles.keyClubInternationalGlobal}>
-            <b className={styles.mathletesExecutive}>
-              <span
-                className={styles.keyClubExecutive}
-              >{`Logistics Executive at TurtleHacks `}</span>
-            </b>
-            <span>
-              <b className={styles.mathletesExecutive}>(Jun 2022 - May 2022)</b>
-            </span>
-          </p>
-          <p className={styles.keyClubInternationalGlobal}>
-            <span>
-              <span className={styles.iHaveBeen}>
-                I served as a Logistics Executive of TurtleHacks, a high-school
-                led hackathon that happened in May. I reached out to various
-                workshop leaders, sponsors, and organizations to organize the
-                hackathon. The logistics team collaborated to figure out all the
-                behind-the-stage work, such as food, venue, activities/events to
-                be hosted, workshops, and many more. 
-              </span>
-            </span>
-          </p>
-          <p className={styles.servingInTheLogisticsTeam}>
-            <span>
-              <span className={styles.iHaveBeen}>
-                Serving in the logistics team taught me the importance of
-                unrecognized work that acts as the basis of the events. After
-                this experience, I was able to appreciate the tech crew, props
-                team, and logistics team of every event for all their hard work
-                behind the scenes. 
-              </span>
-            </span>
-          </p>
-        </div>
-        <div className={styles.gradWeekProjectContainer}>
-          <p className={styles.keyClubInternationalGlobal}>
-            <b className={styles.mathletesExecutive}>
-              <span
-                className={styles.keyClubExecutive}
-              >{`Grad Week Project Organizer `}</span>
-            </b>
-            <span>
-              <b className={styles.mathletesExecutive}>
-                (February - June 2023)
-              </b>
-            </span>
-          </p>
-          <p className={styles.keyClubInternationalGlobal}>
-            <span>
-              <span>
-                <span className={styles.iHaveBeen}>
-                  As part of the Grad Week project group of our school
-                  leadership, I helped organize senior backyard bash, grad
-                  breakfast, and prom. My position was mainly a
-                  planner/facilitator. Serving as a grad group organizer helped
-                  me realize the true importance of leadership in our school
-                  community: bringing joy into students’ high school lives and
-                  giving them more memorable experiences.
-                </span>
-              </span>
-            </span>
-          </p>
-          <p className={styles.blankLine4}>
-            <span>
-              <span>&nbsp;</span>
-            </span>
-          </p>
-          <p className={styles.keyClubInternationalGlobal}>
-            <b className={styles.mathletesExecutive}>
-              <span className={styles.keyClubExecutive}>
-                Horizons Leadership Conference Organizer
-              </span>
-            </b>
-            <span>
-              <b className={styles.mathletesExecutive}> (February 2023)</b>
-            </span>
-          </p>
-          <p className={styles.keyClubInternationalGlobal}>
-            <span>
-              <span className={styles.iHaveBeen}>
-                For the Horizons Leadership Conference, I served as an organizer
-                in the decorations team in decorating the stage and preparing
-                for other necessary materials to enhance the experience for the
-                attendees. I also served as a spirit leader, leading the spirit
-                group with various icebreaker activities and bringing them
-                closer. 
-              </span>
-            </span>
-          </p>
-        </div>
-        <b className={styles.leadership2}>Leadership</b>
-      </div>
-      <img
-        className={styles.lineDecorationsIcon}
-        alt=""
-        src={leadership_lines}
-      />
-      <div className={styles.images}>
-        <img className={styles.mathletesIcon} alt="" src={mathletes} />
-        <img className={styles.keyClubIcon} alt="" src={keyclub} />
-        <img
-          className={styles.turtlehacksIcon}
-          alt=""
-          src={turtlehacks}
-          onClick={onTurtleHacksImageClick}
-        />
-        <img className={styles.lhssIcon} alt="" src={lhss} />
-        <div className={styles.labelTurtlehacks}>
-          Click to visit our website
-        </div>
       </div>
     </div>
   );

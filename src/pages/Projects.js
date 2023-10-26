@@ -1,16 +1,24 @@
-import { useCallback } from "react";
+import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Projects.module.css";
+import PopupProject from './components/PopupProject';
+import './components/Popup.css';
+import GridItem from './components/GridItem';
 
-import projects_lines from '../images/projects_lines.svg';
+import foodieco from '../images/foodieco.png';
 import foodieco1 from '../images/foodieco1.png';
 import foodieco2 from '../images/foodieco2.png';
 import lovethyhood from '../images/lovethyhood.png';
 import healthyme from '../images/healthyme.png';
+import healthyme1 from '../images/healthyme1.png';
 import readbetter from '../images/readbetter.png';
+import readbetter1 from '../images/readbetter1.png';
 import ccc from '../images/ccc.png';
+import ccc1 from '../images/ccc1.png';
+import bodyindepth from '../images/bodyindepth.png';
 import bodyindepth1 from '../images/bodyindepth1.png';
 import bodyindepth2 from '../images/bodyindepth2.png';
+import studyspace from '../images/studyspace.png';
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -27,33 +35,13 @@ const Projects = () => {
     window.open("https://devpost.com/sooyeunleanne");
   }, []);
 
-  const onButtonContainerClick = useCallback(() => {
-    window.open("https://youtu.be/2BrVxchByck");
-  }, []);
-
-  const onButtonContainer1Click = useCallback(() => {
-    window.open("https://www.youtube.com/watch?v=rGr_D0UZhUU");
-  }, []);
-
-  const onButtonClick = useCallback(() => {
-    window.open("https://youtu.be/d77sW5xHxH4");
-  }, []);
-
-  const onButtonContainer2Click = useCallback(() => {
-    window.open("https://youtu.be/BRFJ2iNiig0");
-  }, []);
-
-  const onButtonContainer3Click = useCallback(() => {
-    window.open("https://youtu.be/BRFJ2iNiig0");
-  }, []);
-
-  const onHealThymeDemonstrationPicturClick = useCallback(() => {
-    window.open("https://youtu.be/iKNFji-NY80");
-  }, []);
-
-  const onButtonContainer4Click = useCallback(() => {
-    window.open("https://github.com/sooyeunleanne/Body-In-Depth");
-  }, []);
+  const [popupFoodieco, openFoodieco] = useState(false);
+  const [popupLoveThyHood, openLoveThyHood] = useState(false);
+  const [popupHealThyme, openHealThyme] = useState(false);
+  const [popupReadBetter, openReadBetter] = useState(false);
+  const [popupBodyInDepth, openBodyInDepth] = useState(false);
+  const [popupStudySpace, openStudySpace] = useState(false);
+  const [popupCCC, openCCC] = useState(false);
 
   return (
     <div className={styles.projects}>
@@ -66,230 +54,158 @@ const Projects = () => {
         <div className={styles.leadership} onClick={onLeadershipTextClick}>
           Leadership
         </div>
-      </div>
+
       <div className={styles.text}>
-        <b className={styles.projects2}>Projects</b>
-        <b className={styles.hackathons}>Hackathons</b>
-        <b className={styles.others}>Others</b>
-        <div className={styles.foodiecoHighlanderContainer}>
-          <p className={styles.foodiecoHighlanderEngineer}>
-            <span className={styles.foodiecoHighlanderEngineer1}>
-              <i className={styles.foodieco}>{`Foodieco - `}</i>
-              <b>Highlander Engineering Challenge (2022/06) 👑</b>
-            </span>
-          </p>
-          <p className={styles.myFirstHackathon}>
-            My first hackathon where I won the Best Software Project award.
-          </p>
-          <p className={styles.myFirstHackathon}>
-            I used python to work on the back-end, the front-end, and the UI
-            design.
-          </p>
-          <p className={styles.myFirstHackathon}>
-            Our application, FoodiEco offers a fridge page that allows the user
-            to have a full view of the items in their fridge, helping reduce
-            food waste and impulse buying. There is also a recipe page that
-            allows the user to save their own recipes to help with the
-            organization of cooking. Moreover, there is a replacement page that
-            informs the user of healthier and more eco-friendly replacements for
-            certain ingredients
-          </p>
-          <p className={styles.myFirstHackathon}>&nbsp;</p>
-          <p className={styles.foodiecoHighlanderEngineer}>
-            <span className={styles.foodiecoHighlanderEngineer1}>
-              <i className={styles.foodieco}>Love Thy Neighbourhood</i>
-              <b> - Recess Hacks 2.0 (2022/07)</b>
-            </span>
-          </p>
-          <p className={styles.myFirstHackathon}>
-            Since COVID-19 has started, the virtual environment and quarantine
-            made people numb to the lack of social interaction within the
-            community. In-person interactions diminished and connections in
-            neighborhoods are lost. People got distant and are more used to
-            online socialization. They rarely meet new people
-          </p>
-          <p className={styles.myFirstHackathon}>
-            Our team figured out a solution to this problem. We created a
-            webpage called “NeighborHood” where people can access information
-            about nearby community events. When they log into their account,
-            they can choose the community that they want to join. After the
-            log-in process, they will see a list of community events in their
-            regions. They can also post community events that they are hosting
-            or participating in. This webpage will connect people by inviting
-            them to various face-to-face regional events.
-          </p>
-          <p className={styles.myFirstHackathon}>&nbsp;</p>
-          <p className={styles.foodiecoHighlanderEngineer}>
-            <span className={styles.foodiecoHighlanderEngineer1}>
-              <i className={styles.foodieco}>HealThyme</i>
-              <b> - Hack the Valley 7 (2022/10)</b>
-            </span>
-          </p>
-          <p className={styles.inHackTheValley7AHackat}>
-            <span className={styles.inHackTheValley7AHackat1}>
-              <span>
-                In Hack The Valley 7, a hackathon for high school and university
-                students, my team designed a website that helps community and
-                healthcare workers, called HealThyme. HealThyme takes the
-                location of the user and generates a map indicating each of the
-                nearby hospitals as well as the number of people in the
-                waitlist. Once the user has chosen a hospital/clinic they think
-                is the best fit for them, they are able to book a time and join
-                the online waitlist, saving them time and maybe even their life.
-              </span>
-            </span>
-          </p>
-          <p className={styles.blankLine2}>
-            <span className={styles.inHackTheValley7AHackat1}>
-              <span>&nbsp;</span>
-            </span>
-          </p>
-          <p className={styles.foodiecoHighlanderEngineer}>
-            <span className={styles.foodiecoHighlanderEngineer1}>
-              <i className={styles.foodieco}>{`Read Better - `}</i>
-              <b>JamHacks 7 (2023/06)</b>
-            </span>
-          </p>
-          <p className={styles.myFirstHackathon}>
-            At JamHacks7, a hackathon for high school and university students,
-            me and my team collaborated to develop a bionic reading website
-            called ReadBetter. 
-          </p>
-          <p className={styles.bionicReadingIs}>
-            Bionic reading is a technology of guiding people’s eyes across texts
-            to assist in reading by providing artificial fixation points. By
-            bolding initial letters of words with a specific rule that creates
-            the highest efficiency in reading, it allows the reader to easily
-            follow the text. ReadBetter accepts pdf files, image files (.jpeg,
-            .jpg, and .png), and audio files and displays them in a bionic
-            reading form for the users.
-          </p>
+        <b className={styles.heading1}>Projects</b>
+        <br/>
+        <b className={styles.heading2}>Software Projects / Design Projects</b>
+        <div className={styles.devpostButton} onClick={onDevpostButtonClick}>
+          <div className={styles.devpostButtonChild} />
+          <b className={styles.devpost} style ={{color: "white"}}>Devpost</b>
         </div>
-        <div className={styles.communityChangemakerChallengContainer}>
-          <p className={styles.inHackTheValley7AHackat}>
-            <b className={styles.foodiecoHighlanderEngineer1}>
-              Community Changemaker Challenge (2022/12)
-            </b>
-          </p>
-          <p className={styles.inTheCommunity}>
-            In the Community Changemaker Challenge, my team collaborated to
-            propose a solution to a chronic problem in the community. For
-            students who struggle to find post-secondary pathways, we designed
-            an event week with university program fairs, workplaces visits, and
-            peer support. We were awarded Most Synchronized and Organized,
-            Strong Pitch, and Best Overall Project.
-          </p>
-          <p className={styles.inHackTheValley7AHackat}>
-            <span className={styles.foodiecoHighlanderEngineer1}>
-              <b>&nbsp;</b>
-            </span>
-          </p>
-          <p className={styles.inHackTheValley7AHackat}>
-            <span className={styles.foodiecoHighlanderEngineer1}>
-              <i className={styles.bodyInDepth}>Body In Depth</i>
-              <b className={styles.b}> (2023/02)</b>
-            </span>
-          </p>
-          <p className={styles.inTheCommunity}>
-            For a side project, I developed a body composition analysis
-            calculator that plans out a dietary plan for weight loss/gain. The
-            program with built with Processing, a graphical library that uses
-            Java as its primary language. I also added a dictionary page and a
-            unit converter to better the user experience.
-          </p>
-          <p className={styles.inHackTheValley7AHackat}>
-            <span className={styles.foodiecoHighlanderEngineer1}>
-              <b>&nbsp;</b>
-            </span>
-          </p>
-          <p className={styles.inHackTheValley7AHackat}>
-            <span className={styles.foodiecoHighlanderEngineer1}>
-              <i className={styles.bodyInDepth}>StudySpace</i>
-              <b className={styles.b}> (2023/02)</b>
-            </span>
-          </p>
-          <p className={styles.inTheCommunity}>
-            In a 3-people team, I designed a study assistant program in Processing.
-            It has a stopwatch that measures your total time spent studying (along with a reminder 
-            for a break in every 30 mins), music/audio features to help you concentrate, and a 
-            checklist feature in which you list your finished/unfinished tasks. Once you are finished,
-            you can click the camera button to take a screenshot of your daily progress.
-          </p>
+        <div style={{position: "relative", color: "black", top: "24%", fontSize: "17px"}}>
+          <b>Languages and Frameworks</b>
+          <p>C++, Java, JavaScript, Typescript, React, CSS, HTML, Python, Processing</p>
         </div>
-      </div>
-      <div
-        className={styles.devpostButton}
-        onClick={onDevpostButtonClick}
-      >
-        <div className={styles.devpostButtonChild} />
-        <b className={styles.devpost}>Devpost</b>
-      </div>
-      <div className={styles.lovethyhood}>
-        <img
-          className={styles.lovethyhoodPitchVideo}
-          alt=""
-          src={lovethyhood}
-        />
-        {/* <div className={styles.button} onClick={onButtonContainerClick}>
-          <div className={styles.buttonChild} />
-          <b className={styles.pitchVideo}>Pitch Video</b>
-        </div> */}
-      </div>
-      <div className={styles.foodieco1}>
-        <img className={styles.imageIcon} alt="" src={foodieco1} />
-        <img className={styles.imageIcon1} alt="" src={foodieco2} />
-        {/* <div className={styles.button1} onClick={onButtonContainer1Click}>
-          <div className={styles.buttonItem} />
-          <b className={styles.demoVideo}>Demo Video</b>
+        <div className = {styles.gridContainer} style = {{boxShadow: "10px 10px grey"}}>
+          <GridItem 
+          image = {foodieco}
+          name="Application"
+          role="Foodieco" 
+          startYear = "2022/06"
+          endYear = "Full-stack"
+          trigger={popupFoodieco} setTrigger={openFoodieco} ></GridItem>
+
+          {/* <GridItem 
+          image = {lovethyhood}
+          name="Website"
+          role="LoveThyHood" 
+          startYear = "2022/07"
+          endYear = "Front-end"
+          trigger={popupLoveThyHood} setTrigger={openLoveThyHood} ></GridItem> */}
+
+          <GridItem 
+          image = {healthyme}
+          name="Website"
+          role="HealThyme" 
+          startYear = "2022/10"
+          endYear = "Full-stack"
+          trigger={popupHealThyme} setTrigger={openHealThyme}></GridItem>
+
+          <GridItem 
+          image = {ccc}
+          name="Design Project"
+          role="Community Changemaker Challenge" 
+          startYear = "2022/12"
+          endYear = "Winner"
+          trigger={popupCCC} setTrigger={openCCC}></GridItem>
+          
+          <GridItem 
+          image = {bodyindepth}
+          name="Application"
+          role="Body In Depth" 
+          startYear = "2023/02"
+          endYear = "Full-stack"
+          trigger={popupBodyInDepth} setTrigger={openBodyInDepth}></GridItem>
+          
+          <GridItem
+          image = {studyspace}
+          name="Application"
+          role="StudySpace" 
+          startYear = "2023/02"
+          endYear = "Full-stack"
+          trigger={popupStudySpace} setTrigger={openStudySpace}></GridItem>
+
+          <GridItem 
+          image = {readbetter}
+          name="Website"
+          role="ReadBetter" 
+          startYear = "2023/06"
+          endYear = "Developer"
+          trigger={popupReadBetter} setTrigger={openReadBetter}></GridItem>    
         </div>
-        <button className={styles.button2} onClick={onButtonClick}>
-          <div className={styles.buttonInner} />
-          <b className={styles.demoVideo1}>Pitch Video</b>
-        </button> */}
+        
+        <PopupProject 
+        image = {foodieco1}
+        name="Application"
+        role="Foodieco" 
+        startYear = "2022/06"
+        endYear = "Full-stack"
+        description = {["Developed an app that provides a full view of fridge items and suggests possible replacements for certain ingredients in a 4-people team.", 
+        "Built with Python, Tkinter.", 
+        "Worked on front-end and back-end."]}
+        githublink = "https://github.com/acrenw/FoodiEco"
+        trigger={popupFoodieco} setTrigger={openFoodieco}></PopupProject>
+
+        {/* <Popup 
+        image = {lovethyhood}
+        name="Website"
+        role="LoveThyHood" 
+        startYear = "2022/07"
+        endYear = "Front-end"
+        description = {["Developed an app that provides a full view of fridge items and suggests possible replacements for certain ingredients in a 4-people team.", 
+        "Built with ReactJS (Javascript, HTML, CSS)", 
+        "Worked on front-end."]}
+        trigger={popupLoveThyHood} setTrigger={openLoveThyHood}></Popup> */}
+
+        <PopupProject 
+        image = {healthyme1}
+        name="Website"
+        role="HealThyme" 
+        startYear = "2022/10"
+        endYear = "Full-stack"
+        description = {["Developed the 3 main pages of a website that allows the user to compare the number of people on the waitlist of nearby hospitals/clinics and book an appointment.", 
+        "Built with ReactJS (Javascript, HTML, CSS).", 
+        "Mainly worked on front-end and Google Maps API Integration."]}
+        githublink = "https://github.com/acrenw/my-app"
+        trigger={popupHealThyme} setTrigger={openHealThyme}></PopupProject>
+
+        <PopupProject 
+        image = {ccc1}
+        name="Design Project"
+        role="Community Changemaker Challenge by SHAD Canada, &Vision Inc, ECD Key Club" 
+        startYear = "2022/12"
+        endYear = "Winner"
+        description = {["Participated in a 1-month long project design challenge in a 4-people team",
+        "For students struggling to find post-secondary pathways, my team designed an event week with university program fairs, workplaces visits, and peer support.", 
+        "Was awarded Best Overall Project, Most Synchronized and Organized, and Strong Pitch"]}
+        trigger={popupCCC} setTrigger={openCCC}></PopupProject>
+        
+        <PopupProject 
+        image = {readbetter1}
+        name="Website"
+        role="ReadBetter" 
+        startYear = "2023/06"
+        endYear = "Developer"
+        description = {["Developed a Flask application to assist people in reading by providing artificial fixation points, using integrations of assemblyai, pypdf2, and EasyOCR.",
+        "Observed a decrease in the total reading time by approximately 35% from a reading efficiency experiment.", 
+        "Was a Runner-up for Best University Hacks at JAMHacks 7."]}
+        githublink = "https://github.com/acrenw/JAMHacks7"
+        trigger={popupReadBetter} setTrigger={openReadBetter}></PopupProject>
+
+        <PopupProject 
+        image = {bodyindepth2}
+        name="Application"
+        role="Body In Depth" 
+        startYear = "2023/02"
+        endYear = "Full-stack"
+        description = {["Engineered a body composition analysis calculator that plans out a dietary plan for weight loss/gain.",
+        "Built with Processing, a graphical library that uses Java as its primary language using object-oriented programming (OOP).", 
+        "Worked alone as a full-stack developer."]}
+        githublink = "https://github.com/sooyeunleanne/Body-In-Depth"
+        trigger={popupBodyInDepth} setTrigger={openBodyInDepth}></PopupProject>
+
+        <PopupProject 
+        image = {studyspace}
+        name="Application"
+        role="StudySpace" 
+        startYear = "2023/02"
+        endYear = "Full-stack"
+        description = {["Worked as a full-stack developer to develop a study assistant program",
+        "Has a stopwatch that measures your total study time, music/audio features to help with concentration, and a checklist feature.", 
+        "Built in Processing (a graphical library that uses Java as its primary language) using OOP in a 3-people team."]}
+        trigger={popupStudySpace} setTrigger={openStudySpace}><h3>StudySpace</h3></PopupProject>
       </div>
-      <div className={styles.ccc}>
-        <div className={styles.ccc1}>Best Overall Project Certificate</div>
-        <img
-          className={styles.cccOverallProject}
-          alt=""
-          src={ccc}
-        />
-      </div>
-      <div className={styles.readbetter}>
-        <img
-            className={styles.readbetterDemoVideo}
-            alt=""
-            src={readbetter}
-          />
-        {/* <div className={styles.button3} onClick={onButtonContainer2Click}>
-          <div className={styles.buttonChild} />
-          <b className={styles.pitchVideo} >Pitch/Demo Video</b>
-        </div> */}
-      </div>
-      <div className={styles.healthyme1}>
-        {/* <div className={styles.button4} onClick={onButtonContainer3Click}>
-          <div className={styles.buttonChild}/>
-          <b className={styles.pitchVideo}>Demo Video</b>
-        </div> */}
-        <img
-          className={styles.healthymeDemonstrationPictur}
-          alt=""
-          src={healthyme}
-          onClick={onHealThymeDemonstrationPicturClick}
-        />
-      </div>
-      <img
-        className={styles.lineDecorationsIcon}
-        alt=""
-        src={projects_lines}
-      />
-      <div className={styles.bodyindepth}>
-        <div className={styles.button5} onClick={onButtonContainer4Click}>
-          <div className={styles.buttonChild} />
-          <b className={styles.pitchVideo}>Open Repository</b>
-        </div>
-        <img className={styles.imageIcon2} alt="" src={bodyindepth1} />
-        <img className={styles.imageIcon3} alt="" src={bodyindepth2} />
       </div>
     </div>
   );
