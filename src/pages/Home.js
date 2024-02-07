@@ -1,6 +1,7 @@
-import { useCallback } from "react";
+import { useRef, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Home.module.css";
+import Starfield from "./background-component/Starfield";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -25,31 +26,43 @@ const Home = () => {
     window.open("https://github.com/sooyeunleanne");
   }, []);
 
-  const onResumeClick = useCallback(() => {
-    window.open(
-      "https://drive.google.com/drive/folders/1Z4RtdjrIXqIc6ge516YFRHC2PeBl6dq7"
-    );
-  }, []);
+
+  //animated coloring of background
+  // const homeDivRef = useRef(null);
+  // useEffect(() => {
+  //   const handleMouseMove = (e) => {
+  //     const x = e.offsetX;
+  //     const y = e.offsetY;
+  //     homeDivRef.current.style.backgroundColor = `rgb(0, 0, ${Math.round(x/50)})`;
+  //   };
+
+  //   const homeDiv = homeDivRef.current;
+  //   homeDiv.addEventListener('mousemove', handleMouseMove);
+
+  //   return () => {
+  //     homeDiv.removeEventListener('mousemove', handleMouseMove);
+  //   };
+  // }, []); 
 
   return (
     <div className={styles.home}>
+      <Starfield />
       <div className={styles.header}>
-        <div className={styles.headerBackground} />
-        <div className={styles.home1}>Home</div>
-        <div className={styles.projects} onClick={onProjectsTextClick}>
+        <div className={styles.router}>Home</div>
+        <div className={styles.router} onClick={onProjectsTextClick}>
           Projects
         </div>
-        <div className={styles.leadership} onClick={onLeadershipTextClick}>
+        <div className={styles.router} onClick={onLeadershipTextClick}>
           Leadership
         </div>
       </div>
       <b className={styles.name}>Leanne Kim</b>
+      <div className={styles.pronoun}>(She/Her)</div>
       <div className={styles.description}>
         <span>{`A prospective `}</span>
         <b>Systems Design Engineering</b>
         <span> Student at University of Waterloo.</span>
       </div>
-      <div className={styles.pronoun}>(She/Her)</div>
       <div className={styles.buttonContainer}>
         <button className={styles.linkButton} onClick={onLinkedInClick}>
           LinkedIn
