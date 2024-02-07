@@ -1,7 +1,7 @@
 import { useRef, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Home.module.css";
-import Starfield from "./background-component/Starfield";
+import Starfield from "./page-component/Starfield";
 
 const Home = () => {
   const navigate = useNavigate();
