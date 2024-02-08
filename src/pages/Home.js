@@ -1,7 +1,7 @@
 import { useRef, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Home.module.css";
-import Starfield from "./background-component/Starfield";
+import Starfield from "./page-component/Starfield";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -56,35 +56,37 @@ const Home = () => {
           Leadership
         </div>
       </div>
-      <b className={styles.name}>Leanne Kim</b>
-      <div className={styles.pronoun}>(She/Her)</div>
-      <div className={styles.description}>
-        <span>{`A prospective `}</span>
-        <b>Systems Design Engineering</b>
-        <span> Student at University of Waterloo.</span>
-      </div>
-      <div className={styles.buttonContainer}>
-        <button className={styles.linkButton} onClick={onLinkedInClick}>
-          LinkedIn
-        </button>
-        <button className={styles.linkButton} onClick={onGithubClick}>
-          Github
-        </button>
-        <button className={styles.linkButton} onClick={onDevpostClick}>
-          Devpost
-        </button>
-        {/* <button className={styles.linkButton} onClick={onResumeClick}>
-          Resume
-        </button> */}
-      </div>
-      <div className={styles.contacts}>
-        <p>
-          <div className={styles.bottomLine}/>
-          <br/>
-          <b>Email</b>: sooyeunleanne@gmail.com
-          <br/>
-          <b>Phone</b>: +1 519-722-3291
-        </p>
+      <div style={{width: "100%"}}>
+        <b className={styles.name}>Leanne Kim</b>
+        <div className={styles.pronoun}>(She/Her)</div>
+        <div className={styles.description}>
+          <span>{`A prospective `}</span>
+          <b>Systems Design Engineering</b>
+          <span> Student at University of Waterloo.</span>
+        </div>
+        <div className={styles.buttonContainer}>
+          <button className={styles.linkButton} onClick={onLinkedInClick}>
+            LinkedIn
+          </button>
+          <button className={styles.linkButton} onClick={onGithubClick}>
+            Github
+          </button>
+          <button className={styles.linkButton} onClick={onDevpostClick}>
+            Devpost
+          </button>
+          {/* <button className={styles.linkButton} onClick={onResumeClick}>
+            Resume
+          </button> */}
+        </div>
+        <div className={styles.contacts}>
+          <p>
+            <div className={styles.bottomLine}/>
+            <br/>
+            <b>Email</b>: sooyeunleanne@gmail.com
+            <br/>
+            <b>Phone</b>: +1 519-722-3291
+          </p>
+        </div>
       </div>
     </div>
   );
