@@ -48,7 +48,7 @@ function Starfield(props) {
 					const rgb =
 						'rgba(' + starColor[0] + ',' + starColor[1] + ',' + starColor[2] + ',' + brightness + ')';
 					c.fillStyle = rgb;
-					c.fillRect(x, y, 1, 1);
+					c.fillRect(x, y, 2, 2);
 				};
 
 				const moveStars = (distance) => {
