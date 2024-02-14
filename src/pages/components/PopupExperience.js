@@ -11,13 +11,13 @@ export default function PopupLeadership(props) {
     <div className="popup">
         <div className="popup-inner">
             <div>
-            <img src={props.image} width = "40%" style={{paddingBottom: "50px"}}/>
+            <img src={props.image} width = "40%" style={{paddingBottom: "13m"}}/>
             </div>
             <button className="close-btn" onClick={() => props.setTrigger(false)}>
                 X</button>
             { props.name }
             <br/>
-            <b className="role" style={{fontSize: "30px"}}> { props.role } </b>
+            <b className="role" style={{fontSize: "1.5em"}}> { props.role } </b>
             <p>
                 { props.startYear } - {props.endYear}
             </p>

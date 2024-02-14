@@ -1,152 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
 .projects {
   position: relative;
-  background-color: #dcf0f6;
+  background-color: black;
   width: 100%;
-  height: 1800px;
   overflow: hidden;
   text-align: center;
-  font-size: var(--font-size-xs);
   color: var(--color-white);
-  font-family: var(--font-cinzel);
-}
-
-.headerBackground {
-  display: flex;
-  background-color: var(--color-steelblue);
-  width: 100%;
-  height: 120px;
-}
-
-.home {
-  position: absolute;
-  top: 45px;
-  left: 25%;
-  height: 7%;
-  cursor: pointer;
-  text-align: center;
-  transform: translate(-50%, 0px);
-}
-
-.projects1 {
-  position: absolute;
-  top: 45px;
-  left: 50%;
-  height: 7%;
-  cursor: pointer;
-  text-align: center;
-  transform: translate(-50%, 0px);
-}
-
-.leadership{
-  position: absolute;
-  top: 45px;
-  left: 75%;
-  height: 7%;
-  cursor: pointer;
-  text-align: center;
-  transform: translate(-50%, 0px);
+  justify-content: center;
+  font-family: "Titillium Web", sans-serif;
 }
 
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  font-size: var(--font-size-6xl);
+  display: flex;
+  background-color: transparent;
+  width: 100vw;
+  height: 6em;
   font-family: var(--font-lora);
 }
 
-.text {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  font-size: var(--font-size-13xl);
-  color: var(--color-black);
-  font-size: var(--font-size-xs);
-  color: var(--color-white);
-  font-family: var(--font-lora);
+.router {
+  line-height: 4em;
+  cursor: pointer;
+  text-align: center;
+  justify-self: center;
+  font-size: 1.25em;
+  font-family: "Titillium Web", sans-serif;
+  width: 10vw;
+  margin-left: 17.5vw;
+  margin-top: 1em;
 }
 
-.heading1 {
-  display: inline;
-  position: absolute;
-  width: 50%;
-  top: 13%;
-  left: 25%;
-  text-align: center;
-  font-size: var(--font-size-31xl);
-  color: var(--color-black);
-  font-family: var(--font-cinzel);
-}
-
-.heading2 {
-  display: inline;
-  position: absolute;
-  width: 50%;
-  left: 25%;
-  top: 18%;
-  text-align: center;
-  color: var(--color-black);
-  font-size: var(--font-size-13xl);
-  font-family: var(--font-cinzel);
+.router:hover {
+  text-shadow: 0 0 5px white;
 }
 
 .devpostButton {
-  position: absolute;
-  height: 43px;
-  top: 22%;
-  left: 50%;
-  cursor: pointer;
-  font-size: var(--font-size-xl);
-  border-radius: var(--br-11xl);
-  background-color: var(--color-steelblue);
-  font-family: var(--font-cinzel);
-  width: 200px;
-  height: 40px;
-  transform: translate(-50%, -50%);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .devpostButton:hover {
-  background-color: rgb(141, 187, 227);
+  cursor: pointer;
+}
+
+h1 {
+  display: block;
+  font-size: 4em;
+  font-family: "Titillium Web", sans-serif;
+  width: 10em;
+  margin-top: 2em;  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5em;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 4px white;
+  -webkit-text-size-adjust: none;
+}
+
+h2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  font-size: 1.5em;
 }
 
 .gridContainer {
-  position: relative;
   display: grid;
   background-color: white;
-  grid-template-columns: repeat(3, 15%);
-  grid-gap: 10%;
-  row-gap: 5%;
-  width: 50%;
-  left: 20%;
-  top: 25%;
-  padding: 5%;
-  padding-bottom: 7%;
+  grid-template-columns: repeat(3, 20vw);
+  grid-gap: 5vw;
+  row-gap: 3em;
+  width: 75vw;
+  margin-top: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.25rem;
+  padding-top: 3rem;
   border-radius: var(--br-11xl);
   align-items: center;
   justify-content: center;
 }
 
-.gridContainer div{
-  display: flex-grid;
-  align-items: center;
-  justify-content: center;
-}
-
-.bodyParagraph {
-  width: 70%;
-  color: black;
-  font-size: 15px;
-}
-
-.devpost {
-  position: absolute;
-  height: 43px;
-  top: 0;
-  left: 3.92px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 196.08px;
-}
+@media only screen and (max-width: 600px) {
+  html {
+  font-size: 7px;
+  }
+};
+@media only screen and (max-width: 740px) {
+  html {
+  font-size: 10px;
+  }
+};
+@media only screen and (max-width: 850px) {
+  html {
+  font-size: 11px;
+  }
+};
+@media only screen and (max-width: 1024px) {
+  html {
+  font-size: 18px;
+  }
+};

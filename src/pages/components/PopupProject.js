@@ -12,13 +12,13 @@ export default function PopupProject(props) {
     <div className="popup">
         <div className="popup-inner">
             <div>
-            <img src={props.image} width = "40%" style={{paddingBottom: "25px"}}/>
+            <img src={props.image} width = "40%" style={{paddingBottom: "1em"}}/>
             </div>
             <button className="close-btn" onClick={() => props.setTrigger(false)}>
                 X</button>
             { props.name }
             <br/>
-            <b className="role" style={{fontSize: "30px"}}> { props.role } </b>
+            <b className="role" style={{fontSize: "1.5em"}}> { props.role } </b>
             <p>
                 { props.startYear } - {props.endYear}
             </p>

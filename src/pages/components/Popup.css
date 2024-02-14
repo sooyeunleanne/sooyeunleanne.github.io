@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
 .popup {
     position: fixed;
     top: 0;
@@ -6,11 +8,12 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     color: black;
-    font-size: 17px;
+    font-size: 1.1em;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 99;
 }
 
 .role {
@@ -18,9 +21,9 @@
 }
 
 .description {
-    font-family: var(--font-lora);
+    font-family: "Titillium Web", sans-serif,;
     color: black;
-    font-size: 15px;
+    font-size: 0.9em;
     line-height: 25px;
 }
 
@@ -53,3 +56,28 @@
 .github-button:hover {
     cursor: pointer;
 }
+
+li {
+    text-indent: 0;
+}
+
+@media only screen and (max-width: 600px) {
+html {
+font-size: 10px;
+}
+};
+@media only screen and (max-width: 740px) {
+html {
+font-size: 15px;
+}
+};
+@media only screen and (max-width: 850px) {
+html {
+font-size: 17px;
+}
+};
+@media only screen and (max-width: 1024px) {
+html {
+font-size: px;
+}
+};

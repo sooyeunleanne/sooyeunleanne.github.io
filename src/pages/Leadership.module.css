@@ -1,345 +1,96 @@
-.leadership {
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+.experiences {
   position: relative;
-  background-color: #ffebfd;
+  background-color: black;
   width: 100%;
-  height: 1800px;
   overflow: hidden;
   text-align: center;
-  font-size: var(--font-size-xs);
   color: var(--color-white);
-  font-family: var(--font-cinzel);
-}
-
-.headerBackground {
-  display: flex;
-  background-color: #0d0f66;
-  width: 100%;
-  height: 120px;
-}
-
-.home {
-  position: absolute;
-  top: 45px;
-  left: 25%;
-  height: 120px;
-  cursor: pointer;
-  text-align: center;
-  transform: translate(-50%, 0px);
-}
-
-.projects {
-  position: absolute;
-  top: 45px;
-  left: 50%;
-  height: 120px;
-  cursor: pointer;
-  text-align: center;
-  transform: translate(-50%, 0px);
-}
-
-.leadership1 {
-  position: absolute;
-  top: 45px;
-  left: 75%;
-  height: 120px;
-  cursor: pointer;
-  text-align: center;
-  transform: translate(-50%, 0px);
+  justify-content: center;
+  font-family: "Titillium Web", sans-serif;
 }
 
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  font-size: var(--font-size-6xl);
+  display: flex;
+  background-color: transparent;
+  width: 100vw;
+  height: 6em;
   font-family: var(--font-lora);
 }
 
-.text {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  font-size: var(--font-size-13xl);
-  color: var(--color-black);
-  font-size: var(--font-size-xs);
-  font-family: var(--font-cinzel);
-}
-
-.heading1 {
-  display: inline;
-  position: absolute;
-  width: 50%;
-  top: 13%;
-  left: 25%;
-  text-align: center;
-  font-size: var(--font-size-31xl);
-  color: #191ba2;;
-}
-
-.heading2 {
-  display: inline;
-  position: absolute;
-  width: 50%;
-  left: 25%;
-  top: 18%;
-  text-align: center;
-  color: var(--color-black);
-  font-size: var(--font-size-13xl);
-}
-
-.devpostButton {
-  position: absolute;
-  height: 43px;
-  top: 22%;
-  left: 50%;
+.router {
+  line-height: 4em;
   cursor: pointer;
-  font-size: var(--font-size-xl);
-  border-radius: var(--br-11xl);
-  background-color: var(--color-steelblue);
-  width: 200px;
-  height: 40px;
-  transform: translate(-50%, -50%);
+  text-align: center;
+  justify-self: center;
+  font-size: 1.25em;
+  font-family: "Titillium Web", sans-serif;
+  width: 10vw;
+  margin-left: 17.5vw;
+  margin-top: 1em;
 }
 
-.devpostButton:hover {
-  background-color: rgb(141, 187, 227);
+.router:hover {
+  text-shadow: 0 0 5px white;
+}
+
+h1 {
+  display: block;
+  font-size: 4em;
+  font-family: "Titillium Web", sans-serif;
+  width: 10em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5em;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 4px white;
+  -webkit-text-size-adjust: none;
+}
+
+h2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  font-size: 1.5em;
 }
 
 .gridContainer {
-  font-family: var(--font-lora);
-  position: relative;
   display: grid;
-  background-color: rgba(255, 255, 255, 0.5);
-  grid-template-columns: repeat(3, 15%);
-  grid-gap: 10%;
-  row-gap: 5%;
-  width: 50%;
-  left: 20%;
-  top: 22%;
-  padding: 5%;
-  padding-bottom: 7%;
+  background-color: white;
+  grid-template-columns: repeat(3, 20vw);
+  grid-gap: 5vw;
+  row-gap: 3em;
+  width: 75vw;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.25rem;
+  padding-top: 3rem;
   border-radius: var(--br-11xl);
-  border-color: #0d0f66;
-  border-style: solid;
   align-items: center;
   justify-content: center;
 }
 
-.gridContainer div{
-  display: flex-grid;
-  align-items: center;
-  justify-content: center;
-}
-
-.bodyParagraph {
-  width: 70%;
-  color: black;
-  font-size: 15px;
-}
-
-/* 
-.leadershipChild {
-  position: absolute;
-  top: 380px;
-  left: -500px;
-  width: 3500px;
-  height: 2000px;
-  opacity: 0.5;
-}
-.headerBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #054fbe;
-  width: 2000px;
-  height: 100px;
-}
-.home,
-.leadership1,
-.projects {
-  position: absolute;
-  top: 34px;
-  display: inline-block;
-  cursor: pointer;
-}
-.home {
-  left: 150px;
-  width: 80px;
-}
-.leadership1,
-.projects {
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-.projects {
-  left: 670px;
-  width: 100px;
-}
-.leadership1 {
-  right: 150px;
-  width: 200px;
-}
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1440px;
-  height: 100px;
-  color: var(--color-white);
-}
-.extracurriculars,
-.studentLeadership {
-  position: absolute;
-  top: 139px;
-  left: 227px;
-  display: inline-block;
-  width: 800px;
-}
-.studentLeadership {
-  top: 1227px;
-  left: 221px;
-}
-.laurelHeightsSecondary {
-  margin-block-start: 0;
-  margin-block-end: 2px;
-}
-.sep2021 {
-  margin: 0;
-}
-.laurelHeightsSecondaryContainer {
-  position: absolute;
-  top: 1270px;
-  left: 220px;
-  font-size: var(--font-size-xl);
-  display: inline-block;
-  width: 800px;
-}
-.keyClubExecutive {
-  font-size: var(--font-size-6xl);
-}
-.keyClubInternationalGlobal {
-  text-indent: 40px;
-  margin-block-start: 0;
-  margin-block-end: 5px;
-}
-.iHaveBeen {
-  line-height: 25px;
-}
-.mathletesExecutive {
-  line-height: 40px;
-}
-.servingInTheLogisticsTeam {
-  text-indent: 40px;
-  margin: 0;
-}
-.keyClubExecutiveContainer {
-  position: absolute;
-  top: 219px;
-  left: 380px;
-  text-align: left;
-  display: inline-block;
-  width: 875px;
-  font-size: var(--font-size-lg);
-  font-family: var(--font-lora);
-}
-.blankLine4 {
-  text-indent: 40px;
-  margin-block-start: 0;
-  margin-block-end: 5px;
-  font-size: var(--font-size-xl);
-}
-.gradWeekProjectContainer {
-  position: absolute;
-  top: 1358px;
-  left: 0;
-  text-align: left;
-  display: inline-block;
-  width: 800px;
-  font-size: var(--font-size-lg);
-  font-family: var(--font-lora);
-}
-.leadership2 {
-  position: absolute;
-  top: 0;
-  left: 347px;
-  font-size: var(--font-size-31xl);
-  display: inline-block;
-  width: 559px;
-  height: 89px;
-}
-.texts {
-  position: absolute;
-  top: 281px;
-  left: 100px;
-  width: 1255px;
-  height: 1754px;
-  font-size: var(--font-size-13xl);
-  font-family: var(--font-cinzel);
-}
-.lineDecorationsIcon,
-.mathletesIcon {
-  position: absolute;
-  top: 437px;
-  left: 0;
-  width: 1480px;
-  height: 1093px;
-}
-.mathletesIcon {
-  top: 340px;
-  width: 240.7px;
-  height: 240px;
-  object-fit: cover;
-}
-.keyClubIcon {
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 248.31px;
-}
-.keyClubIcon,
-.lhssIcon,
-.turtlehacksIcon {
-  position: absolute;
-  object-fit: cover;
-}
-.turtlehacksIcon {
-  top: 610px;
-  left: 0;
-  width: 250px;
-  height: 250px;
-  cursor: pointer;
-}
-.lhssIcon {
-  top: 1059px;
-  left: 915px;
-  width: 300px;
-  height: 316.14px;
-}
-.labelTurtlehacks {
-  position: absolute;
-  top: 868px;
-  left: 0;
-  display: inline-block;
-  width: 250px;
-  height: 19px;
-}
-.images {
-  position: absolute;
-  top: 555px;
-  left: 100px;
-  width: 1215px;
-  height: 1375.14px;
-  font-size: var(--font-size-xs);
-}
-.leadership {
-  position: relative;
-  background-color: #f2ffbc;
-  width: 100%;
-  height: 2100px;
-  overflow: hidden;
-  text-align: center;
-  font-size: var(--font-size-6xl);
-  color: var(--color-black);
-  font-family: var(--font-lora);
-} */
+@media only screen and (max-width: 600px) {
+  html {
+  font-size: 7px;
+  }
+};
+@media only screen and (max-width: 740px) {
+  html {
+  font-size: 10px;
+  }
+};
+@media only screen and (max-width: 850px) {
+  html {
+  font-size: 11px;
+  }
+};
+@media only screen and (max-width: 1024px) {
+  html {
+  font-size: 18px;
+  }
+};

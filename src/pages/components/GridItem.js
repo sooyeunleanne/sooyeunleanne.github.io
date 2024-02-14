@@ -12,7 +12,7 @@ export default function GridItem(props) {
     return (
     <div className="grid-item">
         <div>
-            <img src={props.image} width = "50%"/>
+            <img src={props.image} width = "50em"/>
         </div>
         { props.name }
         <div className = "role">
@@ -22,7 +22,7 @@ export default function GridItem(props) {
             </div>
         </div>
         <div className="break"></div>
-        <button className="pop-up-button" onClick={() => props.setTrigger(true)}>open</button>
+        <button className="pop-up-button" onClick={() => props.setTrigger(true)}>Open</button>
     </div>
     );
 }
