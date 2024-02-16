@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
+import sakura from '../../images/blue-sakura.png';
 
 function Starfield(props) {
-	const { speedFactor = 0.05, backgroundColor = 'black', starColor = [255, 255, 255], starCount = 5000 } = props;
-
+	const { speedFactor = 0.05, backgroundColor = 'transparent', starColor = [255, 255, 255], starCount = 50 } = props;
 	useEffect(() => {
 		const canvas = document.getElementById('starfield');
 
@@ -29,7 +29,7 @@ function Starfield(props) {
 					for (let i = 0; i < count; i++) {
 						const s = {
 							x: Math.random() * 1600 - 800,
-							y: Math.random() * 900 - 450,
+							y: -800 + Math.random() * 800,
 							z: Math.random() * 1000,
 						};
 						out.push(s);
@@ -40,22 +40,24 @@ function Starfield(props) {
 				let stars = makeStars(starCount);
 
 				const clear = () => {
-					c.fillStyle = backgroundColor;
+					// c.fillStyle = backgroundColor;
 					c.fillRect(0, 0, canvas.width, canvas.height);
 				};
 
 				const putPixel = (x, y, brightness) => {
-					const rgb =
-						'rgba(' + starColor[0] + ',' + starColor[1] + ',' + starColor[2] + ',' + brightness + ')';
-					c.fillStyle = rgb;
-					c.fillRect(x, y, 2, 2);
+					// const rgb =
+					// 	'rgba(' + starColor[0] + ',' + starColor[1] + ',' + starColor[2] + ',' + brightness + ')';
+					// c.fillStyle = rgb;
+					// // c.fillRect(x, y, 2, 2);
+					var sakuraIcon = document.getElementById("sakura");
+					c.drawImage(sakuraIcon, x, y, 25, 25);
 				};
 
 				const moveStars = (distance) => {
 					const count = stars.length;
 					for (var i = 0; i < count; i++) {
 						const s = stars[i];
-						s.z -= distance;
+						s.y += distance;
 						while (s.z <= 1) {
 							s.z += 1000;
 						}
@@ -72,12 +74,15 @@ function Starfield(props) {
 					let elapsed = time - prevTime;
 					prevTime = time;
 
-					moveStars(elapsed * speedFactor);
+					// moveStars(elapsed * speedFactor);
+					moveStars(15 * speedFactor);
 
 					clear();
 
-					const cx = w / 2;
-					const cy = h / 2;
+					// const cx = w / 2;
+					// const cy = h / 2;
+					const cx = 0;
+					const cy = 0;
 
 					const count = stars.length;
 					for (var i = 0; i < count; i++) {
@@ -86,14 +91,27 @@ function Starfield(props) {
 						const x = cx + star.x / (star.z * 0.001);
 						const y = cy + star.y / (star.z * 0.001);
 
-						if (x < 0 || x >= w || y < 0 || y >= h) {
-							continue;
+						if (y >= h) {
+							star.x = Math.random() * 1600 - 800;
+							star.y = -100;
+							const y = cy + star.y / (star.z * 0.001);
+							const d = star.z / 1000.0;
+							const b = 1 - d * d;
+
+							putPixel(x, y, b)
 						}
+
+						// if (y < 0 || y >= h-50) {
+						// 	const y = h-25;
+						// 	const d = star.z / 1000.0;
+						// 	const b = 1 - d * d;
+						// 	putPixel(x, y, b);
+						// }
 
 						const d = star.z / 1000.0;
 						const b = 1 - d * d;
 
-						putPixel(x, y, b);
+						putPixel(x, y, b)
 					}
 
 					requestAnimationFrame(tick);
@@ -135,7 +153,9 @@ function Starfield(props) {
 				pointerEvents: 'none',
 				mixBlendMode: 'screen',
 			}}
-		></canvas>
+		>
+			<img src={sakura} id='sakura'></img>
+		</canvas>
 	);
 }
 

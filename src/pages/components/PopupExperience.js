@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useCallback } from "react";
 import './Popup.css';
 
-export default function PopupLeadership(props) {
+export default function PopupExperiences(props) {
     const onGithubClick = useCallback(() => {
         window.open(props.githublink);
       }, []);

@@ -1,60 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
-/* The sticky class is added to the header with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 102px;
+.mypicture {
+  width: 20rem;
+  margin-bottom: 3rem;
 }
 
 .home {
   position: relative;
-  background-color: linear-gradient(darkblue, black);
+  background-color: #cceaff;
   width: 100%;
   overflow: hidden;
   text-align: center;
   font-family: "Titillium Web", sans-serif;
-  color: var(--color-white);
+  color: black;
   justify-content: center;
 }
 
 .header {
   display: flex;
-  background-color: transparent;
+  background-color: #cceaff;
+  opacity: 0.9;
   width: 100vw;
-  height: 6em;
+  height: 5em;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .router {
-  line-height: 4em;
+  line-height: 3em;
   cursor: pointer;
   text-align: center;
   justify-self: center;
   font-size: 1.25em;
   width: 10vw;
   margin-left: 17.5vw;
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 .router:hover {
-  text-shadow: 0 0 5px white;
+  text-shadow: 0 0 2px #02487a;
 }
 
+.icon {
+  height: 1.2rem;
+}
+
+.filler {
+  height: 12rem;
+}
 .name {
-  display: block;
   font-size: 4em;
-  width: 10em;
-  margin-top: 2em;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  color: white;
-  text-shadow: 0 0 4px white;
+  margin-top: 12rem;
+  color: #02487a;
   -webkit-text-size-adjust: none;
 }
 
@@ -62,7 +60,6 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  color: white;
   font-size: 1.5em;
 }
 
@@ -71,7 +68,6 @@
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
-  color: white;
   font-size: 1.25em;
 }
 
@@ -105,15 +101,16 @@
 }
 
 .linkButton:hover {
-  box-shadow: 0 0 0.5em white;
+  box-shadow: 0 0 0.5em #4e718a;
 }
 
 .contacts {
   display: block;
-  margin-top: 5em;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 5em;
+  padding-top: 5em;
+  padding-left: auto;
+  padding-right: auto;
+  padding-bottom: 5em;
+  background-color: black;
   color: white;
   font-size: 1em;
   line-height: 1.5em;
@@ -150,3 +147,8 @@
   font-size: 18px;
   }
 };
+
+.bread::before{ 
+  content: "U+1F35E"; /* Unicode value for a heart */
+  font-size: 2rem; /* set font size */
+}

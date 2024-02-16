@@ -1,108 +1,68 @@
-import { useRef, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
 import styles from "./Home.module.css";
 import Starfield from "./page-component/Starfield";
+import Profile from './Profile';
 import Projects from "./Projects";
-import Leadership from "./Leadership";
-
-//images
-import instagram from '../images/instagram.webp';
-import linkedin from '../images/linkedin.png';
-import github from '../images/github.png';
-import devpost from '../images/devpost.png';
+import Experiences from "./Experiences";
+import Awards from "./Awards";
 
 const Home = () => {
-  const navigate = useNavigate();
-  // const projectsRef = useRef();
 
-  const onProjectsTextClick = useEffect(() => {
-    // const {currentProject} = projectsRef;
-    // if (currentProject != null) {
-    //   currentProject.scrollIntoView({behavior: "smooth"});
-    // }
-  },[]);
+  //navigations
+  const profileRef = useRef(null);
+  const projectsRef = useRef(null);
+  const experiencesRef = useRef(null);
 
-  const onLeadershipTextClick = useCallback(() => {
-    // navigate("/leadership");
-    window.scrollTo(0, 1750);
-  }, [navigate]);
+  const onProfileClick = (e) => {
+    e.preventDefault();
+    profileRef.current?.scrollIntoView({behaviour: "smooth"});
+  };
 
-  const onInstagramClick = useCallback(() => {
-    window.open("https://www.instagram.com/sooyeunleanne/")
-  }, []);
+  const onProjectsClick = (e) => {
+    e.preventDefault();
+    projectsRef.current?.scrollIntoView({behaviour: "smooth"});
+  };
 
-  const onLinkedInClick = useCallback(() => {
-    window.open("https://www.linkedin.com/in/sooyeunleanne/");
-  }, []);
-
-  const onDevpostClick = useCallback(() => {
-    window.open("https://devpost.com/sooyeunleanne");
-  }, []);
-
-  const onGithubClick = useCallback(() => {
-    window.open("https://github.com/sooyeunleanne");
-  }, []);
-
-  //animated coloring of background
-  // const homeDivRef = useRef(null);
-  // useEffect(() => {
-  //   const handleMouseMove = (e) => {
-  //     const x = e.offsetX;
-  //     const y = e.offsetY;
-  //     homeDivRef.current.style.backgroundColor = `rgb(0, 0, ${Math.round(x/50)})`;
-  //   };
-
-  //   const homeDiv = homeDivRef.current;
-  //   homeDiv.addEventListener('mousemove', handleMouseMove);
-
-  //   return () => {
-  //     homeDiv.removeEventListener('mousemove', handleMouseMove);
-  //   };
-  // }, []); 
+  const onExperiencesClick = (e) => {
+    e.preventDefault();
+    experiencesRef.current?.scrollIntoView({behavior: "smooth"});
+  };
 
   return (
     <div className={styles.home} id="Home">
       <Starfield />
+
+      <div ref={profileRef}>
+        <Profile />
+      </div>
+      
+      <div ref={projectsRef}>
+        <Projects/>
+      </div>
+      
+      <div ref={experiencesRef}>
+        <Experiences/>
+      </div>
+      
+      {/* <Awards /> */}
+
+      
       <div className={styles.header} id="Header">
-        <div className={styles.router}>Home</div>
-        <div className={styles.router} onClick={onProjectsTextClick}>
+        <div className={styles.router} onClick={onProfileClick}>Profile</div>
+        <div className={styles.router} onClick={onProjectsClick}>
           Projects
         </div>
-        <div className={styles.router} onClick={onLeadershipTextClick}>
-          Leadership
+        <div className={styles.router} onClick={onExperiencesClick}>
+          Experiences
         </div>
       </div>
-      <div>
-        <b className={styles.name}>Leanne Kim</b>
-        <div className={styles.pronoun}>(She/Her)</div>
-        <div className={styles.description}>
-          <span>Welcome! I am a </span>
-          <b>Systems Design Engineering</b>
-          <span> (Class of 28') student at University of Waterloo.</span>
-        </div>
-
-        <div className={styles.content}>
-        <b>Interests: </b>
-          <span>Full-stack development (front-end + back-end), software development, project management, machine learning</span>
-          <br/>
-          <b>Hobbies: </b>
-          <span>Reading, stargazing, dancing, piano, web development</span>
-        </div>
-
-        <div className={styles.buttonContainer}>
-          <img src={instagram} className={styles.linkButton} onClick={onInstagramClick} />
-          <img src={linkedin} className={styles.linkButton} onClick={onLinkedInClick} />
-          <img src={github} className={styles.linkButton} onClick={onGithubClick}/>
-          <img src={devpost} className={styles.linkButton} onClick={onDevpostClick}/>
-        </div>
-      </div>
-
-      <Projects ref={projectsRef}/>
-      <Leadership id="experiences"/>
 
       <div className={styles.contacts}>
           <p>
             <div className={styles.bottomLine}/>
+            Built by <b>Leanne Kim</b>
+            <br/>
+            <br/>
             <b>Email</b>: sooyeunleanne@gmail.com
             <br/>
             <b>Phone</b>: +1 519-722-3291

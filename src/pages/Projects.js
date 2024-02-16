@@ -31,8 +31,8 @@ const Projects = () => {
     navigate("/");
   }, [navigate]);
 
-  const onLeadershipTextClick = useCallback(() => {
-    navigate("/leadership");
+  const onExperiencesTextClick = useCallback(() => {
+    navigate("/Experiences");
   }, [navigate]);
 
   const onDevpostButtonClick = useCallback(() => {
@@ -55,10 +55,6 @@ const Projects = () => {
         <h1>Projects</h1>
         <h2>Software Projects / Design Projects</h2>
         <img className={styles.devpostButton} src={devpost} onClick={onDevpostButtonClick}></img>
-        <div>
-          <b>Languages and Frameworks</b>
-          <p>C++, Java, JavaScript, Typescript, React, CSS, HTML, Python, Processing</p>
-        </div>
       </div>
 
       <div className = {styles.gridContainer} style = {{boxShadow: "10px 10px grey"}}>

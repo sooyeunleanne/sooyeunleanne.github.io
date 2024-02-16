@@ -5,7 +5,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import Home from "./pages/Home";
-import Leadership from "./pages/Leadership";
+import Experiences from "./pages/Experiences";
 import Projects from "./pages/Projects";
 import { useEffect } from "react";
 
@@ -29,7 +29,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/leadership":
+      case "/Experiences":
         title = "";
         metaDescription = "";
         break;
@@ -56,7 +56,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/leadership" element={<Leadership />} />
+      <Route path="/Experiences" element={<Experiences />} />
       <Route path="/projects" element={<Projects />} />
     </Routes>
   );

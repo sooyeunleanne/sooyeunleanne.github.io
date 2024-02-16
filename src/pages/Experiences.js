@@ -1,9 +1,8 @@
-import { useState, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import styles from "./Leadership.module.css";
+import { useState } from "react";
+import styles from "./Experiences.module.css";
 import PopupExperience from './components/PopupExperience.js';
 import './components/Popup.css';
-import GridItem from './components/GridItem';
+import GridItem from './components/GridItem.js';
 
 import keyclub from '../images/keyclub.png';
 import mathletes from '../images/mathletes.png';
@@ -13,25 +12,11 @@ import akcse from '../images/akcse.png';
 import ksa from '../images/ksa.png';
 import mto from '../images/mto.jfif';
 
-const Leadership = () => {
-  const navigate = useNavigate();
-
-  const onHomeTextClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
-  const onProjectsTextClick = useCallback(() => {
-    navigate("/projects");
-  }, [navigate]);
-
-  const onLeadershipTextClick = useCallback(() => {
-    navigate("/experiences");
-  }, [navigate]);
-
+const Experiences = () => {  
   const [popupKeyClub, openKeyClub] = useState(false);
   const [popupKCI, openKCI] = useState(false);
   const [popupMathletes, openMathletes] = useState(false);
-  const [popupStudentLeadership, openStudentLeadership] = useState(false);
+  const [popupStudentExperiences, openStudentExperiences] = useState(false);
   const [popupTurtleHacks, openTurtleHacks] = useState(false);
   const [popupAKCSE, openAKCSE] = useState(false);
   const [popupKSA, openKSA] = useState(false);
@@ -78,8 +63,8 @@ const Leadership = () => {
         role="Student Leadership" 
         startYear = "Sep 2021"
         endYear = "Jun 2023" 
-        trigger={popupStudentLeadership} 
-        setTrigger={openStudentLeadership}></GridItem>
+        trigger={popupStudentExperiences} 
+        setTrigger={openStudentExperiences}></GridItem>
 
         <GridItem 
         image= {turtlehacks}
@@ -126,8 +111,8 @@ const Leadership = () => {
       role="President" 
       startYear = "Jun 2020"
       endYear = "Jun 2023"       
-      description= {["Led 331 students to organize leadership workshops, divisional meetups, cultural potlucks, and volunteer opportunities.", 
-      "Maintained club engagement during the pandemic by introducing online volunteer/leadership opportunities in weekly meetings.",
+      description= {["Led 331 students to organize Experiences workshops, divisional meetups, cultural potlucks, and volunteer opportunities.", 
+      "Maintained club engagement during the pandemic by introducing online volunteer/Experiences opportunities in weekly meetings.",
         "Coordinated an online communication skills workshop with Mike Farwell (a local talkshow host) and a club-wide meetup with Key Club alumni for post-secondary guidance."]}></PopupExperience>
 
       {/* <PopupExperience 
@@ -156,16 +141,16 @@ const Leadership = () => {
       "Worked as a Junior Executive in 2021-2022 and a Senior Executive in 2022-2023"]}></PopupExperience>
 
       <PopupExperience 
-      trigger={popupStudentLeadership} 
-      setTrigger={openStudentLeadership}
+      trigger={popupStudentExperiences} 
+      setTrigger={openStudentExperiences}
       image = {lhss}
       name="Laurel Heights Secondary School"
       role="Student Leadership" 
       startYear = "Sep 2021"
       endYear = "Jun 2023"
-      description = {["Organized Horizons Leadership Conference (March 22nd, 2023) for 200+ student leaders from different schools.", 
+      description = {["Organized Horizons Experiences Conference (March 22nd, 2023) for 200+ student leaders from different schools.", 
       "Coordinated the Grad Week (backyard bash, grad breakfast, time capsule letters, and prom) for Class of 2023. Approximately 90% of the graduating class (400+ students) participated in this project.", 
-      "Received 90%+ positive feedback from the participants of both the Horizons Leadership Conference and Grad Week"]}
+      "Received 90%+ positive feedback from the participants of both the Horizons Experiences Conference and Grad Week"]}
       ></PopupExperience>
 
       <PopupExperience 
@@ -222,4 +207,4 @@ const Leadership = () => {
   );
 };
 
-export default Leadership;
+export default Experiences;

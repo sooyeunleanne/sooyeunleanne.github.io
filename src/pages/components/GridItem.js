@@ -12,7 +12,7 @@ export default function GridItem(props) {
     return (
     <div className="grid-item">
         <div>
-            <img src={props.image} width = "50em"/>
+            <img src={props.image} height="25vw"/>
         </div>
         { props.name }
         <div className = "role">
