@@ -8,7 +8,7 @@
 .home {
   position: relative;
   background-color: #cceaff;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
   text-align: center;
   font-family: "Titillium Web", sans-serif;
