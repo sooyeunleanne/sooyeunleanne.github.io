@@ -199,7 +199,7 @@ const Experiences = () => {
       role = "Jr. Technical Analyst (Co-op)"
       startYear = "Jan 2024"
       endYear = ""
-      description = {["Participated in website development projects (e.g. Towing and Storage Complaints website) as part of the Technical Support team in IT solutions branch.", 
+      description = {["Participated in application development project (e.g. Towing and Storage Oversight Application) as part of the Technical Support team in IT solutions branch.", 
       "Helped develop the frontend of the TSOA website UI for client portal to help the public secure their rights by filing a complaint against overcharging tow companies, tow truck drivers, or vehicle storage operators.", 
       "Assisted in the backend development by writing functions that read and write pdf files to organize filed complaints."]}
       ></PopupExperience>
