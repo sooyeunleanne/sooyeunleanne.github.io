@@ -38,7 +38,7 @@ h2 {
   margin-right: auto;
   padding: 1.25vw;
   padding-top: 3rem;
-  border-radius: var(--br-11xl);
+  border-radius: 30px;
   align-items: center;
   justify-content: space-around;
 }

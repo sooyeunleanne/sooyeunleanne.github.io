@@ -7,12 +7,11 @@
 
 .home {
   position: relative;
-  background-color: #cceaff;
-  width: 100%;
+  background-color: black;
   overflow: hidden;
   text-align: center;
   font-family: "Titillium Web", sans-serif;
-  color: black;
+  color: white;
   justify-content: center;
 }
 
@@ -36,6 +35,7 @@
   width: 10vw;
   margin-left: 17.5vw;
   margin-top: 0.5em;
+  color: black;
 }
 
 .router:hover {
@@ -52,7 +52,7 @@
 .name {
   font-size: 4em;
   margin-top: 12rem;
-  color: #02487a;
+  color: #cceaff;
   -webkit-text-size-adjust: none;
 }
 
@@ -96,7 +96,7 @@
   background-color: white;
   font-size: 1em;
   cursor: pointer;
-  border-radius: var(--br-11xl);
+  border-radius: 30px;
   color: white;
 }
 

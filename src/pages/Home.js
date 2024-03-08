@@ -4,7 +4,6 @@ import Starfield from "./page-component/Starfield";
 import Profile from './Profile';
 import Projects from "./Projects";
 import Experiences from "./Experiences";
-import Awards from "./Awards";
 
 const Home = () => {
 

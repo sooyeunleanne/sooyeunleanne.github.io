@@ -35,14 +35,14 @@
     max-width: 640px;
     height: auto;
     background-color: #FFF;
-    border-radius: var(--br-11xl);
+    border-radius: 30px;
 }
 
 .popup-inner .close-btn {
     position: absolute;
     top: 5%;
     right: 5%;
-    border-radius: var(--br-11xl);
+    border-radius: 30px;
     background-color: white;
 }
 
