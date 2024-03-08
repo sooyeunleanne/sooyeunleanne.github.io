@@ -43,7 +43,7 @@ const Profile = () => {
             <b className={styles.name}>Leanne Kim</b>
             <div className={styles.pronoun}>(She/Her)</div>
             <div className={styles.description}>
-              <span>Welcome! I am a </span>
+              <span>Hello! I am a </span>
               <b>Systems Design Engineering</b>
               <span> (Class of 28') student at University of Waterloo.</span>
             </div>
