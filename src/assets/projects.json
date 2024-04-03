@@ -11,21 +11,12 @@
         "point3": "Worked on front-end and back-end.",
         "githublink": "https://github.com/acrenw/FoodiEco"
     },
-    "HealThyme": {
-        "type": "Software Application",
-        "name": "HealThyme",
-        "competition": "Hack The Valley 7",
-        "date": "2022/10",
-        "point1": "Developed the 3 main pages of a website that allows the user to compare the number of people on the waitlist of nearby hospitals/clinics and book an appointment.",
-        "point2": "Built with ReactJS (Javascript, HTML, CSS).",
-        "point3": "Mainly worked on front-end and Google Maps API Integration."
-    },
     "Community Changemaker Challenge": {
         "type": "Design Project",
         "name": "Post-secondary Event Week",
         "competition": "Community Changemaker Challenge",
         "date": "2022/10",
-        "award": "Winner",
+        "award": "1st place",
         "point1": "Participated in a 1-month long project design challenge in a 4-people team.",
         "point2": "For students struggling to find post-secondary pathways, my team designed an event week with university program fairs, workplaces visits, and peer support.",
         "point3": "Was awarded Best Overall Project, Most Synchronized and Organized, and Strong Pitch."
@@ -58,5 +49,39 @@
         "award": "Runner-up for Best University Hacks",
         "point1": "Developed a Flask application to assist people in reading by providing artificial fixation points, using integrations of assemblyai, pypdf2, and EasyOCR.",
         "point2": "Observed a decrease in the total reading time by approximately 35% from a reading efficiency experiment."
+    },
+    "AppMatch Maker": {
+        "type": "Software Prototype",
+        "name": "AppMatch Maker",
+        "competition": "OPS Phenomenal Hackathon with Microsoft",
+        "date": "2024/03",
+        "role": "Project Manager, Developer in a Team of 5",
+        "award": "Eureka Moment Award",
+        "point1": "Used MS Forms, PowerBI, Power Automate, and Dataverse to develop a software prototype that scans technology landscape across the Ontario Public Service and finds opportunities to reuse existing applications.",
+        "point2": "Estimated to reduce time, resources, and finances taken towards building a new IT solution every time by 30%.",
+        "point3": "Prepared and delivered the pitch that included problem statement, busines impact, target users, solution, technology stack, and solution roadmap for the future.",
+        "link": "https://www.clientfeedback.mto.gov.on.ca/"
+    },
+    "Client Feedback Portal, Towing and Storage Oversight Application": {
+        "type": "Software Application",
+        "name": "Client Feedback Portal",
+        "competition": "Ministry of Transportation",
+        "date": "2024/04",
+        "role": "Frontend Developer, Backend Developer",
+        "point1": "Engaged in developing the Client Feedback Portal for the Towing and Storage Oversight Application project (a complaint portal against overcharging towing and vehicle storage operators).",
+        "point2": "Developed the user interface using Angular and made it compliant with Accessibility for Ontarians with Disabilities Act (AODA) using WAVE evaluation tool and NVDA speech viewer.",
+        "point3": "Participated in backend development by writing functions that organize filed complaints into pdf files in database using Springboot.",
+        "link": "https://www.clientfeedback.mto.gov.on.ca/"
+    },
+    "Client Information Portal, Towing and Storage Oversight Application": {
+        "type": "Software Application",
+        "name": "Client Information Portal",
+        "competition": "Ministry of Transportation",
+        "date": "2024/04",
+        "role": "Frontend Developer",
+        "point1": "Engaged in developing the Client Information Portal Towing and Storage Oversight Application project (a complaint portal against overcharging towing and vehicle storage operators).",
+        "point2": "Developed the user interface using Angular.",
+        "point3": "Helped make the user interface compliant with Accessibility for Ontario’s with Disabilities Act (AODA) by making the website accessible with keyboard and speech-viewer.",
+        "link": "https://www.clientinformation.mto.gov.on.ca/tssea"
     }
 }

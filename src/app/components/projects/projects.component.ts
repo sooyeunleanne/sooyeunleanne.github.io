@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { ProjectItemComponent } from './project-item/project-item.component';
 import { AppModule } from '../../app.module';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { ProjectItemComponent } from './project-item/project-item.component';
 import { ProjectPopupComponent } from './project-popup/project-popup.component';
 @Component({
   selector: 'app-projects',

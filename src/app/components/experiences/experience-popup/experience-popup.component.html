@@ -1,1 +1,11 @@
-<p>experience-popup works!</p>
+<div>
+    <button (click)="closePopup()">X</button>
+    <h2>{{ experience.role }}</h2>
+    <p>Organization: {{ experience.organization }}</p>
+    <p>{{ experience.startdate }} - {{ experience.enddate }}</p>
+    <ul>
+        <li>{{ experience.point1 }}</li>
+        <li>{{ experience.point2 }}</li>
+        <li *ngIf="experience.point3">{{ experience.point3 }}</li>
+    </ul>
+</div>
