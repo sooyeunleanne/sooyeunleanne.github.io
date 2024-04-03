@@ -1,0 +1,15 @@
+<div *ngFor="let project of projects">
+    <h2>{{ project.name }}</h2>
+    <p>Type: {{ project.type }}</p>
+    <p>Date: {{ project.date }}</p>
+    <p *ngIf="project.competition">Competition: {{ project.competition }}</p>
+    <p *ngIf="project.role">Role: {{ project.role }}</p>
+    <p *ngIf="project.award">Award: {{ project.award }}</p>
+    <ul>
+        <li>{{ project.point1 }}</li>
+        <li>{{ project.point2 }}</li>
+        <li *ngIf="project.point3">{{ project.point3 }}</li>
+    </ul>
+    <p *ngIf="project.githublink"><a href="{{ project.githublink }}">GitHub</a></p>
+</div>
+  

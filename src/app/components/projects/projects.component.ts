@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProjectItemComponent } from '../profile/project-item/project-item.component';
+import { ProjectItemComponent } from './project-item/project-item.component';
 
 @Component({
   selector: 'app-projects',
@@ -8,6 +8,7 @@ import { ProjectItemComponent } from '../profile/project-item/project-item.compo
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
+
 export class ProjectsComponent {
 
 }
