@@ -22,6 +22,7 @@ export class ProjectsComponent {
     this.http.get<any>('assets/projects.json').subscribe(data => {
       this.projects = Object.values(data); // Convert object to array
     });
+    this.projects.reverse();
     for (const project of this.projects) {
       this.popupList[project.name] = false;
     }

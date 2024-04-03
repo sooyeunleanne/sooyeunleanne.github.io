@@ -21,6 +21,7 @@ export class ExperiencesComponent {
     this.http.get<any>('assets/experiences.json').subscribe(data => {
       this.experiences = Object.values(data); // Convert object to array
     });
+    this.experiences.reverse();
     for (const experience of this.experiences) {
       this.popupList[experience.organization] = false;
     }
