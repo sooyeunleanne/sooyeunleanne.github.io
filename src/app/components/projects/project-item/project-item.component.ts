@@ -1,7 +1,6 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppModule } from '../../../app.module';
-import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-project-item',
   standalone: true,
@@ -10,19 +9,10 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './project-item.component.css'
 })
 export class ProjectItemComponent {
-  popup: boolean = false;
+  @Output() popupOpen = new EventEmitter<{projectName: string, open: boolean}>();
+  @Input() project!: any;
 
   openPopup(): void {
-    this.popup = true;
-  }
-
-  projects: any[] = [];
-
-  constructor(private http: HttpClient) {}
-
-  ngOnInit(): void {
-    this.http.get<any>('assets/projects.json').subscribe(data => {
-      this.projects = Object.values(data); // Convert object to array
-    });
+    this.popupOpen.emit({ projectName: this.project.name, open: true });
   }
 }
