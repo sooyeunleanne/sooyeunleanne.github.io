@@ -1,0 +1,62 @@
+{
+    "Foodieco": {
+        "type": "Software Application",
+        "name": "Foodieco",
+        "competition": "Highlander Engineering Challenge",
+        "role": "Full-stack developer",
+        "date": "2022/06",
+        "award": "Best Software Project",
+        "point1": "Developed an app that provides a full view of fridge items and suggests possible replacements for certain ingredients in a 4-people team.",
+        "point2": "Built with Python, Tkinter.",
+        "point3": "Worked on front-end and back-end.",
+        "githublink": "https://github.com/acrenw/FoodiEco"
+    },
+    "HealThyme": {
+        "type": "Software Application",
+        "name": "HealThyme",
+        "competition": "Hack The Valley 7",
+        "date": "2022/10",
+        "point1": "Developed the 3 main pages of a website that allows the user to compare the number of people on the waitlist of nearby hospitals/clinics and book an appointment.",
+        "point2": "Built with ReactJS (Javascript, HTML, CSS).",
+        "point3": "Mainly worked on front-end and Google Maps API Integration."
+    },
+    "Community Changemaker Challenge": {
+        "type": "Design Project",
+        "name": "Post-secondary Event Week",
+        "competition": "Community Changemaker Challenge",
+        "date": "2022/10",
+        "award": "Winner",
+        "point1": "Participated in a 1-month long project design challenge in a 4-people team.",
+        "point2": "For students struggling to find post-secondary pathways, my team designed an event week with university program fairs, workplaces visits, and peer support.",
+        "point3": "Was awarded Best Overall Project, Most Synchronized and Organized, and Strong Pitch."
+    },
+    "StudySpace": {
+        "type": "Software Application",
+        "name": "StudySpace",
+        "date": "2023/02",
+        "role": "Full-stack developer",
+        "point1": "Developed a study assistant program with a stopwatch that measures  total study time, music/audio features to help with concentration, and a checklist feature.",
+        "point2": "Built in Processing (a graphical library that uses Java as its primary language) using OOP in a 3-people team.",
+        "githublink": "https://github.com/sooyeunleanne/Body-In-Depth"
+    },
+    "Body In Depth": {
+        "type": "Software Application",
+        "name": "Body In Depth",
+        "date": "2023/02",
+        "role": "Full-stack developer",
+        "point1": "Engineered a body composition analysis calculator that plans out a dietary plan for weight loss/gain.",
+        "point2": "Built with Processing, a graphical library that uses Java as its primary language using object-oriented programming (OOP).",
+        "point3": "Worked alone as a full-stack developer.",
+        "githublink": "https://github.com/sooyeunleanne/Body-In-Depth"
+    },
+    "ReadBetter": {
+        "type": "Software Application",
+        "name": "ReadBetter",
+        "competition": "JamHacks 7",
+        "date": "2023/06",
+        "role": "Project Manager, Developer",
+        "award": "Runner-up for Best University Hacks",
+        "point1": "Developed a Flask application to assist people in reading by providing artificial fixation points, using integrations of assemblyai, pypdf2, and EasyOCR.",
+        "point2": "Observed a decrease in the total reading time by approximately 35% from a reading efficiency experiment."
+    }
+}
