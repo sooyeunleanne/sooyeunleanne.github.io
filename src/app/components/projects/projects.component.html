@@ -1,8 +1,8 @@
 <div style="text-align: center; margin-top: 3rem;">
-    <h1>Projects</h1>
+    <h1 style="color: #2659ab">Projects</h1>
     <h2>Software and Design Projects</h2>
-    <div class="grid-container" *ngFor="let project of projects">
-        <div class="grid-item">
+    <div class="grid-container" >
+        <div class="grid-item" *ngFor="let project of projects">
             <app-project-item (popupOpen)="handlePopupOpen($event)" [project]="project"></app-project-item>
         </div>
     </div>

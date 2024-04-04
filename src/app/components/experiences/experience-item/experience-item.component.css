@@ -1,5 +1,5 @@
 .item-container {
-    width: 30%;
+    width: 100%;
 }
 
 button {
@@ -13,4 +13,8 @@ button {
 button:hover {
     background-color: lightgrey;
     cursor: pointer;
+}
+
+img {
+    height: 3rem;
 }

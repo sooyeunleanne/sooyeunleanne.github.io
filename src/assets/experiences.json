@@ -1,5 +1,6 @@
 {
     "Key Club": {
+        "logo": "keyclub.png",
         "organization": "Key Club, Laurel Heights S.S.",
         "role": "President",
         "startdate": "2020/06",
@@ -17,6 +18,7 @@
         "point2": "Organized Ontario Mathematics Competition 2023 (https://sites.google.com/view/ontariocmc/home) for 224 students from 10 Ontario schools."
     },
     "TurtleHacks": {
+        "logo": "turtlehacks.png",
         "organization": "TurtleHacks",
         "role": "Logistics Executive",
         "startdate": "2022/06",
@@ -26,6 +28,7 @@
         "point3": "Ensured that all events were happening in a timely manner with adequate resources."
     },
     "AKCSE": {
+        "logo": "akcse.png",
         "organization": "Association of Korean Scientists and Engineers, University of Waterloo",
         "role": "Marketing Specialist",
         "startdate": "2023/09",
@@ -35,6 +38,7 @@
         "point3": "Represented the Faculty of Engineering at an open house presentation to 200+ parents and high school students."
     },
     "KSA": {
+        "logo": "ksa.png",
         "organization": "Korean Students Association, University of Waterloo",
         "role": "Public Relations Specialist",
         "startdate": "2023/09",
@@ -44,6 +48,7 @@
         "point3": "Developed/produced an official sponsorship package to reach out to sponsors."
     },
     "MTO": {
+        "logo": "mto.jfif",
         "organization": "Ontario Ministry of Transportation",
         "role": "Jr. Technical Analyst (Co-op)",
         "startdate": "2024/01",

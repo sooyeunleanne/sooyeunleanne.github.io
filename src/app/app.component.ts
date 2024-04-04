@@ -5,6 +5,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ExperiencesComponent } from './components/experiences/experiences.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ShadowFollowDirective } from './directives/shadowfollow.directive';
 @Component({
   selector: 'app-root',
   standalone: true,

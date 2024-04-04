@@ -5,7 +5,9 @@ button {
     border: none;
     background-color: transparent;
     margin: 1rem;
+    margin-left: 5rem;
     margin-left: 2rem;
+
 }
 
 button:hover {

@@ -9,3 +9,7 @@ button:hover{
     color: darkgrey;
     cursor: pointer;
 }
+
+img {
+    height: 3rem;
+}

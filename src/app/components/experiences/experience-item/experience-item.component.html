@@ -1,6 +1,7 @@
 <div class="item-container">
-    <h3>{{ experience.organization }}</h3>
-    <h2>{{ experience.role }}</h2>
+    <p *ngIf="experience.logo"><img [src]="'../../../../assets/images/'+ experience.logo" /></p>
+    <b style="color: #e300a3">{{ experience.role }}</b>
+    <h2>{{ experience.organization }}</h2>
     <p>{{ experience.startdate }} - {{ experience.enddate }}</p>
     <button (click)="openPopup()">Details</button>
 </div>
