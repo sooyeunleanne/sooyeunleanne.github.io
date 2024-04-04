@@ -1,12 +1,11 @@
-<div appShadowFollow>
-    <app-header></app-header>
+<div class="cursor" [style.top]="top" [style.left]="left" [ngClass]="{'expand':expand}" #cursor> </div>
 
-    <app-profile></app-profile>
+<app-header></app-header>
 
-    <app-projects id="projects"></app-projects>
+<app-profile (mouseover)="resetCursorStyle()"></app-profile>
 
-    <app-experiences id="experiences"></app-experiences>
+<app-projects  (mouseover)="changeCursorStyle('rgba(179, 208, 255, 0.3)')" id="projects"></app-projects>
 
-    <app-footer></app-footer>
-</div>
+<app-experiences (mouseover)="changeCursorStyle('rgba(255, 209, 236, 0.3)')" id="experiences"></app-experiences>
 
+<app-footer></app-footer>
