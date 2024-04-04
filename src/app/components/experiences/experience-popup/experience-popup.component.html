@@ -1,11 +1,14 @@
-<div>
+<div class="popup-container">
     <button (click)="closePopup()">X</button>
-    <h2>{{ experience.role }}</h2>
-    <p>Organization: {{ experience.organization }}</p>
-    <p>{{ experience.startdate }} - {{ experience.enddate }}</p>
-    <ul>
-        <li>{{ experience.point1 }}</li>
-        <li>{{ experience.point2 }}</li>
-        <li *ngIf="experience.point3">{{ experience.point3 }}</li>
-    </ul>
+    <p style="margin-top: 3rem">{{ experience.organization }}</p>
+    <h1>{{ experience.role }}</h1>
+    <h4>{{ experience.startdate }} - {{ experience.enddate }}</h4>
+    <div class="point-container">
+        <ul>
+            <li>{{ experience.point1 }}</li>
+            <li>{{ experience.point2 }}</li>
+            <li *ngIf="experience.point3">{{ experience.point3 }}</li>
+        </ul>
+    </div>
+    
 </div>

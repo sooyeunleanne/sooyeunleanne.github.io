@@ -1,10 +1,12 @@
-<div>
+<div class="project-item-container">    
+    <p *ngIf="project.competition">{{ project.competition }}</p>
     <h2>{{ project.name }}</h2>
-    <p>Type: {{ project.type }}</p>
-    <p>Date: {{ project.date }}</p>
-    <p *ngIf="project.competition">Competition: {{ project.competition }}</p>
-    <p *ngIf="project.role">Role: {{ project.role }}</p>
-    <p *ngIf="project.award">Award: {{ project.award }}</p>
+    <p style="color: #2659ab"><b>{{ project.type }}</b></p>
+    <p>{{ project.date }}</p>
+    <p *ngIf="project.role">{{ project.role }}</p>
+    <p *ngIf="project.award">
+        <img style="height: 1rem" src="../../../../assets/images/crown.png"> {{ project.award }}
+    </p>
     <button (click)="openPopup()">Details</button>
 </div>
   

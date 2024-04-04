@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+button {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.popup-container {
+    position: fixed;
+    top: 50%; /* Align to the middle of the viewport */
+    transform: translateY(-50%); /* Adjust vertically by half of its own height */   
+    left: 15%;
+    right: 15%;
+    border-style: solid;
+    border-radius: 3rem;
+    background-color: white;
+    width: 70%;
+    padding: 2%;
+}
+
+.point-container {
+    text-align: left;
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 2.5rem;
+    font-size: 1rem;
+}

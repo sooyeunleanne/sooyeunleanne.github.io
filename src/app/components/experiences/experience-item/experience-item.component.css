@@ -1,0 +1,16 @@
+.item-container {
+    width: 30%;
+}
+
+button {
+    background-color: transparent;
+    border-color: black;
+    border-radius: 1em;
+    width: 7rem;
+    padding: 0.25rem;
+}
+
+button:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}

@@ -1,16 +1,19 @@
-<div>
+<div class="popup-container">
     <button (click)="closePopup()">X</button>
-    <h2>{{ project.name }}</h2>
-    <p>Type: {{ project.type }}</p>
-    <p>Date: {{ project.date }}</p>
-    <p *ngIf="project.competition">Competition: {{ project.competition }}</p>
-    <p *ngIf="project.role">Role: {{ project.role }}</p>
-    <p *ngIf="project.award">Award: {{ project.award }}</p>
-    <ul>
-        <li>{{ project.point1 }}</li>
-        <li>{{ project.point2 }}</li>
-        <li *ngIf="project.point3">{{ project.point3 }}</li>
-    </ul>
+    <h3 style="margin-top: 3rem;"  *ngIf="project.award"><img style="height: 1rem" src="../../../../assets/images/crown.png"> {{ project.award }} </h3>
+    <h3 *ngIf="project.competition">{{ project.competition }}</h3>
+    <h1>{{ project.name }}</h1>
+    <h2 style="color: #2659ab">{{ project.type }}</h2>
+    <p>{{ project.date }}</p>
+    <h3 *ngIf="project.role">{{ project.role }}</h3>
+    <div class="point-container">
+        <ul>
+            <li>{{ project.point1 }}</li>
+            <li>{{ project.point2 }}</li>
+            <li *ngIf="project.point3">{{ project.point3 }}</li>
+        </ul>
+    </div>
+   
     <p *ngIf="project.githublink"><a href="{{ project.githublink }}">GitHub</a></p>
     <p *ngIf="project.link"><a href="{{ project.link }}">Link</a></p>
 </div>

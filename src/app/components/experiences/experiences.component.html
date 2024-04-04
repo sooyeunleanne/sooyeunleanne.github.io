@@ -1,5 +1,11 @@
-<h1>Experiences</h1>
-<ng-container *ngFor="let experience of experiences">
-    <app-experience-item (popupOpen)="handlePopupOpen($event)" [experience]="experience"></app-experience-item>
-    <app-experience-popup *ngIf="popupList[experience.organization]" (popupClose)="handlePopupClose($event)" [experience]="experience"></app-experience-popup>
-</ng-container>
+<div style="text-align: center; margin-top: 3rem;">
+    <h1>Experiences</h1>
+    <ng-container class="grid-container" *ngFor="let experience of experiences">
+        <div class="grid-item">
+            <app-experience-item (popupOpen)="handlePopupOpen($event)" [experience]="experience"></app-experience-item>
+        </div>
+    </ng-container>
+    <ng-container *ngFor="let experience of experiences">
+        <app-experience-popup *ngIf="popupList[experience.organization]" (popupClose)="handlePopupClose($event)" [experience]="experience"></app-experience-popup>
+    </ng-container>
+</div>
