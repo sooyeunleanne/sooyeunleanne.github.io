@@ -5,6 +5,9 @@ img {
 .container {
     margin-left: 2rem;
     width: calc(50% - 2rem);
+    max-width: 800px; 
+    padding: 0 1rem; 
+    flex: 1;
 }
 
 a {
@@ -14,4 +17,13 @@ a {
 
 h1 {
     font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin-left: 0;
+        width: calc(100%);
+        justify-content: center;
+    }
 }

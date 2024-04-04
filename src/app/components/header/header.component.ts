@@ -11,6 +11,14 @@ import { ElementRef, Component } from '@angular/core';
 export class HeaderComponent {
   constructor(private elementRef: ElementRef) { }
 
+  scrollToProfile() {
+    const appComponent = this.elementRef.nativeElement.parentElement;
+    const profileComponent = appComponent.querySelector('#profile');
+    if (profileComponent) {
+      profileComponent.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   scrollToProjects() {
     const appComponent = this.elementRef.nativeElement.parentElement;
     const projectComponent = appComponent.querySelector('#projects');

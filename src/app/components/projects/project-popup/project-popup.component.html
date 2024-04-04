@@ -1,7 +1,9 @@
 <div class="popup-container">
     <button (click)="closePopup()">X</button>
-    <h3 style="margin-top: 3rem;"  *ngIf="project.award"><img style="height: 1rem" src="../../../../assets/images/crown.png"> {{ project.award }} </h3>
-    <h3 *ngIf="project.competition">{{ project.competition }}</h3>
+    <div style="margin-top: 3rem;" >
+        <h3 *ngIf="project.award"><img style="height: 1rem" src="../../../../assets/images/crown.png"> {{ project.award }} </h3>
+        <h3 *ngIf="project.competition">{{ project.competition }}</h3>
+    </div>
     <h1>{{ project.name }}</h1>
     <h2 style="color: #2659ab">{{ project.type }}</h2>
     <p>{{ project.date }}</p>

@@ -56,3 +56,22 @@ button {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 100%;
+        font-size: 0.8rem;
+    }
+
+    .popup-container {
+        font-size: 0.8rem;
+    }
+    
+    .point-container {
+        font-size: 0.8rem;
+        height: 15rem;
+        overflow-y: scroll;
+        line-height: 1.2rem;
+    }
+  }
