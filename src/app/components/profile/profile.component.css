@@ -20,10 +20,34 @@ h1 {
     margin-bottom: 0;
 }
 
+.collage-photos {
+    max-width: 50%; 
+    height: auto; 
+    margin-top: 20px;
+}
+
+@media (max-width: 1025px) {
+    .container {
+        margin-left: 0;
+        width: calc(100%);
+        justify-content: center;
+    }
+    .collage-photos {
+        max-width: 100%; 
+        height: auto; 
+        margin-top: 5px;
+    }
+}
+
 @media (max-width: 600px) {
     .container {
         margin-left: 0;
         width: calc(100%);
         justify-content: center;
+    }
+    .collage-photos {
+        max-width: 100%; 
+        height: auto; 
+        margin-top: 5px;
     }
 }

@@ -1,7 +1,8 @@
-<div class="popup-container">
+<div class="popup-container" overflow-y="scroll">
     <button (click)="closePopup()">X</button>
     <div style="margin-top: 3rem;" >
         <h3 *ngIf="project.award"><img style="height: 1rem" src="../../../../assets/images/crown.png"> {{ project.award }} </h3>
+        <p *ngIf="project.screenshot"><img style="height: 15rem" [src]="'../../../../assets/images/'+ project.screenshot" /></p>
         <h3 *ngIf="project.competition">{{ project.competition }}</h3>
     </div>
     <h1>{{ project.name }}</h1>

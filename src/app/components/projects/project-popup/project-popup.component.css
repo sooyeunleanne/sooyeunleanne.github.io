@@ -9,3 +9,17 @@ button:hover{
     color: darkgrey;
     cursor: pointer;
 }
+
+.screenshot { 
+    height: 15rem;
+}
+
+@media (max-width: 1025px) {
+    .screenshot {
+        height: 7rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+}

@@ -57,6 +57,26 @@ button {
     padding-bottom: 1rem;
 }
 
+@media (max-width: 1025px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 45%);
+        margin: auto;
+        font-size: 1rem;
+    }
+
+    .popup-container {
+        padding: 1.5rem;
+        font-size: 1rem;
+        max-height: 50rem;
+    }
+    
+    .point-container {
+        font-size: 1rem;
+        height: 10rem;
+        overflow-y: auto;
+        line-height: 1.5rem;
+    }
+  }
 
 @media (max-width: 600px) {
     .grid-container {
@@ -66,12 +86,13 @@ button {
 
     .popup-container {
         font-size: 0.8rem;
+        padding: 1.5rem;
     }
     
     .point-container {
         font-size: 0.8rem;
         height: 15rem;
-        overflow-y: scroll;
+        overflow-y: auto;
         line-height: 1.2rem;
     }
   }

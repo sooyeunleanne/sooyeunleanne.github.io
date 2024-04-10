@@ -28,3 +28,14 @@ button:hover {
         font-size: 1rem;
     }
 }
+
+@media (max-width: 1024px) {
+    .header {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    button {
+        font-size: 1rem;
+    }
+}
+

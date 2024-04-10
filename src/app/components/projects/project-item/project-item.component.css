@@ -11,3 +11,7 @@ button:hover {
     background-color: lightgrey;
     cursor: pointer;
 }
+
+img {
+    height: 3rem;
+}
