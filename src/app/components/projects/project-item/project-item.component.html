@@ -1,9 +1,9 @@
 <div> 
+    <p>{{ project.date }}</p>
     <p *ngIf="project.logo"><img [src]="'../../../../assets/images/'+ project.logo" /></p>
     <p *ngIf="project.competition">{{ project.competition }}</p>
     <h2>{{ project.name }}</h2>
     <p style="color: #2659ab"><b>{{ project.type }}</b></p>
-    <p>{{ project.date }}</p>
     <p *ngIf="project.role">{{ project.role }}</p>
     <p *ngIf="project.award">
         <img style="height: 1rem" src="../../../../assets/images/crown.png"> {{ project.award }}
