@@ -1,0 +1,60 @@
+{
+    "Key Club": {
+        "logo": "keyclub.png",
+        "organization": "Key Club, Laurel Heights S.S.",
+        "role": "President",
+        "startdate": "2020/06",
+        "enddate": "2023/06",
+        "point1": "Led 331 students to organize Experiences workshops, divisional meetups, cultural potlucks, and volunteer opportunities.",
+        "point2": "Maintained club engagement during the pandemic by introducing online volunteer/Experiences opportunities in weekly meetings.",
+        "point3": "Coordinated an online communication skills workshop with Mike Farwell (a local talkshow host) and a club-wide meetup with Key Club alumni for post-secondary guidance."
+    },
+    "Mathletes": {
+        "organization": "Mathletes, Laurel Heights S.S.",
+        "role": "Executive",
+        "startdate": "2021/06",
+        "enddate": "2023/06",
+        "point1": "Taught mathematical concepts (probabilities, sequences and series, etc.) from math contests to students from grade 9 to 12.",
+        "point2": "Organized Ontario Mathematics Competition 2023 (https://sites.google.com/view/ontariocmc/home) for 224 students from 10 Ontario schools."
+    },
+    "TurtleHacks": {
+        "logo": "turtlehacks.png",
+        "organization": "TurtleHacks",
+        "role": "Logistics Executive",
+        "startdate": "2022/06",
+        "enddate": "2023/05",
+        "point1": "Helped organize the high-school led hybrid hackathon with 342 participants as a Logistics Executive.",
+        "point2": "Facilitated communication with sponsors and workshop leaders, planned food and venue, organized activities/events for hackers.",
+        "point3": "Ensured that all events were happening in a timely manner with adequate resources."
+    },
+    "AKCSE": {
+        "logo": "akcse.png",
+        "organization": "Association of Korean Scientists and Engineers, University of Waterloo",
+        "role": "Marketing Specialist",
+        "startdate": "2023/09",
+        "enddate": "Present",
+        "point1": "Advertised club events (Midterm Emergency Kit give-outs, Resume Critique, etc.) by creating instagram posters, writing post captions, and planning marketing strategies.",
+        "point2": "Resulted in a rapid sold-out of 40 midterm emergency kits within 48 hours after the instagram post.",
+        "point3": "Represented the Faculty of Engineering at an open house presentation to 200+ parents and high school students."
+    },
+    "KSA": {
+        "logo": "ksa.png",
+        "organization": "Korean Students Association, University of Waterloo",
+        "role": "Public Relations Specialist",
+        "startdate": "2023/09",
+        "enddate": "2024/12",
+        "point1": "Wrote formal emails to potential sponsors/partners of the club for sponsorship/partnership.",
+        "point2": "Brainstormed potential partnership events (e.g. school vs. school tournaments) in weekly team meetings.",
+        "point3": "Developed/produced an official sponsorship package to reach out to sponsors."
+    },
+    "MTO": {
+        "logo": "mto.jfif",
+        "organization": "Ontario Ministry of Transportation",
+        "role": "Jr. Technical Analyst (Co-op)",
+        "startdate": "2024/01",
+        "enddate": "2024/04",
+        "point1": "Helped develop Towing and Storage Oversight Application project (a complaint portal against overcharging towing and vehicle storage operators) in the IT solutions branch.",
+        "point2": "Delivered a presentation to Ontario Public Service employees about importance of building a FORTE talent profile, an online resume.",
+        "point3": "Communicated effectively and demonstrated great teamwork, which brought the project to success."
+    }
+}
