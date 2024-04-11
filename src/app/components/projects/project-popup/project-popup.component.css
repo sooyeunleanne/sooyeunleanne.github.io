@@ -16,10 +16,22 @@ button:hover{
 
 @media (max-width: 1025px) {
     .screenshot {
-        height: 7rem;
+        height: 13rem;
     }
 }
 
 @media (max-width: 600px) {
+    .screenshot {
+        max-width: 90%;
+        height: 10rem;
+        width: auto;
+    }
 
+    h1 {
+        font-size: 1.2rem;
+    } 
+
+    h3 {
+        font-size: 0.8rem;
+    }
 }
