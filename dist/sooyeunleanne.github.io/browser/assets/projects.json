@@ -1,5 +1,7 @@
 {
     "Foodieco": {
+        "logo": "foodieco.png",
+        "screenshot": "foodieco1.png",
         "type": "Software Application",
         "name": "Foodieco",
         "competition": "Highlander Engineering Challenge",
@@ -9,9 +11,11 @@
         "point1": "Developed an app that provides a full view of fridge items and suggests possible replacements for certain ingredients in a 4-people team.",
         "point2": "Built with Python, Tkinter.",
         "point3": "Worked on front-end and back-end.",
-        "githublink": "https://github.com/acrenw/FoodiEco"
+        "link": "https://devpost.com/software/foodieco"
     },
     "Community Changemaker Challenge": {
+        "logo": "ccc.png",
+        "screenshot": "ccc1.png",
         "type": "Design Project",
         "name": "Post-secondary Event Week",
         "competition": "Community Changemaker Challenge",
@@ -22,6 +26,7 @@
         "point3": "Was awarded Best Overall Project, Most Synchronized and Organized, and Strong Pitch."
     },
     "StudySpace": {
+        "screenshot": "studyspace.png",
         "type": "Software Application",
         "name": "StudySpace",
         "date": "2023/02",
@@ -31,6 +36,8 @@
         "githublink": "https://github.com/sooyeunleanne/Body-In-Depth"
     },
     "Body In Depth": {
+        "logo": "bodyindepth.png",
+        "screenshot": "bodyindepth2.png",
         "type": "Software Application",
         "name": "Body In Depth",
         "date": "2023/02",
@@ -41,6 +48,8 @@
         "githublink": "https://github.com/sooyeunleanne/Body-In-Depth"
     },
     "ReadBetter": {
+        "logo": "readbetter.png",
+        "screenshot": "readbetter1.png",
         "type": "Software Application",
         "name": "ReadBetter",
         "competition": "JamHacks 7",
@@ -48,7 +57,8 @@
         "role": "Project Manager, Developer",
         "award": "Runner-up for Best University Hacks",
         "point1": "Developed a Flask application to assist people in reading by providing artificial fixation points, using integrations of assemblyai, pypdf2, and EasyOCR.",
-        "point2": "Observed a decrease in the total reading time by approximately 35% from a reading efficiency experiment."
+        "point2": "Observed a decrease in the total reading time by approximately 35% from a reading efficiency experiment.",
+        "link": "https://devpost.com/software/bet-you-can-read-it-better-like-this-readbetter"
     },
     "AppMatch Maker": {
         "type": "Software Prototype",
@@ -63,6 +73,8 @@
         "link": "https://www.clientfeedback.mto.gov.on.ca/"
     },
     "Client Feedback Portal, Towing and Storage Oversight Application": {
+        "logo": "ontario-logo.png",
+        "screenshot": "CFS.png",
         "type": "Software Application",
         "name": "Client Feedback Portal",
         "competition": "Ministry of Transportation",
@@ -74,6 +86,8 @@
         "link": "https://www.clientfeedback.mto.gov.on.ca/"
     },
     "Client Information Portal, Towing and Storage Oversight Application": {
+        "logo": "ontario-logo.png",
+        "screenshot": "CIS.png",
         "type": "Software Application",
         "name": "Client Information Portal",
         "competition": "Ministry of Transportation",
