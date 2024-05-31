@@ -23,9 +23,10 @@ button {
     border-radius: 3rem;
     background-color: white;
     width: 70%;
-    max-height: 30rem;
-    overflow-y: scroll;
     padding: 2%;
+
+    max-height: 35rem;
+    overflow-y: scroll;
 }
 
 .point-container {
