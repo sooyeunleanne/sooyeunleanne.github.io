@@ -4,8 +4,7 @@ img {
 
 .container {
     margin-left: 2rem;
-    width: calc(50% - 2rem);
-    max-width: 800px; 
+    min-width: calc(50%- 1rem);
     padding: 0 1rem; 
     flex: 1;
 }
@@ -21,8 +20,8 @@ h1 {
 }
 
 .collage-photos {
-    max-width: 50%; 
-    height: auto; 
+    width: 50%;
+    height: 50%;
     margin-top: 20px;
 }
 
@@ -33,9 +32,8 @@ h1 {
         justify-content: center;
     }
     .collage-photos {
-        max-width: 100%; 
-        height: auto; 
         margin-top: 5px;
+        width: 100%;
     }
 }
 
@@ -46,8 +44,7 @@ h1 {
         justify-content: center;
     }
     .collage-photos {
-        max-width: 100%; 
-        height: auto; 
         margin-top: 5px;
+        width: 100%;
     }
 }
