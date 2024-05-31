@@ -25,6 +25,7 @@ button {
     width: 70%;
     padding: 2%;
 
+    height: 35rem;
     max-height: 35rem;
     overflow-y: scroll;
 }
