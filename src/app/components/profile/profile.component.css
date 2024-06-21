@@ -1,7 +1,3 @@
-img {
-    height: 1.2rem;
-}
-
 @keyframes slideIn {
     from {
         transform: translateX(-100%);
@@ -11,6 +7,19 @@ img {
         transform: translateX(0);
         opacity: 1;
     }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+img {
+    height: 1.2rem;
 }
 
 .container {
@@ -34,6 +43,17 @@ img {
 
 .description .hobbies {
     animation: slideIn 4s ease-in-out;
+}
+
+.social-media-buttons {
+    margin-top: 2rem; 
+    display: flex; 
+    justify-content: center;
+
+    img {
+        height: 2.25rem;
+        animation: fadeIn 4s ease-in-out;
+    }
 }
 
 a {
