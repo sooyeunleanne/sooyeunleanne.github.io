@@ -72,6 +72,10 @@ h1 {
     margin-top: 20px;
 }
 
+.collage-photos:hover {
+    transform: scale(0.95);
+}
+
 @media (max-width: 1025px) {
     .container {
         margin-left: 0;
