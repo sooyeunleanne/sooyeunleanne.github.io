@@ -13,6 +13,10 @@ button {
     font-style: normal;
 }
 
+button:hover {
+    transform: scale(0.95);
+}
+
 .popup-container {
     height: 35rem;
     max-height: 35rem;
