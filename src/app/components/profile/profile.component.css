@@ -34,15 +34,15 @@ img {
 }
 
 .description .languages {
-    animation: slideIn 2s ease-in-out;
+    animation: slideIn 1.5s ease-in-out;
 }
 
 .description .interests {
-    animation: slideIn 3s ease-in-out;
+    animation: slideIn 2s ease-in-out;
 }
 
 .description .hobbies {
-    animation: slideIn 4s ease-in-out;
+    animation: slideIn 2.5s ease-in-out;
 }
 
 .social-media-buttons {
@@ -52,7 +52,11 @@ img {
 
     img {
         height: 2.25rem;
-        animation: fadeIn 4s ease-in-out;
+        animation: fadeIn 2.5s ease-in-out;
+    }
+
+    img:hover {
+        transform: scale(1.1);
     }
 }
 

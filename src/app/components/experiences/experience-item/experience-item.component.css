@@ -2,6 +2,10 @@
     width: 100%;
 }
 
+.item-container:hover {
+    transform: scale(1.05);
+}
+
 button {
     background-color: transparent;
     border-color: black;
