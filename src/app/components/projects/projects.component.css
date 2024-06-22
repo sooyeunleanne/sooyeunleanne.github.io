@@ -1,5 +1,6 @@
 .item-container {
-    margin-top: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 .item-container:hover {
     transform: scale(1.05);
