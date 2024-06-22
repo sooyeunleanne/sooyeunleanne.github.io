@@ -25,16 +25,6 @@
         "point2": "For students struggling to find post-secondary pathways, my team designed an event week with university program fairs, workplaces visits, and peer support.",
         "point3": "Was awarded Best Overall Project, Most Synchronized and Organized, and Strong Pitch."
     },
-    "StudySpace": {
-        "screenshot": "studyspace.png",
-        "type": "Software Application",
-        "name": "StudySpace",
-        "date": "2023/02",
-        "role": "Full-stack developer",
-        "point1": "Developed a study assistant program with a stopwatch that measures  total study time, music/audio features to help with concentration, and a checklist feature.",
-        "point2": "Built in Processing (a graphical library that uses Java as its primary language) using OOP in a 3-people team.",
-        "githublink": "https://github.com/sooyeunleanne/Body-In-Depth"
-    },
     "Body In Depth": {
         "logo": "bodyindepth.png",
         "screenshot": "bodyindepth2.png",
