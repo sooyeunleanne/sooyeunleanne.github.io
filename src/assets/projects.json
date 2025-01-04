@@ -87,5 +87,44 @@
         "point2": "Developed the user interface using Angular.",
         "point3": "Helped make the user interface compliant with Accessibility for Ontario’s with Disabilities Act (AODA) by making the website accessible with keyboard and speech-viewer.",
         "link": "https://www.clientinformation.mto.gov.on.ca/tssea"
+    },
+    "St. Paul Chung Parish Official Website": {
+        "logo": "spcparish-logo.jpg",
+        "screenshot": "spcS.png",
+        "competition": "St. Paul Chung Parish",
+        "type": "Website",
+        "name": "St. Paul Chung Parish Official Website",
+        "role": "Volunteer Web Developer",
+        "date": "2024/11",
+        "point1": "Developed and maintained the parish website on Wix, achieving a 150% increase in weekly traffic to 200–300 viewers by enhancing accessibility and design.",
+        "point2": "Streamlined communication by posting important notices, event updates and photos, improving community engagement.",
+        "point3": "Collaborated with parish leaders to ensure accurate and timely content delivery, supporting the church’s mission and events.",
+        "link": "https://www.stpaulchung.ca/"
+    },
+    "InvestMint User Interface": {
+        "logo": "investmint-logo.png",
+        "screenshot": "investmintS.png",
+        "type": "Web Application",
+        "name": "InvestMint User Interface",
+        "competition": "InvestMint",
+        "date": "2024/12",
+        "role": "Full-stack developer",
+        "point1": "Independently developed a full-stack MVP website using ReactJS, Express.js, and MongoDB, featuring authentication, HERE API integration, and an automated sign-up process.",
+        "point2": "Streamlined client onboarding, reducing processing time from 3–4 days to 5 minutes, increasing company profits by 30%, and acquiring 7 new clients.",
+        "point3": "Deployed the application on Vercel and Render with secure .env management for API keys and origin whitelisting.",
+        "link": "https://investmint.vercel.app/"
+    },
+    "Haru Journals": {
+        "logo": "haru-logo.png",
+        "screenshot": "harujournalsS.png",
+        "type": "Web Application",
+        "name": "Haru Journals",
+        "competition": "Team Project",
+        "date": "In Progress",
+        "role": "Project Manager, Full-stack developer",
+        "point1": "Led an 8-person team and served as the sole full-stack developer, managing tasks via Notion and delivering the project using ReactJS, MongoDB, Express.js, and Vercel/Render.",
+        "point2": "Designed and implemented key features, including Google/web-specific sign-up, React Calendar, an emotion tracker, and Spotify/image embedding for enhanced journaling.",
+        "point3": "Participated in theme selection and UI/UX design with Figma, ensuring seamless integration for mobile and web platforms. Streamlined development workflows through weekly meetings and GitHub pull requests, ensuring timely deployment and team collaboration.",
+        "link": "https://investmint.vercel.app/"
     }
 }

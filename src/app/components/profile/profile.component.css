@@ -34,7 +34,7 @@ img {
 
 .container {
     margin-left: 2rem;
-    min-width: calc(50%- 1rem);
+    min-width: calc(50% - 4rem);
     padding: 0 1rem; 
     flex: 1;
 }
