@@ -2,7 +2,7 @@
   width: 100vw;
   max-width: 100%;
   aspect-ratio: 1440 / 1024;
-    background-color: pink;
+  background-color: pink;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -16,6 +16,9 @@
   object-fit: cover;
 }
 
+.cinematic-content.balcony-background {
+  background: linear-gradient(180deg, #62C1F8 0%, #84DDF5 29%, #FFFFFF 47%);
+}
 
 .cursor {
     width: 50px;

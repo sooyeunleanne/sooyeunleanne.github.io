@@ -1,11 +1,42 @@
-.cinematic-content {
-    background-color: pink;
-}
-
 img {
     position: absolute;
     height: auto;
 }
+
+/* background */
+
+.sand {
+    width: 101%;
+    bottom: 0;
+}
+
+.ocean {
+    width: 100%;
+    top: 40%;
+}
+
+.lower-tree {
+    width: 50%;
+    bottom: -10%;
+    right: 0;
+}
+
+.upper-tree {
+    width: 30%;
+    bottom: -5%;
+    right: 0;
+}
+
+.window {
+    width: 100%;
+    bottom: 0;
+}
+
+.lighting {
+    opacity: 0.5;
+}
+
+/* Leanne */
 
 .torso {
     left: 19%;
