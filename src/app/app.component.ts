@@ -1,15 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
 import { Component, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ProfileComponent } from './components/profile/profile.component';
-import { ProjectsComponent } from './components/projects/projects.component';
-import { ExperiencesComponent } from './components/experiences/experiences.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { BalconyComponent } from './pages/balcony/balcony.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, ProfileComponent, ProjectsComponent, ExperiencesComponent, FooterComponent],
+  imports: [CommonModule, RouterOutlet, BalconyComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

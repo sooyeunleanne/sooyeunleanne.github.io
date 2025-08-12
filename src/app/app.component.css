@@ -1,3 +1,21 @@
+.cinematic-frame {
+  width: 100vw;
+  max-width: 100%;
+  aspect-ratio: 1440 / 1024;
+  background-color: white; /* content background */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cinematic-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
 .cursor {
     width: 50px;
     height: 50px;
