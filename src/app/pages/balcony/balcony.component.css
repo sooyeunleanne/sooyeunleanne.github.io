@@ -73,3 +73,48 @@ img {
     top: 35%;
     width: 5.972%;
 }
+
+.lighting {
+    top: 0;
+}
+
+/* Profile content */
+h1 {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.5rem, 3.5vw, 2rem);
+    margin: clamp(0.5rem, 4vw, 3rem);
+    letter-spacing: 0.2em;
+    color: white;
+}
+
+p {
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: clamp(0.25rem, 1.25vw, 1rem);
+    font-size: clamp(0.25rem, 1.5vw, 1rem);
+    color: darkslategray;
+}
+
+.talking-box {
+    top: 10%;
+    transform: translateX(-50%);
+    left: 60%;
+    width: 40%;
+}
+
+.intro {
+    position: absolute;
+    transform: translateX(-50%);
+    top: 20%;
+    left: 60%;
+    width: 32.5%;
+}
+
+.social-media {
+    font-size: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.social-media > i {
+    margin: clamp(0.25rem, 0.75vw, 0.5rem);
+}
