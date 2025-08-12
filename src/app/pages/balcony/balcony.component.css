@@ -1,0 +1,44 @@
+.cinematic-content {
+    background-color: pink;
+}
+
+img {
+    position: absolute;
+    height: auto;
+}
+
+.torso {
+    left: 19%;
+    top: 48.047%;
+    width: 14%;
+}
+
+.shirt {
+    left: 20%;
+    top: 46.875%;
+    width: 14%;
+}
+
+.arms-and-hands {
+    left: 14%;
+    top: 18.652%;
+    width: 20%;
+}
+
+.pants {
+    left: 17%;
+    top: 70%;
+    width: 20%;
+}
+
+.hair {
+    left: 14%;
+    top: 30%;
+    width: 14%;
+}
+
+.face {
+    left: 22%;
+    top: 35%;
+    width: 5.972%;
+}
