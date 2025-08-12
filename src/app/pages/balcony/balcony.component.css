@@ -17,13 +17,13 @@ img {
 
 .lower-tree {
     width: 50%;
-    bottom: -10%;
+    bottom: 0;
     right: 0;
 }
 
 .upper-tree {
-    width: 30%;
-    bottom: -5%;
+    width: 40%;
+    bottom: 0%;
     right: 0;
 }
 
