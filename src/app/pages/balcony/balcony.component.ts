@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PageSettingsService } from '../../services/page-settings.service';
 
 @Component({
   selector: 'app-balcony',
@@ -8,6 +9,12 @@ import { Component } from '@angular/core';
   styleUrl: './balcony.component.css'
 })
 export class BalconyComponent {
+  constructor(private pageSettings: PageSettingsService) {}
+
+  ngOnInit() {
+    this.pageSettings.setPage('balcony-background', 'right');
+  }
+
   onInstagramClick() {
     window.open('https://www.instagram.com/sooyeunleanne', '_blank');
   }

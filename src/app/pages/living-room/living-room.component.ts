@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PageSettingsService } from '../../services/page-settings.service';
 
 @Component({
   selector: 'app-living-room',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './living-room.component.css'
 })
 export class LivingRoomComponent {
+  constructor(private pageSettings: PageSettingsService) {}
 
+  ngOnInit() {
+    this.pageSettings.setPage('living-room-background', 'left');
+  }
 }

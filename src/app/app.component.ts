@@ -3,6 +3,8 @@ import { Component, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { BalconyComponent } from './pages/balcony/balcony.component';
 import { HeaderComponent } from "./components/header/header.component";
+import { Observable } from 'rxjs';
+import { PageSettingsService } from './services/page-settings.service';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -12,6 +14,14 @@ import { HeaderComponent } from "./components/header/header.component";
 })
 export class AppComponent {
   title = 'sooyeunleanne.github.io';
+  
+  backgroundClass$: Observable<string>;
+  headerSide$: Observable<'left' | 'right'>;
+
+  constructor(private pageSettings: PageSettingsService) {
+    this.backgroundClass$ = this.pageSettings.background$;
+    this.headerSide$ = this.pageSettings.headerSide$;
+  }
 
   @ViewChild('cursor') cursor!: ElementRef;
 
