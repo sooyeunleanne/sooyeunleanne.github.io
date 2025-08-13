@@ -1,7 +1,41 @@
-<div style="display: flex; justify-content: flex-end;">
-    <div class="header">
-        <button (click)="scrollToProfile()">Profile</button>
-        <button (click)="scrollToProjects()">Projects</button>
-        <button (click)="scrollToExperiences()">Experiences</button>
+<header>
+    <div class="navigation-button" *ngIf="currentRoute !== '/'" (click)="goTo('/')">
+        <div class="navigation-wrapper">
+            <img src="../../../assets/images/navigation/label.svg" alt="Label" class="label" />
+            <div class="navigation-label">
+                <h4>Balcony</h4>
+                <p>Home screen</p>
+            </div>
+        </div>
     </div>
-</div>
+
+    <div class="navigation-button" *ngIf="currentRoute !== '/office'" (click)="goTo('/office')">
+        <div class="navigation-wrapper">
+            <img src="../../../assets/images/navigation/label.svg" alt="Label" class="label" />
+            <div class="navigation-label">
+                <h4>Office</h4>
+                <p>My past projects</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation-button" *ngIf="currentRoute !== '/living-room'" (click)="goTo('/living-room')">
+        <div class="navigation-wrapper">
+            <img src="../../../assets/images/navigation/label.svg" alt="Label" class="label" />
+            <div class="navigation-label">
+                <h4>Living Room</h4>
+                <p>Extracurriculars</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation-button" *ngIf="currentRoute !== '/my-room'" (click)="goTo('/my-room')">
+        <div class="navigation-wrapper">
+            <img src="../../../assets/images/navigation/label.svg" alt="Label" class="label" />
+            <div class="navigation-label">
+                <h4>My Room</h4>
+                <p>Journals and Pics</p>
+            </div>
+        </div>
+    </div>
+</header>

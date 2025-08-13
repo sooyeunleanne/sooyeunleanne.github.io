@@ -1,37 +1,29 @@
-import { ElementRef, Component } from '@angular/core';
+
+import { Component, OnInit, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 
 export class HeaderComponent {
-  constructor(private elementRef: ElementRef) { }
+  currentRoute: string = '';
 
-  scrollToProfile() {
-    const appComponent = this.elementRef.nativeElement.parentElement;
-    const profileComponent = appComponent.querySelector('#profile');
-    if (profileComponent) {
-      profileComponent.scrollIntoView({ behavior: 'smooth' });
-    }
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    // Subscribe to route changes so currentRoute updates dynamically
+    this.router.events.subscribe(() => {
+      this.currentRoute = this.router.url;
+    });
   }
 
-  scrollToProjects() {
-    const appComponent = this.elementRef.nativeElement.parentElement;
-    const projectComponent = appComponent.querySelector('#projects');
-    if (projectComponent) {
-      projectComponent.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  scrollToExperiences() {
-    const appComponent = this.elementRef.nativeElement.parentElement;
-    const experiencesComponent = appComponent.querySelector('#experiences');
-    if (experiencesComponent) {
-      experiencesComponent.scrollIntoView({ behavior: 'smooth' });
-    }
+  goTo(path: string) {
+    this.router.navigate([path]);
   }
 }

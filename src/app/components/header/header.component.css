@@ -1,41 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-
-.header {
-    display: flex; 
-    width: 50%;
+header {
+    width: 19%;
+    z-index: 999;
+    position: absolute;
+    transform: translateY(-50%);
     right: 0;
-    justify-content: space-evenly;
+    top: 50%;
 }
-
-button {
-    font-size: 1.2rem;
+.navigation-button {
+    background: none;
     border: none;
-    background-color: transparent;
-    margin: 1rem;
+    text-align: right;
+    margin-bottom: 1rem;
+
 }
 
-button:hover {
-    font-weight: bold;
-    cursor: pointer;
+.navigation-wrapper {
+    position: relative;
+    display: inline-block;
 }
 
-@media (max-width: 600px) {
-    .header {
-        width: 100%;
-        justify-content: center;
-    }
-    button {
-        font-size: 1rem;
-    }
+.navigation-label {
+    width: 100%;
+    position: absolute;
+    top: 50%;  /* center vertically */
+    left: 50%; /* center horizontally */
+    transform: translate(-50%, -50%);
+    text-align: right;
+    line-height: normal;
 }
 
-@media (max-width: 1024px) {
-    .header {
-        width: 100%;
-        justify-content: space-evenly;
-    }
-    button {
-        font-size: 1rem;
-    }
+.navigation-label > h4, p {
+    margin: 5px;
+    font-size: clamp(0.25rem, 1.125vw, 1rem);
 }
 
+img {
+    width: 100%;
+}
