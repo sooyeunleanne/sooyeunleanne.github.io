@@ -6,10 +6,41 @@ header {
     right: 0;
     top: 50%;
 }
+
+header.left {
+    left: 0;
+}
+
+header.right {
+    right: 0;
+}
+
+
+/* Left side (image right, text left) */
+header.left .navigation-label {
+    text-align: left;
+    left: 40%; /* anchor towards left inside image */
+    transform: translate(-50%, -50%);
+}
+
+header.left .navigation-wrapper img {
+    transform: scaleX(-1);
+}
+
+/* Right side (image left, text right) */
+header.right .navigation-label {
+    text-align: right;
+    right: 40%; /* anchor towards right inside image */
+    transform: translate(50%, -50%); /* flip X offset */
+}
+
+header.right .navigation-wrapper img {
+    transform: scaleX(1);
+}
+
 .navigation-button {
     background: none;
     border: none;
-    text-align: right;
     margin-bottom: 1rem;
 
 }
@@ -20,18 +51,19 @@ header {
 }
 
 .navigation-label {
-    width: 100%;
+    width: auto;
+    min-width: 80%;
     position: absolute;
-    top: 50%;  /* center vertically */
-    left: 50%; /* center horizontally */
-    transform: translate(-50%, -50%);
+    top: 45%;  /* center vertically */
+    padding: clamp(0.25rem, 0.25vw, 1rem);
+    margin: 0;
     text-align: right;
     line-height: normal;
 }
 
 .navigation-label > h4, p {
-    margin: 5px;
-    font-size: clamp(0.25rem, 1.125vw, 1rem);
+    margin: clamp(0px, 1vw, 5px);
+    font-size: clamp(0.3rem, 1.375vw, 1rem);
 }
 
 img {

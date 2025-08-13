@@ -1,5 +1,5 @@
 
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, Input, OnInit, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 })
 
 export class HeaderComponent {
+  @Input() side: 'left' | 'right' = 'right'; // default right
+
   currentRoute: string = '';
 
   constructor(private router: Router) {}
