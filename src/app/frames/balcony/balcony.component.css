@@ -1,10 +1,12 @@
 .frame-container {
     position: relative;      /* now children with absolute are relative to this container */
     width: 60%;             /* or any width you want */
-    margin: 0 auto;          /* center container horizontally */
+    margin: 30px auto;          /* center container horizontally */
     aspect-ratio: 1024 / 675; /* width / height of your original container */
     overflow: hidden;
     background: linear-gradient(180deg, #62C1F8 0%, #84DDF5 29%, #FFFFFF 47%);
+    z-index: 1;
+    border: 3px solid #62C1F8;
 }
 
 img {
@@ -101,10 +103,15 @@ h1 {
 
 p {
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.4rem;
     margin-bottom: clamp(0.25rem, 1.25vw, 1rem);
-    font-size: clamp(0.25rem, 1.5vw, 1rem);
+    font-size: clamp(0.25rem, 1vw, 1rem);
     color: darkslategray;
+}
+
+.uw {
+    margin-left: 5px;
+    height: 1.5rem;
 }
 
 .talking-box {

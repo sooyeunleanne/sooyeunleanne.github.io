@@ -1,0 +1,22 @@
+.profile-description {
+    width: 60%;
+    margin: auto;
+}
+
+.balcony-wrapper {
+    position: relative;
+    margin: 30px auto;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-container > h4 {
+    margin: 0;
+}
+
+.logo {
+    height: 0.9rem;
+}
