@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { PageSettingsService } from '../../services/page-settings.service';
 
 @Component({
-  selector: 'app-balcony',
-  standalone: true,
-  imports: [],
-  templateUrl: './balcony.component.html',
-  styleUrl: './balcony.component.css'
+    selector: 'app-balcony',
+    imports: [],
+    templateUrl: './balcony.component.html',
+    styleUrl: './balcony.component.css'
 })
 export class BalconyComponent {
   constructor(private pageSettings: PageSettingsService) {}

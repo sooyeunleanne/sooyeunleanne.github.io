@@ -5,11 +5,10 @@ import { CommonModule } from '@angular/common';
 import { TimelineModule } from 'primeng/timeline';
 
 @Component({
-  selector: 'app-ec',
-  standalone: true,
-  imports: [LivingRoomComponent, CommonModule, TimelineModule],
-  templateUrl: './ec.component.html',
-  styleUrl: './ec.component.css'
+    selector: 'app-ec',
+    imports: [LivingRoomComponent, CommonModule, TimelineModule],
+    templateUrl: './ec.component.html',
+    styleUrl: './ec.component.css'
 })
 export class EcComponent {
   ecs: any = {};          // full JSON data

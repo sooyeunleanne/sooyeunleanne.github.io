@@ -8,11 +8,10 @@ import { EcComponent } from './components/ec/ec.component';
 import { Observable } from 'rxjs';
 import { PageSettingsService } from './services/page-settings.service';
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet, ProfileComponent, ProjectsComponent, EcComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    imports: [CommonModule, RouterOutlet, ProfileComponent, ProjectsComponent, EcComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'sooyeunleanne.github.io';

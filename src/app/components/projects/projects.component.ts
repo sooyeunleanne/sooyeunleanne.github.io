@@ -4,11 +4,10 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { OfficeComponent } from "../../frames/office/office.component";
 @Component({
-  selector: 'app-projects',
-  standalone: true,
-  imports: [AppModule, CommonModule, OfficeComponent],
-  templateUrl: './projects.component.html',
-  styleUrl: './projects.component.css'
+    selector: 'app-projects',
+    imports: [AppModule, CommonModule, OfficeComponent],
+    templateUrl: './projects.component.html',
+    styleUrl: './projects.component.css'
 })
 
 export class ProjectsComponent {
