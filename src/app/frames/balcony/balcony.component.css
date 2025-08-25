@@ -1,3 +1,12 @@
+.frame-container {
+    position: relative;      /* now children with absolute are relative to this container */
+    width: 60%;             /* or any width you want */
+    margin: 0 auto;          /* center container horizontally */
+    aspect-ratio: 1024 / 675; /* width / height of your original container */
+    overflow: hidden;
+    background: linear-gradient(180deg, #62C1F8 0%, #84DDF5 29%, #FFFFFF 47%);
+}
+
 img {
     position: absolute;
     height: auto;
@@ -6,7 +15,7 @@ img {
 /* background */
 
 .sand {
-    width: 101%;
+    width: 100%;
     bottom: 0;
 }
 
@@ -33,6 +42,8 @@ img {
 }
 
 .lighting {
+    width: 100%;
+    height: 100%;
     opacity: 0.5;
 }
 

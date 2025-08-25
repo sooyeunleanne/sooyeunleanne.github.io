@@ -1,15 +1,8 @@
 <div class="cursor" [style.top]="top" [style.left]="left" [ngClass]="{'expand':expand}" #cursor> </div>
 
-<div class="cinematic-frame">
-    <div class="cinematic-content" [ngClass]="backgroundClass$ | async">
-        <app-header [side]="(headerSide$ | async) || 'right'"></app-header>
-        <router-outlet></router-outlet>
-    </div>
-</div>
 
-
-<!-- <app-profile (mouseover)="resetCursorStyle()" id="profile"></app-profile>
-
+<app-profile (mouseover)="resetCursorStyle()" id="profile"></app-profile>
+<!-- 
 <app-projects  (mouseover)="changeCursorStyle('rgba(179, 208, 255, 0.3)')" id="projects"></app-projects>
 
 <app-experiences (mouseover)="changeCursorStyle('rgba(255, 209, 236, 0.3)')" id="experiences"></app-experiences> -->

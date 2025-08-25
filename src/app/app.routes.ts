@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { BalconyComponent } from './pages/balcony/balcony.component';
-import { OfficeComponent } from './pages/office/office.component';
-import { LivingRoomComponent } from './pages/living-room/living-room.component';
-import { MyRoomComponent } from './pages/my-room/my-room.component';
+import { BalconyComponent } from './frames/balcony/balcony.component';
+import { OfficeComponent } from './frames/office/office.component';
+import { LivingRoomComponent } from './frames/living-room/living-room.component';
+import { MyRoomComponent } from './frames/my-room/my-room.component';
 
 export const routes: Routes = [
   { path: '', component: BalconyComponent },
