@@ -1,7 +1,87 @@
-.item-container {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+h1 {
+    margin-top: 5rem;
+    margin-left: 3rem;
+    margin-bottom: 0;
+    color: #7f6c87;
 }
-.item-container:hover {
-    transform: scale(1.05);
+
+/* .office-wrapper {
+    background-color: #7f6c87;
+} */
+
+.project-page {
+    display: flex;
+    margin-top: 3rem;
+    flex-direction: row;
+}
+
+.office {
+    flex: 1.5;      /* takes 2 parts of total space */
+    min-width: 300px; /* optional: prevent shrinking too much */
+}
+
+.project-container {
+    flex: 2;      /* takes 1 part of total space */
+    min-width: 200px; /* optional: prevent shrinking */
+}
+
+.project-logo {
+    height: 2.5rem;
+    cursor: pointer;
+    font-family: "Source Code Pro", monospace;
+}
+
+.project-logo-bar {
+    padding: 2rem;
+    padding-top: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    width: calc(100% - 6rem);
+    margin-right: 2rem;
+    overflow-x: scroll;
+}
+
+.award {
+    font-size: 0.9rem;
+    background-color: rgba(253, 255, 163, 0.5);
+}
+
+.project-date {
+    font-size: 0.7rem;
+}
+
+.project-description {
+    border: 1px solid grey;
+    margin-right: 2rem;
+    padding: 2rem;
+    width: calc(100% - 6rem);
+    aspect-ratio: 5 / 3.5;
+    overflow-y: scroll;
+}
+
+.project-description > p {
+    line-height: 2;
+}
+
+.tech-stack-logo {
+    height: 1.25rem;
+}
+
+.tech-stack {
+    font-family: "Source Code Pro", monospace;
+}
+
+.link {
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.screenshot {
+    max-width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

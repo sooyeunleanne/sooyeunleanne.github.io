@@ -1,0 +1,69 @@
+.frame-container {
+    position: relative;      /* now children with absolute are relative to this container */
+    width: calc(100% - 60px);             /* or any width you want */
+    margin: 30px;
+    aspect-ratio: 1 / 1; /* width / height of your original container */
+    overflow: hidden;
+    background: #C2CACE;
+    z-index: 1;
+    border: 1px solid darkgray;
+}
+
+img {
+    position: absolute;
+    height: auto;
+}
+
+.clock-shadow {
+    width: 50%;
+    top: 10%;
+    right: 25%;
+}
+
+.clock {
+    width: 20%;
+    top: 10%;
+    right: 20%;
+}
+
+.computer {
+    width: 50%;
+    top: 40%;
+    left: 15%;
+}
+
+.desk {
+    top: 40%;
+    left: -25%;
+    width: 150%;
+}
+
+.keyboard {
+    width: 40%;
+    left: 30%;
+    top: 80%;
+}
+
+.leanne {
+    width: 50%;
+    left: 40%;
+    top: 47%;
+}
+
+.light-from-screen {
+    width: 100%;
+    mix-blend-mode: color-dodge;
+}
+
+.main-shadow {
+    mix-blend-mode: multiply;
+    width: 100%;
+    top: 25%;
+    height: 75%;
+}
+
+.chair {
+    width: 30%;
+    bottom: 0;
+    right: 5%;
+}

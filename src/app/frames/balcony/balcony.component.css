@@ -6,7 +6,7 @@
     overflow: hidden;
     background: linear-gradient(180deg, #62C1F8 0%, #84DDF5 29%, #FFFFFF 47%);
     z-index: 1;
-    border: 3px solid #62C1F8;
+    border: 1px solid #62C1F8;
 }
 
 img {

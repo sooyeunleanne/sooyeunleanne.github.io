@@ -3,11 +3,6 @@
     margin: auto;
 }
 
-.balcony-wrapper {
-    position: relative;
-    margin: 30px auto;
-}
-
 .flex-container {
     display: flex;
     justify-content: space-between;

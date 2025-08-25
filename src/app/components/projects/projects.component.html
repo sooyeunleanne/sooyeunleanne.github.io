@@ -1,13 +1,55 @@
-<div class="project-container" style="text-align: center; padding-top: 5rem;">
-    <h1 style="color: #2659ab">Projects</h1>
-    <h2>Software and Design Projects</h2>
-    <div class="grid-container" >
-        <div class="item-container" *ngFor="let project of projects">
-            <app-project-item (popupOpen)="handlePopupOpen($event)" [project]="project"></app-project-item>
+<h1>Projects</h1>
+<div class="project-page">
+    <app-office class="office" />
+    
+
+    <div class="project-container">
+        <div class="project-logo-bar">
+            <div *ngFor="let project of projects" (click)="openProjectDescription(project.name)">
+                <img *ngIf="project.logo !== undefined" 
+                    [src]="'../../../assets/images/projects/logo/' + project.logo" 
+                    alt="project logo" 
+                    class="project-logo" />
+                <span *ngIf="project.logo === undefined" class="project-logo">{{project.name}}</span>
+                <p class="project-date">{{project.date}}</p>
+            </div>
+        </div>
+
+        <div class="project-description" *ngIf="openProject !== null">
+
+            <!-- Project name and links -->
+            <h2>
+                {{openProject.name}}
+                <i *ngIf="openProject.link" class="fa-solid fa-link" (click)="onLinkClick(openProject.link)"></i>
+                <i *ngIf="openProject.githubLink" class="fa-brands fa-github" (click)="onGithubLinkClick(openProject.githubLink)"></i>
+                <img *ngIf="openProject.devpostLink" class="link" src="../../../assets/images/projects/icon/devpost.svg" (click)="onDevpostLinkClick(openProject.devpostLink)"/>
+            </h2>
+
+            <p *ngIf="openProject.award" class="award">🏆 <i>{{openProject.award}}</i> at {{openProject.competition}}</p>
+
+            <!-- Tech Stack -->
+            <span *ngFor="let techStack of openProject.techStack; let i = index; let last = last" class="tech-stack">
+                <img *ngIf="!showText[techStack]" 
+                    [src]="'../../../assets/images/profile/logo/' + techStack + '.png'" 
+                    [alt]="techStack" 
+                    (error)="handleImageError($event)"
+                    class="tech-stack-logo" />
+                <span *ngIf="showText[techStack]"> {{techStack}}</span>
+                <span *ngIf="!last">, </span>
+            </span>
+
+            <!-- Brief point -->
+            <p [innerHTML]="openProject.point"></p>
+
+            <!-- Screenshot -->
+            <img
+                [src]="'../../../assets/images/projects/screenshot/' + openProject.screenshot" 
+                [alt]="openProject.screenshot" 
+                class="screenshot" />
+
+            <!-- Detailed description -->
+            <p [innerHTML]="openProject.description"></p>
         </div>
     </div>
-
-    <div *ngFor="let project of projects">
-        <app-project-popup *ngIf="popupList[project.name]" (popupClose)="handlePopupClose($event)" [project]="project"></app-project-popup>
-    </div>
+    
 </div>
