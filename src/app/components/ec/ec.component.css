@@ -21,57 +21,88 @@ h1 {
     min-width: 200px; /* optional: prevent shrinking */
     position: relative;
     margin-left: 20px;
-    border-left: 2px solid #ccc;
     padding-left: 20px;
 }
 
-.timeline-organization {
-    margin-bottom: 40px;
+.ec-logo-bar {
+    border-top: 1px solid grey;
+    padding: 2rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    width: calc(100% - 6rem);
+    margin-right: 2rem;
+    overflow-x: scroll;
+    white-space: nowrap; /* keep items in one row */
+}
+
+
+.ec-logo-bar div {
+    cursor: pointer;
+    flex: 0 0 auto; /* prevent shrinking */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ec-logo-bar div.active {
+    position: relative; 
+}
+
+
+.ec-logo-bar div.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px; /* thickness of the shadow line */
+    background: rgba(0, 0, 0, 0.3); /* shadow color */
+    border-radius: 2px; /* soft edges for the line */
+}
+
+.ec-logo {
+    height: 2.5rem;
+    cursor: pointer;
+    font-family: "Source Code Pro", monospace;
+}
+
+.ec-date {
+    font-size: 0.7rem;
 }
 
 .org-header {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
 }
 
 .org-logo {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    border-radius: 50%;
+    height: 6rem;
+}
+
+.ec-timeline {
+    margin-top: 20px;
 }
 
 .timeline {
-  position: relative;
-  margin: 20px 0;
-  padding-left: 40px;
-  border-left: 3px solid #798f5b;
+    position: relative;
+    margin-left: 20px;
+    border-left: 2px solid #ccc;
 }
 
 .timeline-item {
-  margin-bottom: 30px;
-  position: relative;
+    position: relative;
+    padding: 10px 0 10px 20px;
 }
 
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -9px;
-  top: 0;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: #798f5b;
+.timeline-dot {
+    position: absolute;
+    left: -7px;
+    top: 12px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #007bff;
 }
 
-.timeline-date {
-  font-size: 14px;
-  color: gray;
-}
-
-.timeline-title {
-  font-weight: bold;
-  font-size: 16px;
+.timeline-content {
+    padding-left: 10px;
 }

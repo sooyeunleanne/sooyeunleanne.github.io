@@ -1,26 +1,30 @@
 import { Component } from '@angular/core';
-import { LivingRoomComponent } from '../../frames/living-room/living-room.component';
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-
-import { TimelineModule } from 'primeng/timeline';
+import { LivingRoomComponent } from '../../frames/living-room/living-room.component';
 
 @Component({
-    selector: 'app-ec',
-    imports: [LivingRoomComponent, TimelineModule],
-    templateUrl: './ec.component.html',
-    styleUrl: './ec.component.css'
+  selector: 'app-ec',
+  standalone: true,
+  imports: [CommonModule, LivingRoomComponent],
+  templateUrl: './ec.component.html',
+  styleUrls: ['./ec.component.css']
 })
 export class EcComponent {
-  ecs: any = {};          // full JSON data
+  ecs: any = {};
   orgKeys: string[] = [];
+  openOrgKey: string | null = null;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.http.get<any>('assets/ec.json').subscribe(data => {
       this.ecs = data;
-      this.orgKeys = Object.keys(data).reverse(); // keys in reverse order
-      console.log(this.ecs);
+      this.orgKeys = Object.keys(data);
     });
+  }
+
+  openEcTimeline(orgKey: string) {
+    this.openOrgKey = orgKey;
   }
 }

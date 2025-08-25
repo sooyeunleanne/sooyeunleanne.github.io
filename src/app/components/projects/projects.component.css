@@ -78,7 +78,7 @@ h1 {
     margin-right: 2rem;
     padding: 2rem;
     width: calc(100% - 6rem);
-    aspect-ratio: 5 / 3.5;
+    aspect-ratio: 4 / 2.8;
     overflow-y: scroll;
 }
 

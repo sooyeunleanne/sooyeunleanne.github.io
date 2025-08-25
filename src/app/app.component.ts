@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild, HostListener } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { EcComponent } from './components/ec/ec.component';
@@ -9,7 +8,7 @@ import { Observable } from 'rxjs';
 import { PageSettingsService } from './services/page-settings.service';
 @Component({
     selector: 'app-root',
-    imports: [CommonModule, RouterOutlet, ProfileComponent, ProjectsComponent, EcComponent],
+    imports: [CommonModule, ProfileComponent, ProjectsComponent, EcComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
