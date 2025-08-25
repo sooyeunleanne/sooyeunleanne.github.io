@@ -9,9 +9,9 @@
 }
 
 .frame-wrapper {
-    background: grey; /* top & bottom area color */
+    background: linear-gradient(180deg, grey 0%, #C2CACE 15%, #C2CACE 85%, grey 100%);; /* top & bottom area color */
     margin: 0 auto;
-    padding: 4rem 0; /* top & bottom spacing for grey */
+    padding: 5rem 0; /* top & bottom spacing for grey */
     width: calc(100% - 60px);
 }
 

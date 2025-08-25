@@ -5,7 +5,9 @@
 
     <div class="project-container">
         <div class="project-logo-bar">
-            <div *ngFor="let project of projects" (click)="openProjectDescription(project.name)">
+            <div *ngFor="let project of projects" 
+                (click)="openProjectDescription(project.name)"
+                [class.active]="openProject?.name === project.name">
                 <img *ngIf="project.logo !== undefined" 
                     [src]="'../../../assets/images/projects/logo/' + project.logo" 
                     alt="project logo" 

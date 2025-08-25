@@ -7,10 +7,6 @@ h1 {
     color: #7f6c87;
 }
 
-/* .office-wrapper {
-    background-color: #7f6c87;
-} */
-
 .project-page {
     display: flex;
     margin-top: 3rem;
@@ -27,21 +23,44 @@ h1 {
     min-width: 200px; /* optional: prevent shrinking */
 }
 
-.project-logo {
-    height: 2.5rem;
-    cursor: pointer;
-    font-family: "Source Code Pro", monospace;
-}
-
 .project-logo-bar {
+    border-top: 1px solid grey;
     padding: 2rem;
-    padding-top: 0;
+    padding-top: 2rem;
     display: flex;
     flex-direction: row;
     gap: 50px;
     width: calc(100% - 6rem);
     margin-right: 2rem;
     overflow-x: scroll;
+    white-space: nowrap; /* keep items in one row */
+}
+
+.project-logo-bar div {
+    cursor: pointer;
+    flex: 0 0 auto; /* prevent shrinking */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-logo-bar div.active {
+    position: relative; 
+}
+
+.project-logo-bar div.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px; /* thickness of the shadow line */
+    background: rgba(0, 0, 0, 0.3); /* shadow color */
+    border-radius: 2px; /* soft edges for the line */
+}
+
+.project-logo {
+    height: 2.5rem;
+    cursor: pointer;
+    font-family: "Source Code Pro", monospace;
 }
 
 .award {
