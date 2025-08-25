@@ -1,12 +1,18 @@
 .frame-container {
     position: relative;      /* now children with absolute are relative to this container */
-    width: calc(100% - 60px);             /* or any width you want */
-    margin: 30px;
+    margin: 0 auto;
     aspect-ratio: 1 / 1; /* width / height of your original container */
     overflow: hidden;
     background: #C2CACE;
     z-index: 1;
     border: 1px solid darkgray;
+}
+
+.frame-wrapper {
+    background: grey; /* top & bottom area color */
+    margin: 0 auto;
+    padding: 4rem 0; /* top & bottom spacing for grey */
+    width: calc(100% - 60px);
 }
 
 img {
