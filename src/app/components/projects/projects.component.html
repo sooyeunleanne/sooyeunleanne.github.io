@@ -1,58 +1,77 @@
 <h1>Projects</h1>
 <div class="project-page">
-    <app-office class="office" />
-    
+  <app-office class="office" />
 
-    <div class="project-container">
-        <div class="project-logo-bar">
-            <div *ngFor="let project of projects" 
-                (click)="openProjectDescription(project?.name)"
-                [class.active]="openProject?.name === project?.name">
-                <img *ngIf="project?.logo !== undefined" 
-                    [src]="'../../../assets/images/projects/logo/' + project?.logo" 
-                    alt="project logo" 
-                    class="project-logo" />
-                <span *ngIf="project?.logo === undefined" class="project-logo">{{project?.name}}</span>
-                <p class="project-date">{{project?.date}}</p>
-            </div>
-        </div>
 
-        <div class="project-description" *ngIf="openProject !== null">
-
-            <!-- Project name and links -->
-            <h2>
-                {{openProject?.name}}
-                <i *ngIf="openProject?.link" class="fa-solid fa-link link" (click)="onLinkClick(openProject?.link)"></i>
-                <i *ngIf="openProject?.githubLink" class="fa-brands fa-github link" (click)="onGithubLinkClick(openProject?.githubLink)"></i>
-                <img *ngIf="openProject?.devpostLink" class="link" src="../../../assets/images/projects/icon/devpost.svg" (click)="onDevpostLinkClick(openProject?.devpostLink)"/>
-            </h2>
-
-            <p *ngIf="openProject?.award" class="award">🏆 <i>{{openProject?.award}}</i> at {{openProject.competition}}</p>
-
-            <!-- Tech Stack -->
-            <span *ngFor="let techStack of openProject?.techStack; let i = index; let last = last" class="tech-stack">
-                <img *ngIf="!showText[techStack]" 
-                    [src]="'../../../assets/images/profile/logo/' + techStack + '.png'" 
-                    [alt]="techStack" 
-                    (error)="handleImageError($event)"
-                    class="tech-stack-logo" />
-                <span *ngIf="showText[techStack]"> {{techStack}}</span>
-                <span *ngIf="!last">, </span>
-            </span>
-
-            <!-- Brief point -->
-            <p [innerHTML]="openProject?.point"></p>
-
-            <!-- Screenshot -->
+  <div class="project-container">
+    <div class="project-logo-bar">
+      @for (project of projects; track project) {
+        <div
+          (click)="openProjectDescription(project?.name)"
+          [class.active]="openProject?.name === project?.name">
+          @if (project?.logo !== undefined) {
             <img
-                *ngIf="openProject?.screenshot !== null"
-                [src]="'../../../assets/images/projects/screenshot/' + openProject?.screenshot" 
-                [alt]="openProject?.screenshot" 
-                class="screenshot" />
-
-            <!-- Detailed description -->
-            <p [innerHTML]="openProject?.description"></p>
+              [src]="'../../../assets/images/projects/logo/' + project?.logo"
+              alt="project logo"
+              class="project-logo" />
+          }
+          @if (project?.logo === undefined) {
+            <span class="project-logo">{{project?.name}}</span>
+          }
+          <p class="project-date">{{project?.date}}</p>
         </div>
+      }
     </div>
-    
+
+    @if (openProject !== null) {
+      <div class="project-description">
+        <!-- Project name and links -->
+        <h2>
+          {{openProject?.name}}
+          @if (openProject?.link) {
+            <i class="fa-solid fa-link link" (click)="onLinkClick(openProject?.link)"></i>
+          }
+          @if (openProject?.githubLink) {
+            <i class="fa-brands fa-github link" (click)="onGithubLinkClick(openProject?.githubLink)"></i>
+          }
+          @if (openProject?.devpostLink) {
+            <img class="link" src="../../../assets/images/projects/icon/devpost.svg" (click)="onDevpostLinkClick(openProject?.devpostLink)"/>
+          }
+        </h2>
+        @if (openProject?.award) {
+          <p class="award">🏆 <i>{{openProject?.award}}</i> at {{openProject.competition}}</p>
+        }
+        <!-- Tech Stack -->
+        @for (techStack of openProject?.techStack; track techStack; let i = $index; let last = $last) {
+          <span class="tech-stack">
+            @if (!showText[techStack]) {
+              <img
+                [src]="'../../../assets/images/profile/logo/' + techStack + '.png'"
+                [alt]="techStack"
+                (error)="handleImageError($event)"
+                class="tech-stack-logo" />
+            }
+            @if (showText[techStack]) {
+              <span> {{techStack}}</span>
+            }
+            @if (!last) {
+              <span>, </span>
+            }
+          </span>
+        }
+        <!-- Brief point -->
+        <p [innerHTML]="openProject?.point"></p>
+        <!-- Screenshot -->
+        @if (openProject?.screenshot !== null) {
+          <img
+            [src]="'../../../assets/images/projects/screenshot/' + openProject?.screenshot"
+            [alt]="openProject?.screenshot"
+            class="screenshot" />
+        }
+        <!-- Detailed description -->
+        <p [innerHTML]="openProject?.description"></p>
+      </div>
+    }
+  </div>
+
 </div>

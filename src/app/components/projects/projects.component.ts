@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { AppModule } from '../../app.module';
-import { CommonModule } from '@angular/common';
+
 import { HttpClient } from '@angular/common/http';
 import { OfficeComponent } from "../../frames/office/office.component";
 @Component({
     selector: 'app-projects',
-    imports: [AppModule, CommonModule, OfficeComponent],
+    imports: [AppModule, OfficeComponent],
     templateUrl: './projects.component.html',
     styleUrl: './projects.component.css'
 })
