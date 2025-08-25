@@ -3,14 +3,14 @@ import { Component, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProjectsComponent } from './components/projects/projects.component';
-import { ExperiencesComponent } from './components/experiences/experiences.component';
+import { EcComponent } from './components/ec/ec.component';
 
 import { Observable } from 'rxjs';
 import { PageSettingsService } from './services/page-settings.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, ProfileComponent, ProjectsComponent, ExperiencesComponent],
+  imports: [CommonModule, RouterOutlet, ProfileComponent, ProjectsComponent, EcComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

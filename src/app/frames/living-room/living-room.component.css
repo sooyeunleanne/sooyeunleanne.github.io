@@ -1,0 +1,76 @@
+.frame-container {
+    position: relative;      /* now children with absolute are relative to this container */
+    width: 100%;             /* or any width you want */
+    margin: 0 auto;
+    aspect-ratio: 1024 / 675; /* width / height of your original container */
+    overflow: hidden;
+    background: #F6FFF4;
+    z-index: 1;
+}
+
+
+.frame-wrapper {
+    background: #f8ff9c;
+    margin: 0 auto;
+    padding: 10rem 0; /* top & bottom spacing for grey */
+    width: calc(100% - 60px);
+}
+
+img {
+    position: absolute;
+    height: auto;
+}
+
+.wall-dividers {
+    width: 100%;
+}
+
+.floor {
+    top: 76%;
+    left: -13%;
+}
+
+.sofa-1 {
+    width: 80%;
+    top: 40%;
+    left: 20%;
+}
+
+.sofa {
+    width: 80%;
+    top: 38%;
+    left: 22%;  
+}
+
+.window {
+    width: 22.5%;
+    top: -5%;
+}
+
+.leanne {
+    width: 60%;
+    left: 37%;
+    top: 28%;
+}
+
+.tree {
+    width: 30%;
+    top: 42.5%;
+    left: 4%;
+}
+
+.lighting {
+    width: 100%;
+}
+
+.table {
+    width: 60%;
+    left: 35%;
+    top: 75%;
+}
+
+.matcha {
+    width: 5%;
+    right: 20%;
+    top: 75%;
+}

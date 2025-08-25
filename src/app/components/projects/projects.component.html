@@ -6,14 +6,14 @@
     <div class="project-container">
         <div class="project-logo-bar">
             <div *ngFor="let project of projects" 
-                (click)="openProjectDescription(project.name)"
-                [class.active]="openProject?.name === project.name">
-                <img *ngIf="project.logo !== undefined" 
-                    [src]="'../../../assets/images/projects/logo/' + project.logo" 
+                (click)="openProjectDescription(project?.name)"
+                [class.active]="openProject?.name === project?.name">
+                <img *ngIf="project?.logo !== undefined" 
+                    [src]="'../../../assets/images/projects/logo/' + project?.logo" 
                     alt="project logo" 
                     class="project-logo" />
-                <span *ngIf="project.logo === undefined" class="project-logo">{{project.name}}</span>
-                <p class="project-date">{{project.date}}</p>
+                <span *ngIf="project?.logo === undefined" class="project-logo">{{project?.name}}</span>
+                <p class="project-date">{{project?.date}}</p>
             </div>
         </div>
 
@@ -21,16 +21,16 @@
 
             <!-- Project name and links -->
             <h2>
-                {{openProject.name}}
-                <i *ngIf="openProject.link" class="fa-solid fa-link" (click)="onLinkClick(openProject.link)"></i>
-                <i *ngIf="openProject.githubLink" class="fa-brands fa-github" (click)="onGithubLinkClick(openProject.githubLink)"></i>
-                <img *ngIf="openProject.devpostLink" class="link" src="../../../assets/images/projects/icon/devpost.svg" (click)="onDevpostLinkClick(openProject.devpostLink)"/>
+                {{openProject?.name}}
+                <i *ngIf="openProject?.link" class="fa-solid fa-link link" (click)="onLinkClick(openProject?.link)"></i>
+                <i *ngIf="openProject?.githubLink" class="fa-brands fa-github link" (click)="onGithubLinkClick(openProject?.githubLink)"></i>
+                <img *ngIf="openProject?.devpostLink" class="link" src="../../../assets/images/projects/icon/devpost.svg" (click)="onDevpostLinkClick(openProject?.devpostLink)"/>
             </h2>
 
-            <p *ngIf="openProject.award" class="award">🏆 <i>{{openProject.award}}</i> at {{openProject.competition}}</p>
+            <p *ngIf="openProject?.award" class="award">🏆 <i>{{openProject?.award}}</i> at {{openProject.competition}}</p>
 
             <!-- Tech Stack -->
-            <span *ngFor="let techStack of openProject.techStack; let i = index; let last = last" class="tech-stack">
+            <span *ngFor="let techStack of openProject?.techStack; let i = index; let last = last" class="tech-stack">
                 <img *ngIf="!showText[techStack]" 
                     [src]="'../../../assets/images/profile/logo/' + techStack + '.png'" 
                     [alt]="techStack" 
@@ -41,16 +41,17 @@
             </span>
 
             <!-- Brief point -->
-            <p [innerHTML]="openProject.point"></p>
+            <p [innerHTML]="openProject?.point"></p>
 
             <!-- Screenshot -->
             <img
-                [src]="'../../../assets/images/projects/screenshot/' + openProject.screenshot" 
-                [alt]="openProject.screenshot" 
+                *ngIf="openProject?.screenshot !== null"
+                [src]="'../../../assets/images/projects/screenshot/' + openProject?.screenshot" 
+                [alt]="openProject?.screenshot" 
                 class="screenshot" />
 
             <!-- Detailed description -->
-            <p [innerHTML]="openProject.description"></p>
+            <p [innerHTML]="openProject?.description"></p>
         </div>
     </div>
     
