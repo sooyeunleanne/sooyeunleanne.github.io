@@ -1,0 +1,77 @@
+h1 {
+    margin-top: 5rem;
+    margin-left: 3rem;
+    margin-bottom: 0;
+    color: #798f5b;
+}
+
+.ec-page {
+    display: flex;
+    margin-top: 3rem;
+    flex-direction: row;
+}
+
+.living-room {
+    flex: 1.5;      /* takes 2 parts of total space */
+    min-width: 300px; /* optional: prevent shrinking too much */
+}
+
+.ec-container {
+    flex: 2;      /* takes 1 part of total space */
+    min-width: 200px; /* optional: prevent shrinking */
+    position: relative;
+    margin-left: 20px;
+    border-left: 2px solid #ccc;
+    padding-left: 20px;
+}
+
+.timeline-organization {
+    margin-bottom: 40px;
+}
+
+.org-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.org-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.timeline {
+  position: relative;
+  margin: 20px 0;
+  padding-left: 40px;
+  border-left: 3px solid #798f5b;
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -9px;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #798f5b;
+}
+
+.timeline-date {
+  font-size: 14px;
+  color: gray;
+}
+
+.timeline-title {
+  font-weight: bold;
+  font-size: 16px;
+}
