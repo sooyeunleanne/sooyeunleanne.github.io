@@ -41,16 +41,14 @@
             <h2>{{ ecs[openOrgKey].organization }}</h2>
             </div>
 
-            <div class="ec-timeline">
-                <div class="timeline">
+            <div class="timeline">
                 <div *ngFor="let role of ecs[openOrgKey].roles" class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                     <div class="timeline-date">{{ role.startdate }} – {{ role.enddate }}</div>
-                    <div class="timeline-title">{{ role.title }}</div>
+                    <h4 class="timeline-title">{{ role.title }}</h4>
                     <div *ngIf="role.point" [innerHTML]="role.point"></div>
                     </div>
-                </div>
                 </div>
             </div>
             <!-- <p-timeline [value]="ecs[openOrgKey].roles" layout="vertical">

@@ -21,6 +21,14 @@ export class EcComponent {
     this.http.get<any>('assets/ec.json').subscribe(data => {
       this.ecs = data;
       this.orgKeys = Object.keys(data);
+      // Sort each organization's roles so latest startdate comes first
+      this.orgKeys.forEach(orgKey => {
+        this.ecs[orgKey].roles.sort((a: any, b: any) => {
+          const dateA = new Date(a.startdate);
+          const dateB = new Date(b.startdate);
+          return dateB.getTime() - dateA.getTime(); // latest first
+        });
+      });
     });
   }
 

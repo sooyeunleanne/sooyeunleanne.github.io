@@ -10,7 +10,7 @@
 
 
 .frame-wrapper {
-    background: #f8ff9c;
+    background: linear-gradient(180deg, #a8fff1 0%, #fffdcc 15%, #fffdcc 85%, #a8fff1 100%);; /* top & bottom area color */
     margin: 0 auto;
     padding: 10rem 0; /* top & bottom spacing for grey */
     width: calc(100% - 60px);
