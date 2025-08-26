@@ -86,6 +86,7 @@ h1 {
     width: calc(100% - 6rem);
     aspect-ratio: 4 / 2.65;
     border: 1px grey solid;
+    background-color: #fefefe;
     overflow-y: scroll;
 }
 

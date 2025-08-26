@@ -75,6 +75,7 @@ h1 {
 }
 
 .project-description {
+    background-color: #fefefe;
     border: 1px solid grey;
     margin-right: 2rem;
     padding: 2rem;
