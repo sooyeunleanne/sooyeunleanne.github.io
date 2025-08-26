@@ -25,12 +25,17 @@ button.active {
 
 .social-media {
     display: flex;
-    font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+    font-size: clamp(0.9rem, 3vw, 1.25rem);
     gap: 1rem;
 }
 
-.social-media > i{
+.social-media > i {
     padding: clamp(0.5rem, 2vw, 1rem);
+    cursor: pointer;
+}
+
+.social-media > i:hover {
+    transform: scale(110%);
 }
 
 /* Responsive Media Queries for Header */
@@ -46,6 +51,11 @@ button.active {
         padding: 0.5rem;
         margin-left: 0.5rem;
     }
+
+    .social-media > i {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
 }
 
 /* Extra small devices */
@@ -59,6 +69,11 @@ button.active {
         padding: 0.4rem;
         margin-left: 0.25rem;
     }
+
+    .social-media > i {
+        font-size: 0.8rem;
+        padding: 0.4rem;
+    }
 }
 
 /* Large screens */
@@ -67,5 +82,10 @@ button.active {
         font-size: 1.4rem;
         padding: 1.2rem;
         margin-left: 2.5rem;
+    }
+
+    .social-media > i {
+        font-size: 1.4rem;
+        padding: 1.2rem;
     }
 }
