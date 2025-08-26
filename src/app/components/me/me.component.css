@@ -24,7 +24,7 @@ h1 {
     border-radius: 1rem;
     width: 50%;
     max-width: 90%;
-    max-height: 90%;
+    max-height: 70vh;
     overflow-y: auto;
     position: relative;
 }
