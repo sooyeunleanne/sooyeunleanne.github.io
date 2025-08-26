@@ -24,7 +24,7 @@ h1 {
     background: #fff;
     padding: clamp(1rem, 3vw, 2rem);
     border-radius: clamp(0.5rem, 2vw, 1rem);
-    width: clamp(90%, 50vw, 50%);
+    width: clamp(90%, 60vw, 50%);
     max-width: 95%;
     max-height: 85vh;
     overflow-y: auto;
@@ -305,8 +305,9 @@ h1 {
 /* Large screens */
 @media (min-width: 1441px) {
     .popup {
-        width: 40%;
-        max-width: 40%;
+        width: 60%;
+        max-width: 60%;
+        max-height: 50vh;
     }
     
     .mosaic-grid {
