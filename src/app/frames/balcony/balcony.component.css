@@ -1,0 +1,361 @@
+.frame-container {
+    position: relative;      /* now children with absolute are relative to this container */
+    width: 90%;             /* responsive width */
+    max-width: 800px;       /* maximum width for large screens */
+    margin: clamp(20px, 4vw, 40px) auto;          /* responsive margin */
+    aspect-ratio: 1024 / 675; /* width / height of your original container */
+    overflow: hidden;
+    background: linear-gradient(180deg, #62C1F8 0%, #84DDF5 29%, #FFFFFF 47%);
+    z-index: 1;
+    border: 1px solid #62C1F8;
+}
+
+img {
+    position: absolute;
+    height: auto;
+}
+
+/* background */
+.background {
+    opacity: 0;
+    animation: fadeIn 1s forwards; /* fade in over 1s */
+}
+
+.sand {
+    width: 100%;
+    bottom: 0;
+}
+
+.ocean {
+    width: 100%;
+    top: 40%;
+    animation: ocean-waves 3s ease-in-out infinite alternate;
+}
+
+.lower-tree {
+    width: 50%;
+    bottom: 0;
+    right: 0;
+    animation: shake-lower-tree 3s ease-in-out infinite alternate;
+}
+
+.upper-tree {
+    width: 40%;
+    bottom: 0%;
+    right: 0;
+    animation: shake-upper-tree 3s ease-in-out infinite alternate;
+}
+
+.window {
+    width: 100%;
+    bottom: 0;
+}
+
+.background .lighting {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+
+@keyframes ocean-waves {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, -2px);
+    }
+}
+
+@keyframes shake-upper-tree {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(3px, 3px) rotate(1deg);
+    }
+}
+
+@keyframes shake-lower-tree {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(-3px, -3px) rotate(-0.5deg);
+    }
+}
+
+/* Leanne */
+
+.leanne {
+    opacity: 0;
+    animation: fadeIn 2s forwards; /* fade in over 1s */
+    animation-delay: 1s;
+}
+
+.torso {
+    left: 19%;
+    top: 48.047%;
+    width: 14%;
+    animation: stretch-torso 2s ease-in-out infinite alternate;
+}
+
+.shirt {
+    left: 20%;
+    top: 46.875%;
+    width: 14%;
+    animation: stretch-shirt 2s ease-in-out infinite alternate;
+}
+
+.arms-and-hands {
+    left: 14%;
+    top: 18.652%;
+    width: 20%;
+    animation: stretch-arms 2s ease-in-out infinite alternate;
+}
+
+.pants {
+    left: 17%;
+    top: 70%;
+    width: 20%;
+    animation: stretch-pants 2s ease-in-out infinite alternate;
+}
+
+.hair {
+    left: 14%;
+    top: 30%;
+    width: 14%;
+    animation: stretch-hair 2s ease-in-out infinite alternate;
+}
+
+.face {
+    left: 22%;
+    top: 35%;
+    width: 5.972%;
+}
+
+.lighting {
+    top: 0;
+    opacity: 0.5;
+}
+
+@keyframes stretch-arms {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(0, -10px) rotate(-3deg); /* Move arms up */
+    }
+}
+
+@keyframes stretch-torso {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(0, -5px); }
+}
+
+@keyframes stretch-pants {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(0, -5px) rotate(3deg); }
+}
+
+@keyframes stretch-shirt {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(0, -5px); }
+}
+
+@keyframes stretch-hair {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(0, -5px); }
+}
+
+/* Profile content */
+.content {
+    opacity: 0;
+    animation: fadeIn 2s forwards; /* fade in over 1s */
+    animation-delay: 2s;
+}
+
+h1 {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.5rem, 3.5vw, 2rem);
+    margin: clamp(0.5rem, 4vw, 3rem);
+    letter-spacing: 0.2em;
+    color: white;
+}
+
+p {
+    text-align: center;
+    line-height: 1.4rem;
+    margin-top: clamp(0rem, 1vw, 1rem);
+    margin-bottom: clamp(0rem, 1vw, 1rem);
+    font-size: clamp(0rem, 1.2vw, 1rem);
+    color: darkslategray;
+}
+
+.uw {
+    margin-left: 5px;
+    height: 1.5rem;
+}
+
+.talking-box {
+    top: 10%;
+    transform: translateX(-50%);
+    left: 60%;
+    width: 40%;
+
+    animation: floating-talking-box 3.3s ease-in-out infinite alternate;
+}
+
+.intro {
+    position: absolute;
+    transform: translateX(-50%);
+    top: 20%;
+    left: 60%;
+    width: 32.5%;
+
+    animation: floating-talking-box 3.3s ease-in-out infinite alternate;
+}
+
+.social-media {
+    font-size: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.social-media > i {
+    margin: clamp(0.25rem, 0.75vw, 0.5rem);
+}
+
+@keyframes floating-talking-box {
+    0% { transform: translate(-50%, 0); }
+    100% { transform: translate(-50%, -5px); }
+}
+
+/* Responsive Design for Balcony Component */
+
+@media (max-width: 715px) {
+    .intro-add {
+        display: none;
+    }
+}
+/* Mobile devices */
+@media (max-width: 768px) {
+    .frame-container {
+        width: 95%;
+        margin: 15px auto;
+    }
+    
+    h1 {
+        font-size: clamp(0.8rem, 4vw, 1.5rem);
+        margin: clamp(0.3rem, 3vw, 2rem);
+    }
+    
+    p {
+        font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+        line-height: 1.3rem;
+        margin-bottom: clamp(0.2rem, 1vw, 0.8rem);
+    }
+    
+    .uw {
+        display: none;
+    }
+
+    .social-media {
+        font-size: clamp(0.8rem, 3vw, 1.2rem);
+    }
+    
+    .social-media > i {
+        margin: clamp(0.2rem, 0.5vw, 0.4rem);
+    }
+    
+    .talking-box {
+        width: 45%;
+    }
+    
+    .intro {
+        width: 30%;
+    }
+}
+
+/* Tablet devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .frame-container {
+        width: 85%;
+        margin: 25px auto;
+    }
+    
+    h1 {
+        font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+    }
+    
+    p {
+        font-size: clamp(0.8rem, 1.25vw, 1rem);
+        line-height: 1.3rem;
+        margin-top: clamp(0rem, 0.6vw, 0.8rem);
+    }
+    
+    .social-media {
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
+    }
+}
+
+/* Large screens */
+@media (min-width: 1441px) {
+    .frame-container {
+        width: 70%;
+        max-width: 900px;
+        margin: 40px auto;
+    }
+    
+    h1 {
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+    }
+    
+    p {
+        font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    }
+    
+    .social-media {
+        font-size: clamp(1.2rem, 2vw, 1.6rem);
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .frame-container {
+        width: 98%;
+        margin: 10px auto;
+    }
+    
+    h1 {
+        font-size: clamp(0.7rem, 5vw, 1.2rem);
+        margin: clamp(0.2rem, 2vw, 1.5rem);
+    }
+    
+    p {
+        font-size: clamp(0.6rem, 3vw, 0.8rem);
+        line-height: 1.2rem;
+    }
+    
+    .uw {
+        height: 1rem;
+    }
+    
+    .social-media {
+        font-size: clamp(0.7rem, 4vw, 1rem);
+    }
+    
+    .talking-box {
+        width: 50%;
+    }
+    
+    .intro {
+        width: 42.5%;
+    }
+}
+
+/* Global Keyframes */
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

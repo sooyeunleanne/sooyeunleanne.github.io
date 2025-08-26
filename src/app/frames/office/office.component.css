@@ -1,0 +1,155 @@
+.frame-container {
+    position: relative;      /* now children with absolute are relative to this container */
+    margin: 0 auto;
+    aspect-ratio: 1 / 1; /* width / height of your original container */
+    overflow: hidden;
+    background: #C2CACE;
+    z-index: 1;
+    border: 1px solid darkgray;
+    animation: darkening 4s linear infinite alternate; /* optional timing */
+}
+
+
+@keyframes darkening {
+    0% { background-color: #C2CACE; }
+    100% { background-color: rgba(95, 80, 115, 0.9); }
+}
+
+.frame-wrapper {
+    background: linear-gradient(180deg, grey 0%, #C2CACE 15%, #C2CACE 85%, grey 100%); /* top & bottom area color */
+    margin: 0 auto;
+    padding: clamp(2rem, 18vw, 20rem) 0; /* responsive top & bottom spacing for grey */
+    width: calc(100% - clamp(20px, 4vw, 60px));
+    height: 100%; /* Make it fill available height */
+    align-items: center; /* Center the frame container vertically */
+}
+
+img {
+    position: absolute;
+    height: auto;
+}
+
+/* clock */
+.clock-shadow {
+    width: 50%;
+    top: 10%;
+    right: 25%;
+}
+
+.clock {
+    width: 20%;
+    top: 10%;
+    right: 20%;
+}
+
+.clock-hour {
+    height: 0.6%;
+    top: 19.6%;
+    right: 25.5%;
+    transform-origin: bottom left; /* set here */
+    animation: hour-rotation 6s linear infinite;
+}
+
+.clock-minute {
+    width: 0.5%;
+    top: 12.7%;
+    right: 29.4%;
+    transform-origin: bottom left; /* set here */
+    animation: minute-rotation 1s linear infinite;
+}
+
+
+@keyframes hour-rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg); /* Move arms up */
+    }
+}
+
+@keyframes minute-rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg); /* Move arms up */
+    }
+}
+
+
+
+/* computer */
+.computer {
+    width: 50%;
+    top: 40%;
+    left: 15%;
+}
+
+.screen {
+    width: 48%;
+    top: 41.5%;
+    left: 16%;
+}
+
+.desk {
+    top: 40%;
+    left: -25%;
+    width: 150%;
+}
+
+.keyboard {
+    width: 40%;
+    left: 30%;
+    top: 80%;
+}
+
+.leanne {
+    width: 50%;
+    left: 40%;
+    top: 47%;
+}
+
+.light-from-screen {
+    width: 100%;
+    mix-blend-mode: color-dodge;
+}
+
+.main-shadow {
+    mix-blend-mode: multiply;
+    width: 100%;
+    top: 25%;
+    height: 75%;
+}
+
+.chair {
+    width: 30%;
+    bottom: 0;
+    right: 5%;
+}
+
+/* Responsive Design for Office Component */
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .frame-wrapper {
+        padding: 1.5rem 0;
+        width: calc(100% - 20px);
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .frame-wrapper {
+        padding: 1rem 0;
+        width: calc(100% - 10px);
+    }
+}
+
+/* Large screens */
+@media (min-width: 1441px) {
+    .frame-wrapper {
+        padding: 6rem 0;
+        width: calc(100% - 80px);
+    }
+}

@@ -1,37 +1,48 @@
-import { ElementRef, Component } from '@angular/core';
+
+import { Component, HostListener } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+    selector: 'app-header',
+    imports: [CommonModule],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.css'
 })
 
 export class HeaderComponent {
-  constructor(private elementRef: ElementRef) { }
+  activeSection: string = '';
 
-  scrollToProfile() {
-    const appComponent = this.elementRef.nativeElement.parentElement;
-    const profileComponent = appComponent.querySelector('#profile');
-    if (profileComponent) {
-      profileComponent.scrollIntoView({ behavior: 'smooth' });
+  sections = ['profile', 'projects', 'extracurricular', 'about me']; // IDs of your sections
+
+  navigateTo(componentName: string) {
+    document.getElementById(componentName)?.scrollIntoView({behavior: 'smooth'});
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollPos = window.scrollY + 100; // offset to trigger a bit earlier
+    for (const sectionId of this.sections) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+        if (scrollPos >= top && scrollPos < bottom) {
+          this.activeSection = sectionId;
+          break;
+        }
+      }
     }
   }
 
-  scrollToProjects() {
-    const appComponent = this.elementRef.nativeElement.parentElement;
-    const projectComponent = appComponent.querySelector('#projects');
-    if (projectComponent) {
-      projectComponent.scrollIntoView({ behavior: 'smooth' });
-    }
+  onInstagramClick() {
+    window.open('https://www.instagram.com/sooyeunleanne', '_blank');
   }
 
-  scrollToExperiences() {
-    const appComponent = this.elementRef.nativeElement.parentElement;
-    const experiencesComponent = appComponent.querySelector('#experiences');
-    if (experiencesComponent) {
-      experiencesComponent.scrollIntoView({ behavior: 'smooth' });
-    }
+  onLinkedInClick() {
+    window.open('https://www.linkedin.com/in/sooyeunleanne', '_blank');
+  }
+
+  onGithubClick() {
+    window.open('https://github.com/sooyeunleanne', '_blank');
   }
 }

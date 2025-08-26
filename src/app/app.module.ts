@@ -1,12 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-@NgModule({
-  imports: [
-    CommonModule,
-    HttpClientModule // Import HttpClientModule here
-  ],
-  providers: []
-})
+@NgModule({ imports: [CommonModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

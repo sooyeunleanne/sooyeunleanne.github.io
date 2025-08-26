@@ -1,0 +1,140 @@
+.frame-container {
+    position: relative;      /* now children with absolute are relative to this container */
+    width: 100%;             /* or any width you want */
+    margin: 0 auto;
+    aspect-ratio: 1024 / 675; /* width / height of your original container */
+    overflow: hidden;
+    background: #F6FFF4;
+    z-index: 1;
+    animation: sunlight 4.5s linear infinite alternate;
+}
+
+@keyframes sunlight {
+    0% { background-color: #F6FFF4; }
+    100% { background-color: rgba(255, 230, 0, 0.25); }
+}
+
+.frame-wrapper {
+    background: linear-gradient(180deg, #70d3c2 0%, #f2ffe6 15%, #f2ffe6 85%, #70d3c2 100%); /* top & bottom area color */
+    margin: 0 auto;
+    padding: clamp(2rem, 18vw, 20rem) 0; /* responsive top & bottom spacing */
+    width: calc(100% - clamp(20px, 4vw, 60px));
+    height: 100%; /* Make it fill available height */
+    align-items: center; /* Center the frame container vertically */
+}
+
+img {
+    position: absolute;
+    height: auto;
+}
+
+.wall-dividers {
+    width: 100%;
+}
+
+.floor {
+    top: 76%;
+    left: -13%;
+}
+
+.sofa-1 {
+    width: 80%;
+    top: 40%;
+    left: 20%;
+}
+
+.sofa {
+    width: 80%;
+    top: 38%;
+    left: 22%;  
+}
+
+.window {
+    width: 20%;
+    top: -5%;
+    animation: window-colorchange 3s ease-in-out alternate infinite;
+}
+
+@keyframes window-colorchange {
+    0% {
+        filter: saturate(100%);
+    }
+    100% {
+        filter: saturate(300%);
+    }
+}
+
+.leanne {
+    width: 60%;
+    left: 37%;
+    top: 28%;
+    animation: leanne-working 3s ease-in-out alternate infinite;
+}
+
+
+@keyframes leanne-working {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(0, -3px) rotate(-1deg); /* Move arms up */
+    }
+}
+
+.tree {
+    width: 25%;
+    top: 40%;
+    left: 4.8%;
+    animation: tree-shaking 1.5s ease-in-out alternate infinite;
+}
+
+@keyframes tree-shaking {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(0, -2px) rotate(-2deg); /* Move arms up */
+    }
+}
+
+.lighting {
+    width: 100%;
+}
+
+.table {
+    width: 60%;
+    left: 35%;
+    top: 75%;
+}
+
+.matcha {
+    width: 5%;
+    right: 20%;
+    top: 75%;
+}
+
+/* Responsive Design for Living Room Component */
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .frame-wrapper {
+        padding: 1.5rem 0;
+        width: calc(100% - 20px);
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .frame-wrapper {
+        padding: 1rem 0;
+        width: calc(100% - 10px);
+    }
+}
+
+/* Large screens */
+@media (min-width: 1441px) {
+    .frame-wrapper {
+        padding: 12rem 0;
+        width: calc(100% - 80px);
+    }
+}

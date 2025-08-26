@@ -1,0 +1,59 @@
+<h1>Extracurriculars</h1>
+<div class="ec-page">
+    <!-- Timelines -->
+    <div class="ec-container">
+
+        <!-- Logo bar -->
+        <div class="ec-logo-bar">
+            @for (orgKey of orgKeys; track orgKey) {
+            <div
+                (click)="openEcTimeline(orgKey)"
+                [class.active]="openOrgKey === orgKey">
+
+                <!-- If logo exists -->
+                @if (ecs[orgKey]?.logo) {
+                <img
+                    [src]="'assets/images/ec/' + ecs[orgKey].logo"
+                    [alt]="ecs[orgKey].organization"
+                    class="ec-logo" />
+                }
+
+                <!-- If logo is missing -->
+                @if (!ecs[orgKey]?.logo) {
+                <span class="ec-logo">{{ ecs[orgKey].organization }}</span>
+                }
+
+                <p class="ec-date">
+                {{ ecs[orgKey].roles[0]?.startdate }} – 
+                {{ ecs[orgKey].roles[ecs[orgKey].roles.length - 1]?.enddate || 'Present' }}
+                </p>
+            </div>
+            }
+        </div>
+
+    <!-- Timeline Section -->
+    @if (openOrgKey !== null) {
+        <div class="ec-timeline">
+            <div class="org-header">
+            <img [src]="'assets/images/ec/' + ecs[openOrgKey].logo"
+                [alt]="ecs[openOrgKey].organization"
+                class="org-logo"/>
+            <h2>{{ ecs[openOrgKey].organization }}</h2>
+            </div>
+
+            <div class="timeline">
+                <div *ngFor="let role of ecs[openOrgKey].roles" class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                    <div class="timeline-date">{{ role.startdate }} – {{ role.enddate }}</div>
+                    <h4 class="timeline-title">{{ role.title }}</h4>
+                    <div *ngIf="role.point" [innerHTML]="role.point"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+  </div>
+
+  <app-living-room class="living-room"></app-living-room>
+</div>

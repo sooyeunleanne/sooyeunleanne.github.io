@@ -1,20 +1,33 @@
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
 import { Component, ElementRef, ViewChild, HostListener } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { AfterViewInit, QueryList, ViewChildren } from '@angular/core';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProjectsComponent } from './components/projects/projects.component';
-import { ExperiencesComponent } from './components/experiences/experiences.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { EcComponent } from './components/ec/ec.component';
+
+import { Observable } from 'rxjs';
+import { PageSettingsService } from './services/page-settings.service';
+import { MeComponent } from "./components/me/me.component";
+import { HeaderComponent } from "./components/header/header.component";
+import { FooterComponent } from "./components/footer/footer.component";
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, ProfileComponent, ProjectsComponent, ExperiencesComponent, FooterComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    imports: [CommonModule, ProfileComponent, ProjectsComponent, EcComponent, MeComponent, HeaderComponent, FooterComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'sooyeunleanne.github.io';
+
+  @ViewChildren('fadeComponent', { read: ElementRef }) fadeComponents!: QueryList<ElementRef>;
+  
+  backgroundClass$: Observable<string>;
+  headerSide$: Observable<'left' | 'right'>;
+
+  constructor(private pageSettings: PageSettingsService) {
+    this.backgroundClass$ = this.pageSettings.background$;
+    this.headerSide$ = this.pageSettings.headerSide$;
+  }
 
   @ViewChild('cursor') cursor!: ElementRef;
 
@@ -24,17 +37,17 @@ export class AppComponent {
 
   @HostListener('document:click', ['$event'])
   onClick($event: any) {
-     this.expand=true;
-     setTimeout(() => {
-      this.expand=false;
-     }, 500)
- }
+      this.expand=true;
+      setTimeout(() => {
+        this.expand=false;
+      }, 500)
+  }
 
-@HostListener('document:mousemove', ['$event'])
-  onMousemove($event: any) {
-    this.top=($event.pageY - 25)+ "px";
-    this.left= ($event.pageX - 25)+ "px";
- }
+  @HostListener('document:mousemove', ['$event'])
+    onMousemove($event: any) {
+      this.top=($event.pageY - 25)+ "px";
+      this.left= ($event.pageX - 25)+ "px";
+  }
 
   changeCursorStyle(color: string) {
     const cursorElement = this.cursor.nativeElement;
@@ -44,8 +57,19 @@ export class AppComponent {
 
   resetCursorStyle() {
     const cursorElement = this.cursor.nativeElement;
-    cursorElement.style.backgroundColor = 'rgba(252, 255, 85, 0.3)'; // Reset to default color
-    cursorElement.style.boxShadow = '0px 0px 40px 40px rgba(252, 255, 85, 0.3)'; // Reset to default box shadow
+    cursorElement.style.backgroundColor = 'rgba(66, 200, 237, 0.3)'; // Reset to default color
+    cursorElement.style.boxShadow = '0px 0px 40px 40px rgba(66, 200, 237, 0.3)'; // Reset to default box shadow
   }
 
+  ngAfterViewInit() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    this.fadeComponents.forEach(el => observer.observe(el.nativeElement));
+  }
 }

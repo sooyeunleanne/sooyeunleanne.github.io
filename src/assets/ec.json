@@ -1,0 +1,68 @@
+{
+    "AKCSE": {
+        "logo": "akcseuw.png",
+        "organization": "Association of Korean Scientists and Engineers, University of Waterloo",
+        "roles": [
+            {
+                "title": "Marketing Specialist",
+                "startdate": "2023/09",
+                "enddate": "2024/08"
+            },
+            {
+                "title": "Events Coordinator",
+                "startdate": "2024/09",
+                "enddate": "2024/12"
+            },
+            {
+                "title": "Events Lead",
+                "startdate": "2025/01",
+                "enddate": "2025/08"
+            },
+            {
+                "title": "Development Lead",
+                "startdate": "2025/05",
+                "enddate": "2025/08",
+                "point": "Led the development of AKCSE UW official website in a 4-member team, launched the website in August."
+            },
+            {
+                "title": "Vice President",
+                "startdate": "2025/09",
+                "enddate": "Present"
+            }
+        ]
+    },
+    "TechPlus UW": {
+        "logo": "techplusuw.png",
+        "organization": "Tech+ UW",
+        "roles": [
+            {
+                "title": "Frontend Developer",
+                "startdate": "2025/09",
+                "enddate": "Present",
+                "point": "Participating in the development of Mentorship Program Portal"
+            }
+        ]
+    },
+    "KCG": {
+        "logo": "kcg.png",
+        "organization": "University of Waterloo Korean Catholic Gathering",
+        "roles": [
+            {
+                "title": "Marketing Lead",
+                "startdate": "2024/09",
+                "enddate": "Present"
+            }
+        ]
+    },
+    "St. Paul Chung Parish": {
+        "logo": "stpaulchungparish.png",
+        "organization": "St. Paul Chung Parish",
+        "roles": [
+            {
+                "title": "Website Developer / Manager",
+                "startdate": "2024/08",
+                "enddate": "Present"
+            }
+        ]
+    }
+}

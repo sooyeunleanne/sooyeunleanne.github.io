@@ -1,0 +1,101 @@
+.frame-container {
+    position: relative;      /* now children with absolute are relative to this container */
+    width: 90%;             /* responsive width */
+    max-width: 800px;       /* maximum width for large screens */
+    margin: clamp(20px, 4vw, 30px) auto;          /* responsive margin */
+    aspect-ratio: 1024 / 675; /* width / height of your original container */
+    overflow: hidden;
+    background: radial-gradient(#9F9794 70%, rgb(100, 100, 100) 100%);
+    z-index: 1;
+    border: 1px solid #423534;
+}
+
+img {
+    position: absolute;
+    height: auto;
+}
+
+.chair {
+    width: 20%;
+    right: 0;
+    bottom: 0;
+}
+
+.table {
+    width: 80%;
+}
+
+.journals {
+    width: 20%;
+    bottom: 10%;
+    left: 16%;
+    cursor: pointer;
+    animation: glow 1s infinite alternate;
+}
+
+.lamp {
+    width: 35%;
+    left: 20%;
+    animation: lamp-colorchange 3s ease-in-out alternate infinite;
+}
+
+@keyframes lamp-colorchange {
+    0% {
+        filter: saturate(100%);
+    }
+    100% {
+        filter: saturate(300%);
+    }
+}
+
+.polaroids {
+    width: 25%;
+    bottom: 8%;
+    left: 42%;
+    cursor: pointer;
+    animation: glow 1.2s infinite alternate;
+}
+
+/* Glow animation */
+@keyframes glow {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
+.journals:hover, .polaroids:hover {
+    transform: scale(1.05);
+    animation: none;
+}
+
+/* Responsive Design for My Room Component */
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .frame-container {
+        width: 95%;
+        margin: 15px auto;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .frame-container {
+        width: 98%;
+        margin: 10px auto;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1441px) {
+    .frame-container {
+        width: 70%;
+        max-width: 900px;
+        margin: 40px auto;
+    }
+}

@@ -2,10 +2,12 @@
 
 <app-header></app-header>
 
-<app-profile (mouseover)="resetCursorStyle()" id="profile"></app-profile>
+<app-profile (mouseover)="resetCursorStyle()" id="profile" class="fade-in" #fadeComponent></app-profile>
 
-<app-projects  (mouseover)="changeCursorStyle('rgba(179, 208, 255, 0.3)')" id="projects"></app-projects>
+<app-projects  (mouseover)="changeCursorStyle('rgba(207, 171, 255, 0.3)')" id="projects" class="fade-in" #fadeComponent></app-projects>
 
-<app-experiences (mouseover)="changeCursorStyle('rgba(255, 209, 236, 0.3)')" id="experiences"></app-experiences>
+<app-ec (mouseover)="changeCursorStyle('rgba(0, 209, 164, 0.3)')" id="extracurricular" class="fade-in" #fadeComponent></app-ec>
+
+<app-me (mouseover)="changeCursorStyle('rgba(87, 75, 71, 0.3)')" id="about me" class="fade-in" #fadeComponent></app-me>
 
 <app-footer></app-footer>

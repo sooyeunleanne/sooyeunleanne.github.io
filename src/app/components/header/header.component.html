@@ -1,7 +1,17 @@
-<div style="display: flex; justify-content: flex-end;">
-    <div class="header">
-        <button (click)="scrollToProfile()">Profile</button>
-        <button (click)="scrollToProjects()">Projects</button>
-        <button (click)="scrollToExperiences()">Experiences</button>
-    </div>
-</div>
+<header>
+  <div class="nav">
+    @for (section of sections; track section) {
+      <button
+        [class.active]="activeSection === section"
+        (click)="navigateTo(section)">
+        {{ section }}
+      </button>
+    }
+  </div>
+
+  <div class="social-media">
+    <i class="fa-brands fa-instagram" (click)="onInstagramClick()"></i>
+    <i class="fa-brands fa-linkedin-in" (click)="onLinkedInClick()"></i>
+    <i class="fa-brands fa-github" (click)="onGithubClick()"></i>
+  </div>
+</header>

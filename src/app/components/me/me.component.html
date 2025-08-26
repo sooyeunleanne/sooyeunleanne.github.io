@@ -1,0 +1,52 @@
+<h1>More about me:</h1>
+<app-my-room (journalClicked)="onJournalClick()" (polaroidClicked)="onPolaroidClick()" />
+
+<!-- Journal Pics Popup -->
+@if (picturesOpen === 'journal') {
+    <div class="popup-backdrop" (click)="closePopup()">
+        <div class="popup" (click)="$event.stopPropagation()">
+        <h2>Memories</h2>
+        <div class="mosaic-grid">
+            @for (journalKey of journalKeys; track journalKey; let i = $index) {
+            <div class="mosaic-item" (click)="openImage('journal', i)">
+                <img [src]="'assets/images/me/journal/' + journalPics[journalKey].image"
+                    [alt]="journalPics[journalKey].label"/>
+                <p>{{ journalPics[journalKey].label }}</p>
+            </div>
+            }
+        </div>
+        <button class="close-btn" (click)="closePopup()">×</button>
+        </div>
+    </div>
+}
+
+<!-- Travel Pics Popup -->
+@if (picturesOpen === 'travel') {
+    <div class="popup-backdrop" (click)="closePopup()">
+        <div class="popup" (click)="$event.stopPropagation()">
+        <h2>Travels</h2>
+        <div class="mosaic-grid">
+            @for (travelKey of travelKeys; track travelKey; let i = $index) {
+            <div class="mosaic-item" (click)="openImage('travel', i)">
+                <img [src]="'assets/images/me/travel/' + travelPics[travelKey].image"
+                    [alt]="travelPics[travelKey].label"/>
+                <p>{{ travelPics[travelKey].label }}</p>
+            </div>
+            }
+        </div>
+        <button class="close-btn" (click)="closePopup()">×</button>
+        </div>
+    </div>
+}
+
+<!-- Image Lightbox -->
+@if (lightboxOpen) {
+    <div class="lightbox-backdrop" (click)="closeLightbox()">
+        <div class="lightbox" (click)="$event.stopPropagation()">
+        <button class="nav-btn left" (click)="prevImage($event)">‹</button>
+        <img [src]="currentImage" class="lightbox-img" />
+        <button class="nav-btn right" (click)="nextImage($event)">›</button>
+        <button class="close-btn" (click)="closeLightbox()">×</button>
+        </div>
+    </div>
+}

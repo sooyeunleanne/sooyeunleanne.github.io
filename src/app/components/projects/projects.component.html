@@ -1,13 +1,76 @@
-<div class="project-container" style="text-align: center; padding-top: 5rem;">
-    <h1 style="color: #2659ab">Projects</h1>
-    <h2>Software and Design Projects</h2>
-    <div class="grid-container" >
-        <div class="item-container" *ngFor="let project of projects">
-            <app-project-item (popupOpen)="handlePopupOpen($event)" [project]="project"></app-project-item>
+<h1>Projects</h1>
+<div class="project-page">
+  <app-office class="office" />
+
+  <div class="project-container">
+    <div class="project-logo-bar">
+      @for (project of projects; track project) {
+        <div
+          (click)="openProjectDescription(project?.name)"
+          [class.active]="openProject?.name === project?.name">
+          @if (project?.logo !== undefined) {
+            <img
+              [src]="'../../../assets/images/projects/logo/' + project?.logo"
+              alt="project logo"
+              class="project-logo" />
+          }
+          @if (project?.logo === undefined) {
+            <span class="project-logo">{{project?.name}}</span>
+          }
+          <p class="project-date">{{project?.date}}</p>
         </div>
+      }
     </div>
 
-    <div *ngFor="let project of projects">
-        <app-project-popup *ngIf="popupList[project.name]" (popupClose)="handlePopupClose($event)" [project]="project"></app-project-popup>
-    </div>
+    @if (openProject !== null) {
+      <div class="project-description">
+        <!-- Project name and links -->
+        <h2>
+          {{openProject?.name}}
+          @if (openProject?.link) {
+            <i class="fa-solid fa-link link" (click)="onLinkClick(openProject?.link)"></i>
+          }
+          @if (openProject?.githubLink) {
+            <i class="fa-brands fa-github link" (click)="onGithubLinkClick(openProject?.githubLink)"></i>
+          }
+          @if (openProject?.devpostLink) {
+            <img class="link" src="../../../assets/images/projects/icon/devpost.svg" (click)="onDevpostLinkClick(openProject?.devpostLink)"/>
+          }
+        </h2>
+        @if (openProject?.award) {
+          <p class="award">🏆 <i>{{openProject?.award}}</i> at {{openProject.competition}}</p>
+        }
+        <!-- Tech Stack -->
+        @for (techStack of openProject?.techStack; track techStack; let i = $index; let last = $last) {
+          <span class="tech-stack">
+            @if (!showText[techStack]) {
+              <img
+                [src]="'../../../assets/images/profile/logo/' + techStack + '.png'"
+                [alt]="techStack"
+                (error)="handleImageError($event)"
+                class="tech-stack-logo" />
+            }
+            @if (showText[techStack]) {
+              <span> {{techStack}}</span>
+            }
+            @if (!last) {
+              <span>, </span>
+            }
+          </span>
+        }
+        <!-- Brief point -->
+        <p [innerHTML]="openProject?.point" class="point"></p>
+        <!-- Screenshot -->
+        @if (openProject?.screenshot !== null) {
+          <img
+            [src]="'../../../assets/images/projects/screenshot/' + openProject?.screenshot"
+            [alt]="openProject?.screenshot"
+            class="screenshot" />
+        }
+        <!-- Detailed description -->
+        <p [innerHTML]="openProject?.description" class="description"></p>
+      </div>
+    }
+  </div>
+
 </div>
