@@ -26,6 +26,8 @@ export class ProjectsComponent {
         this.popupList[project.name] = false;
       }
     });
+
+    this.openProject = this.projects[0];
   }
 
   openProjectDescription(projectName: string): void {

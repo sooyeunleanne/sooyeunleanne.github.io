@@ -30,6 +30,8 @@ export class EcComponent {
         });
       });
     });
+
+    this.openOrgKey = this.orgKeys[0];
   }
 
   openEcTimeline(orgKey: string) {

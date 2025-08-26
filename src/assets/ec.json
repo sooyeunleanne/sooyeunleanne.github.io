@@ -31,6 +31,18 @@
             }
         ]
     },
+    "TechPlus UW": {
+        "logo": "techplusuw.png",
+        "organization": "Tech+ UW",
+        "roles": [
+            {
+                "title": "Frontend Developer",
+                "startdate": "2025/09",
+                "enddate": "Present",
+                "point": "Participating in the development of Mentorship Program Portal"
+            }
+        ]
+    },
     "KCG": {
         "logo": "kcg.png",
         "organization": "University of Waterloo Korean Catholic Gathering",
@@ -50,18 +62,6 @@
                 "title": "Website Developer / Manager",
                 "startdate": "2024/08",
                 "enddate": "Present"
-            }
-        ]
-    },
-    "TechPlus UW": {
-        "logo": "techplusuw.png",
-        "organization": "Tech+ UW",
-        "roles": [
-            {
-                "title": "Frontend Developer",
-                "startdate": "2025/09",
-                "enddate": "Present",
-                "point": "Participating in the development of Mentorship Program Portal"
             }
         ]
     }
