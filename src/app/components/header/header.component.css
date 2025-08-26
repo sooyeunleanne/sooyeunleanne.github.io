@@ -4,6 +4,8 @@ header {
     z-index: 1000;    /* Ensure it stays above other elements */
     background: white; /* Optional: prevents content behind it from showing through */
     border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
 }
 
 button {
@@ -19,6 +21,16 @@ button {
 
 button.active {
     font-weight: bold;
+}
+
+.social-media {
+    display: flex;
+    font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+    gap: 1rem;
+}
+
+.social-media > i{
+    padding: clamp(0.5rem, 2vw, 1rem);
 }
 
 /* Responsive Media Queries for Header */
