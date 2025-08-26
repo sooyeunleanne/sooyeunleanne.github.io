@@ -1,7 +1,8 @@
 .frame-container {
     position: relative;      /* now children with absolute are relative to this container */
-    width: 60%;             /* or any width you want */
-    margin: 30px auto;          /* center container horizontally */
+    width: 90%;             /* responsive width */
+    max-width: 800px;       /* maximum width for large screens */
+    margin: clamp(20px, 4vw, 30px) auto;          /* responsive margin */
     aspect-ratio: 1024 / 675; /* width / height of your original container */
     overflow: hidden;
     background: radial-gradient(#9F9794 70%, rgb(100, 100, 100) 100%);
@@ -62,7 +63,7 @@ img {
         opacity: 0.5;
     }
     100% {
-        transform: scale(1.02);
+        transform: scale(1.05);
         opacity: 1;
     }
 }
@@ -70,4 +71,31 @@ img {
 .journals:hover, .polaroids:hover {
     transform: scale(1.05);
     animation: none;
+}
+
+/* Responsive Design for My Room Component */
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .frame-container {
+        width: 95%;
+        margin: 15px auto;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .frame-container {
+        width: 98%;
+        margin: 10px auto;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1441px) {
+    .frame-container {
+        width: 70%;
+        max-width: 900px;
+        margin: 40px auto;
+    }
 }
