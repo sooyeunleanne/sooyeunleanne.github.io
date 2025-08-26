@@ -8,7 +8,6 @@
     background: linear-gradient(180deg, #62C1F8 0%, #84DDF5 29%, #FFFFFF 47%);
     z-index: 1;
     border: 1px solid #62C1F8;
-    border-radius: 8px;     /* subtle rounded corners */
 }
 
 img {
@@ -242,7 +241,6 @@ p {
     .frame-container {
         width: 95%;
         margin: 15px auto;
-        border-radius: 6px;
     }
     
     h1 {
@@ -325,7 +323,6 @@ p {
     .frame-container {
         width: 98%;
         margin: 10px auto;
-        border-radius: 4px;
     }
     
     h1 {
