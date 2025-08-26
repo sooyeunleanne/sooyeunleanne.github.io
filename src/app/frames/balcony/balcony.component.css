@@ -15,6 +15,10 @@ img {
 }
 
 /* background */
+.background {
+    opacity: 0;
+    animation: fadeIn 1s forwards; /* fade in over 1s */
+}
 
 .sand {
     width: 100%;
@@ -24,18 +28,21 @@ img {
 .ocean {
     width: 100%;
     top: 40%;
+    animation: ocean-waves 3s ease-in-out infinite alternate;
 }
 
 .lower-tree {
     width: 50%;
     bottom: 0;
     right: 0;
+    animation: shake-lower-tree 3s ease-in-out infinite alternate;
 }
 
 .upper-tree {
     width: 40%;
     bottom: 0%;
     right: 0;
+    animation: shake-upper-tree 3s ease-in-out infinite alternate;
 }
 
 .window {
@@ -49,36 +56,74 @@ img {
     opacity: 0.5;
 }
 
+@keyframes ocean-waves {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, -2px);
+    }
+}
+
+@keyframes shake-upper-tree {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(3px, 3px) rotate(1deg);
+    }
+}
+
+@keyframes shake-lower-tree {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(-3px, -3px) rotate(-0.5deg);
+    }
+}
+
 /* Leanne */
+
+.leanne {
+    opacity: 0;
+    animation: fadeIn 2s forwards; /* fade in over 1s */
+    animation-delay: 1s;
+}
 
 .torso {
     left: 19%;
     top: 48.047%;
     width: 14%;
+    animation: stretch-torso 2s ease-in-out infinite alternate;
 }
 
 .shirt {
     left: 20%;
     top: 46.875%;
     width: 14%;
+    animation: stretch-shirt 2s ease-in-out infinite alternate;
 }
 
 .arms-and-hands {
     left: 14%;
     top: 18.652%;
     width: 20%;
+    animation: stretch-arms 2s ease-in-out infinite alternate;
 }
 
 .pants {
     left: 17%;
     top: 70%;
     width: 20%;
+    animation: stretch-pants 2s ease-in-out infinite alternate;
 }
 
 .hair {
     left: 14%;
     top: 30%;
     width: 14%;
+    animation: stretch-hair 2s ease-in-out infinite alternate;
 }
 
 .face {
@@ -89,9 +134,45 @@ img {
 
 .lighting {
     top: 0;
+    opacity: 0.5;
+}
+
+@keyframes stretch-arms {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(0, -10px) rotate(-3deg); /* Move arms up */
+    }
+}
+
+@keyframes stretch-torso {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(0, -5px); }
+}
+
+@keyframes stretch-pants {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(0, -5px) rotate(3deg); }
+}
+
+@keyframes stretch-shirt {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(0, -5px); }
+}
+
+@keyframes stretch-hair {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(0, -5px); }
 }
 
 /* Profile content */
+.content {
+    opacity: 0;
+    animation: fadeIn 2s forwards; /* fade in over 1s */
+    animation-delay: 2s;
+}
+
 h1 {
     font-family: "Be Vietnam Pro", sans-serif;
     font-weight: 700;
@@ -119,6 +200,8 @@ p {
     transform: translateX(-50%);
     left: 60%;
     width: 40%;
+
+    animation: floating-talking-box 3.3s ease-in-out infinite alternate;
 }
 
 .intro {
@@ -127,6 +210,8 @@ p {
     top: 20%;
     left: 60%;
     width: 32.5%;
+
+    animation: floating-talking-box 3.3s ease-in-out infinite alternate;
 }
 
 .social-media {
@@ -135,4 +220,17 @@ p {
 
 .social-media > i {
     margin: clamp(0.25rem, 0.75vw, 0.5rem);
+}
+
+@keyframes floating-talking-box {
+    0% { transform: translate(-50%, 0); }
+    100% { transform: translate(-50%, -5px); }
+}
+
+/* Global Keyframes */
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
