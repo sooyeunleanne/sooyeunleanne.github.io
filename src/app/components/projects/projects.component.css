@@ -39,12 +39,14 @@ h1 {
 
 .project-logo-bar div {
     cursor: pointer;
+    padding: 0.125rem;
     flex: 0 0 auto; /* prevent shrinking */
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.project-logo-bar div.active {
+.project-logo-bar div.active, .project-logo-bar div:hover {
     position: relative; 
+    background-color: rgba(200, 200, 200, 0.3);
 }
 
 .project-logo-bar div.active::after {
@@ -60,6 +62,7 @@ h1 {
 
 .project-logo {
     height: 2.5rem;
+    padding: 0.25rem;
     cursor: pointer;
     font-family: "Source Code Pro", monospace;
 }
@@ -79,13 +82,23 @@ h1 {
     border: 1px solid grey;
     margin-right: 2rem;
     padding: 2rem;
-    width: calc(100% - 6rem);
+    width: calc(100% - 7rem - 2px);
     aspect-ratio: 4 / 2.8;
     overflow-y: scroll;
 }
 
 .project-description > p {
     line-height: 2;
+}
+
+.project-description > h2 {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.project-description > span {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
 }
 
 .tech-stack-logo {
@@ -106,4 +119,14 @@ h1 {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

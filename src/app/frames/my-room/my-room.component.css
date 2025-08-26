@@ -4,7 +4,7 @@
     margin: 30px auto;          /* center container horizontally */
     aspect-ratio: 1024 / 675; /* width / height of your original container */
     overflow: hidden;
-    background: #9F9794;
+    background: radial-gradient(#9F9794 70%, rgb(100, 100, 100) 100%);
     z-index: 1;
     border: 1px solid #423534;
 }
@@ -35,6 +35,16 @@ img {
 .lamp {
     width: 35%;
     left: 20%;
+    animation: lamp-colorchange 3s ease-in-out alternate infinite;
+}
+
+@keyframes lamp-colorchange {
+    0% {
+        filter: saturate(100%);
+    }
+    100% {
+        filter: saturate(300%);
+    }
 }
 
 .polaroids {

@@ -59,7 +59,7 @@
           </span>
         }
         <!-- Brief point -->
-        <p [innerHTML]="openProject?.point"></p>
+        <p [innerHTML]="openProject?.point" class="point"></p>
         <!-- Screenshot -->
         @if (openProject?.screenshot !== null) {
           <img
@@ -68,7 +68,7 @@
             class="screenshot" />
         }
         <!-- Detailed description -->
-        <p [innerHTML]="openProject?.description"></p>
+        <p [innerHTML]="openProject?.description" class="description"></p>
       </div>
     }
   </div>

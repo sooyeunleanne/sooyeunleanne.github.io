@@ -99,8 +99,22 @@ h1 {
 .timeline-item {
     position: relative;
     padding: 10px 0 10px 20px;
+
+    opacity: 0;
+    transform: translateY(-20px); /* start slightly above */
+    animation: fadeInDown 0.5s forwards; /* animate to visible */
 }
 
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .timeline-dot {
     position: absolute;
