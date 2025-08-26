@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild, HostListener } from '@angular/core';
+import { AfterViewInit, QueryList, ViewChildren } from '@angular/core';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { EcComponent } from './components/ec/ec.component';
@@ -17,6 +18,8 @@ import { FooterComponent } from "./components/footer/footer.component";
 })
 export class AppComponent {
   title = 'sooyeunleanne.github.io';
+
+  @ViewChildren('fadeComponent', { read: ElementRef }) fadeComponents!: QueryList<ElementRef>;
   
   backgroundClass$: Observable<string>;
   headerSide$: Observable<'left' | 'right'>;
@@ -34,17 +37,17 @@ export class AppComponent {
 
   @HostListener('document:click', ['$event'])
   onClick($event: any) {
-     this.expand=true;
-     setTimeout(() => {
-      this.expand=false;
-     }, 500)
- }
+      this.expand=true;
+      setTimeout(() => {
+        this.expand=false;
+      }, 500)
+  }
 
-@HostListener('document:mousemove', ['$event'])
-  onMousemove($event: any) {
-    this.top=($event.pageY - 25)+ "px";
-    this.left= ($event.pageX - 25)+ "px";
- }
+  @HostListener('document:mousemove', ['$event'])
+    onMousemove($event: any) {
+      this.top=($event.pageY - 25)+ "px";
+      this.left= ($event.pageX - 25)+ "px";
+  }
 
   changeCursorStyle(color: string) {
     const cursorElement = this.cursor.nativeElement;
@@ -58,4 +61,15 @@ export class AppComponent {
     cursorElement.style.boxShadow = '0px 0px 40px 40px rgba(252, 255, 85, 0.3)'; // Reset to default box shadow
   }
 
+  ngAfterViewInit() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    this.fadeComponents.forEach(el => observer.observe(el.nativeElement));
+  }
 }
