@@ -106,6 +106,13 @@ h1 {
     margin-bottom: 1rem;
 }
 
+.org-header h2 {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: #333;
+    margin: 0;
+    font-weight: 600;
+}
+
 .org-logo {
     height: clamp(3rem, 8vw, 6rem);
     max-width: 100%;

@@ -13,7 +13,6 @@
     gap: 1rem;
 }
 
-.flex-container > h3,
 .flex-container > h4 {
     margin: 0;
     min-width: fit-content;
@@ -51,8 +50,8 @@
 /* Mobile First Responsive Design */
 @media (max-width: 768px) {
     .profile-description {
-        width: 95%;
-        padding: 0 0.5rem;
+        width: calc(100% - 4rem);
+        padding: 2rem;
     }
     
     .flex-container {
@@ -84,7 +83,7 @@
 @media (min-width: 769px) and (max-width: 1024px) {
     .profile-description {
         width: 85%;
-        padding: 0 1rem;
+        padding: 1rem;
     }
     
     .flex-container {
@@ -133,8 +132,8 @@
 /* Extra small devices (phones in landscape) */
 @media (max-width: 480px) {
     .profile-description {
-        width: 98%;
-        padding: 0 0.25rem;
+        width: calc(100% - 2rem);
+        padding: 0 1rem;
     }
     
     .flex-container {
