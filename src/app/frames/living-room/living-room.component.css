@@ -43,7 +43,7 @@ img {
 }
 
 .window {
-    width: 22.5%;
+    width: 20%;
     top: -5%;
 }
 
@@ -54,9 +54,9 @@ img {
 }
 
 .tree {
-    width: 30%;
-    top: 42.5%;
-    left: 4%;
+    width: 25%;
+    top: 40%;
+    left: 4.8%;
 }
 
 .lighting {
