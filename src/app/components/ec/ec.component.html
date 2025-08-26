@@ -14,42 +14,48 @@
                 @if (ecs[orgKey]?.logo) {
                 <img
                     [src]="'assets/images/ec/' + ecs[orgKey].logo"
-                    [alt]="ecs[orgKey].organization"
+                    [alt]="ecs[orgKey]?.organization || ''"
                     class="ec-logo" />
                 }
 
                 <!-- If logo is missing -->
-                @if (!ecs[orgKey]?.logo) {
+                @if (!ecs[orgKey]?.logo && ecs[orgKey]?.organization) {
                 <span class="ec-logo">{{ ecs[orgKey].organization }}</span>
                 }
 
                 <p class="ec-date">
-                {{ ecs[orgKey].roles[0]?.startdate }} – 
-                {{ ecs[orgKey].roles[ecs[orgKey].roles.length - 1]?.enddate || 'Present' }}
+                {{ ecs[orgKey]?.roles?.[0]?.startdate }} – 
+                {{ ecs[orgKey]?.roles?.[ecs[orgKey]?.roles?.length - 1]?.enddate || 'Present' }}
                 </p>
             </div>
             }
         </div>
 
     <!-- Timeline Section -->
-    @if (openOrgKey !== null) {
+    @if (openOrgKey !== null && ecs[openOrgKey]) {
         <div class="ec-timeline">
             <div class="org-header">
+            @if (ecs[openOrgKey]?.logo) {
             <img [src]="'assets/images/ec/' + ecs[openOrgKey].logo"
-                [alt]="ecs[openOrgKey].organization"
+                [alt]="ecs[openOrgKey]?.organization || ''"
                 class="org-logo"/>
-            <h2>{{ ecs[openOrgKey].organization }}</h2>
+            }
+            <h2>{{ ecs[openOrgKey]?.organization || '' }}</h2>
             </div>
 
             <div class="timeline">
-                <div *ngFor="let role of ecs[openOrgKey].roles" class="timeline-item">
+                @for (role of ecs[openOrgKey]?.roles || []; track role) {
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                    <div class="timeline-date">{{ role.startdate }} – {{ role.enddate }}</div>
-                    <h4 class="timeline-title">{{ role.title }}</h4>
-                    <div *ngIf="role.point" [innerHTML]="role.point"></div>
+                    <div class="timeline-date">{{ role?.startdate }} – {{ role?.enddate }}</div>
+                    <h4 class="timeline-title">{{ role?.title }}</h4>
+                    @if (role?.point) {
+                    <div [innerHTML]="role.point"></div>
+                    }
                     </div>
                 </div>
+                }
             </div>
         </div>
         }

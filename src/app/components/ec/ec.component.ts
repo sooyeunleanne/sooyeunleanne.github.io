@@ -23,15 +23,20 @@ export class EcComponent {
       this.orgKeys = Object.keys(data);
       // Sort each organization's roles so latest startdate comes first
       this.orgKeys.forEach(orgKey => {
-        this.ecs[orgKey].roles.sort((a: any, b: any) => {
-          const dateA = new Date(a.startdate);
-          const dateB = new Date(b.startdate);
-          return dateB.getTime() - dateA.getTime(); // latest first
-        });
+        if (this.ecs[orgKey]?.roles) {
+          this.ecs[orgKey].roles.sort((a: any, b: any) => {
+            const dateA = new Date(a.startdate);
+            const dateB = new Date(b.startdate);
+            return dateB.getTime() - dateA.getTime(); // latest first
+          });
+        }
       });
+      
+      // Set the first organization as open if available
+      if (this.orgKeys.length > 0) {
+        this.openOrgKey = this.orgKeys[0];
+      }
     });
-
-    this.openOrgKey = this.orgKeys[0];
   }
 
   openEcTimeline(orgKey: string) {
