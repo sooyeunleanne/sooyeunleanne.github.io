@@ -18,7 +18,7 @@
 .frame-wrapper {
     background: linear-gradient(180deg, grey 0%, #C2CACE 15%, #C2CACE 85%, grey 100%); /* top & bottom area color */
     margin: 0 auto;
-    padding: clamp(2rem, 18vw, 10rem) 0; /* responsive top & bottom spacing for grey */
+    padding: clamp(2rem, 18vw, 20rem) 0; /* responsive top & bottom spacing for grey */
     width: calc(100% - clamp(20px, 4vw, 60px));
     height: 100%; /* Make it fill available height */
     align-items: center; /* Center the frame container vertically */

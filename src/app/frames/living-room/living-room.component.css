@@ -15,10 +15,12 @@
 }
 
 .frame-wrapper {
-    background: linear-gradient(180deg, #70d3c2 0%, #f2ffe6 15%, #f2ffe6 85%, #70d3c2 100%);; /* top & bottom area color */
+    background: linear-gradient(180deg, #70d3c2 0%, #f2ffe6 15%, #f2ffe6 85%, #70d3c2 100%); /* top & bottom area color */
     margin: 0 auto;
-    padding: 10rem 0; /* top & bottom spacing for grey */
-    width: calc(100% - 60px);
+    padding: clamp(2rem, 18vw, 20rem) 0; /* responsive top & bottom spacing */
+    width: calc(100% - clamp(20px, 4vw, 60px));
+    height: 100%; /* Make it fill available height */
+    align-items: center; /* Center the frame container vertically */
 }
 
 img {
@@ -109,4 +111,30 @@ img {
     width: 5%;
     right: 20%;
     top: 75%;
+}
+
+/* Responsive Design for Living Room Component */
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .frame-wrapper {
+        padding: 1.5rem 0;
+        width: calc(100% - 20px);
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .frame-wrapper {
+        padding: 1rem 0;
+        width: calc(100% - 10px);
+    }
+}
+
+/* Large screens */
+@media (min-width: 1441px) {
+    .frame-wrapper {
+        padding: 12rem 0;
+        width: calc(100% - 80px);
+    }
 }
