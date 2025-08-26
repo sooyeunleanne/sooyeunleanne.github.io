@@ -1,4 +1,4 @@
-# Leanne's Portfolio
+# [sooyeunleanne.github.io](sooyeunleanne.github.io)
 
 A modern, interactive personal portfolio website built with Angular 20, TypeScript, HTML, and CSS, designed to showcase my projects, skills, and experiences.
 
