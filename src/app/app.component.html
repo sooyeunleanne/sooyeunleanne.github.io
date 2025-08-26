@@ -1,10 +1,11 @@
 <div class="cursor" [style.top]="top" [style.left]="left" [ngClass]="{'expand':expand}" #cursor> </div>
 
+<app-header></app-header>
 
 <app-profile (mouseover)="resetCursorStyle()" id="profile"></app-profile>
 
 <app-projects  (mouseover)="changeCursorStyle('rgba(179, 208, 255, 0.3)')" id="projects"></app-projects>
 
-<app-ec (mouseover)="changeCursorStyle('rgba(255, 209, 236, 0.3)')" id="ec"></app-ec>
+<app-ec (mouseover)="changeCursorStyle('rgba(255, 209, 236, 0.3)')" id="extracurricular"></app-ec>
 
-<app-me (mouseover)="changeCursorStyle('rgba(255, 209, 236, 0.3)')" id="me"></app-me>
+<app-me (mouseover)="changeCursorStyle('rgba(255, 209, 236, 0.3)')" id="about me"></app-me>

@@ -7,9 +7,10 @@ import { EcComponent } from './components/ec/ec.component';
 import { Observable } from 'rxjs';
 import { PageSettingsService } from './services/page-settings.service';
 import { MeComponent } from "./components/me/me.component";
+import { HeaderComponent } from "./components/header/header.component";
 @Component({
     selector: 'app-root',
-    imports: [CommonModule, ProfileComponent, ProjectsComponent, EcComponent, MeComponent],
+    imports: [CommonModule, ProfileComponent, ProjectsComponent, EcComponent, MeComponent, HeaderComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })

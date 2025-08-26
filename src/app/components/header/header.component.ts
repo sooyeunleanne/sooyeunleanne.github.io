@@ -1,7 +1,6 @@
 
-import { Component, Input, OnInit, NgModule } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-header',
@@ -11,20 +10,27 @@ import { Router } from '@angular/router';
 })
 
 export class HeaderComponent {
-  @Input() side: 'left' | 'right' = 'right'; // default right
+  activeSection: string = '';
 
-  currentRoute: string = '';
+  sections = ['profile', 'projects', 'extracurricular', 'about me']; // IDs of your sections
 
-  constructor(private router: Router) {}
-
-  ngOnInit(): void {
-    // Subscribe to route changes so currentRoute updates dynamically
-    this.router.events.subscribe(() => {
-      this.currentRoute = this.router.url;
-    });
+  navigateTo(componentName: string) {
+    document.getElementById(componentName)?.scrollIntoView({behavior: 'smooth'});
   }
 
-  goTo(path: string) {
-    this.router.navigate([path]);
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollPos = window.scrollY + 100; // offset to trigger a bit earlier
+    for (const sectionId of this.sections) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+        if (scrollPos >= top && scrollPos < bottom) {
+          this.activeSection = sectionId;
+          break;
+        }
+      }
+    }
   }
 }

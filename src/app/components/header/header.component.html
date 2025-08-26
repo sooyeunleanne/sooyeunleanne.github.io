@@ -1,49 +1,9 @@
-<header [ngClass]="side">
-  @if (currentRoute !== '/') {
-    <div class="navigation-button" (click)="goTo('/')">
-      <div class="navigation-wrapper">
-        <img src="../../../assets/images/navigation/label.svg" alt="Label" class="label" />
-        <div class="navigation-label">
-          <h4>Balcony</h4>
-          <p>Home screen</p>
-        </div>
-      </div>
-    </div>
-  }
-
-  @if (currentRoute !== '/office') {
-    <div class="navigation-button" (click)="goTo('/office')">
-      <div class="navigation-wrapper">
-        <img src="../../../assets/images/navigation/label.svg" alt="Label" class="label" />
-        <div class="navigation-label">
-          <h4>Office</h4>
-          <p>My past projects</p>
-        </div>
-      </div>
-    </div>
-  }
-
-  @if (currentRoute !== '/living-room') {
-    <div class="navigation-button" (click)="goTo('/living-room')">
-      <div class="navigation-wrapper">
-        <img src="../../../assets/images/navigation/label.svg" alt="Label" class="label" />
-        <div class="navigation-label">
-          <h4>Living Room</h4>
-          <p>Extracurriculars</p>
-        </div>
-      </div>
-    </div>
-  }
-
-  @if (currentRoute !== '/my-room') {
-    <div class="navigation-button" (click)="goTo('/my-room')">
-      <div class="navigation-wrapper">
-        <img src="../../../assets/images/navigation/label.svg" alt="Label" class="label" />
-        <div class="navigation-label">
-          <h4>My Room</h4>
-          <p>Journals and Pics</p>
-        </div>
-      </div>
-    </div>
+<header>
+  @for (section of sections; track section) {
+    <button
+      [class.active]="activeSection === section"
+      (click)="navigateTo(section)">
+      {{ section }}
+    </button>
   }
 </header>
