@@ -1,24 +1,163 @@
 .profile-description {
-    width: 60%;
+    width: 90%;
+    max-width: 1200px;
     margin: auto;
+    padding: 0 1rem;
 }
 
 .flex-container {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.flex-container > h3,
+.flex-container > h4 {
+    margin: 0;
+    min-width: fit-content;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.flex-container > h3 {
+    color: #333;
+    font-weight: 600;
+    margin-top: 1rem;
 }
 
 .flex-container > h4 {
-    margin: 0;
+    color: #555;
+    font-weight: 500;
+    margin-top: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
 }
 
 .logo {
-    height: 0.9rem;
+    height: clamp(0.8rem, 1.5vw, 1.2rem);
+    margin: 0 0.2rem;
+    vertical-align: middle;
 }
 
 .tech-stack {
     opacity: 0;
     animation: fadeAndSlideIn forwards 2s;
+    font-size: clamp(0.8rem, 1.8vw, 1.1rem);
+    line-height: 1.6;
+    flex: 1;
+    text-align: right;
+}
+
+/* Mobile First Responsive Design */
+@media (max-width: 768px) {
+    .profile-description {
+        width: 95%;
+        padding: 0 0.5rem;
+    }
+    
+    .flex-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .flex-container > h3,
+    .flex-container > h4 {
+        text-align: left;
+        margin-bottom: 0.5rem;
+    }
+    
+    .tech-stack {
+        text-align: left;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .logo {
+        height: 0.8rem;
+        margin: 0 0.15rem;
+    }
+}
+
+/* Tablet Portrait */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .profile-description {
+        width: 85%;
+        padding: 0 1rem;
+    }
+    
+    .flex-container {
+        gap: 1.5rem;
+    }
+    
+    .tech-stack {
+        font-size: 1rem;
+    }
+    
+    .logo {
+        height: 1rem;
+    }
+}
+
+/* Tablet Landscape and Small Desktop */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .profile-description {
+        width: 75%;
+    }
+    
+    .flex-container {
+        gap: 2rem;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1441px) {
+    .profile-description {
+        width: 60%;
+    }
+    
+    .flex-container {
+        gap: 2.5rem;
+    }
+    
+    .tech-stack {
+        font-size: 1.1rem;
+    }
+    
+    .logo {
+        height: 1.2rem;
+    }
+}
+
+/* Extra small devices (phones in landscape) */
+@media (max-width: 480px) {
+    .profile-description {
+        width: 98%;
+        padding: 0 0.25rem;
+    }
+    
+    .flex-container {
+        margin-bottom: 0.75rem;
+    }
+    
+    .tech-stack {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+    
+    .logo {
+        height: 0.7rem;
+        margin: 0 0.1rem;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
 }
 
 @keyframes fadeAndSlideIn {
@@ -30,5 +169,4 @@
         opacity: 1;
         transform: translateX(0);
     }
-    
 }
