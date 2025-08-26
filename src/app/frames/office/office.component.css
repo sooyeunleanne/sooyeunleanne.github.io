@@ -6,6 +6,13 @@
     background: #C2CACE;
     z-index: 1;
     border: 1px solid darkgray;
+    animation: darkening 4s linear infinite alternate; /* optional timing */
+}
+
+
+@keyframes darkening {
+    0% { background-color: #C2CACE; }
+    100% { background-color: rgba(95, 80, 115, 0.9); }
 }
 
 .frame-wrapper {
@@ -20,6 +27,7 @@ img {
     height: auto;
 }
 
+/* clock */
 .clock-shadow {
     width: 50%;
     top: 10%;
@@ -32,6 +40,44 @@ img {
     right: 20%;
 }
 
+.clock-hour {
+    height: 0.6%;
+    top: 19.6%;
+    right: 25.5%;
+    transform-origin: bottom left; /* set here */
+    animation: hour-rotation 6s linear infinite;
+}
+
+.clock-minute {
+    width: 0.5%;
+    top: 12.7%;
+    right: 29.4%;
+    transform-origin: bottom left; /* set here */
+    animation: minute-rotation 1s linear infinite;
+}
+
+
+@keyframes hour-rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg); /* Move arms up */
+    }
+}
+
+@keyframes minute-rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg); /* Move arms up */
+    }
+}
+
+
+
+/* computer */
 .computer {
     width: 50%;
     top: 40%;
