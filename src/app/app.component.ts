@@ -6,9 +6,10 @@ import { EcComponent } from './components/ec/ec.component';
 
 import { Observable } from 'rxjs';
 import { PageSettingsService } from './services/page-settings.service';
+import { MeComponent } from "./components/me/me.component";
 @Component({
     selector: 'app-root',
-    imports: [CommonModule, ProfileComponent, ProjectsComponent, EcComponent],
+    imports: [CommonModule, ProfileComponent, ProjectsComponent, EcComponent, MeComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })

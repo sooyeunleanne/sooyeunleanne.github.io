@@ -1,0 +1,44 @@
+.frame-container {
+    position: relative;      /* now children with absolute are relative to this container */
+    width: 60%;             /* or any width you want */
+    margin: 30px auto;          /* center container horizontally */
+    aspect-ratio: 1024 / 675; /* width / height of your original container */
+    overflow: hidden;
+    background: #9F9794;
+    z-index: 1;
+    border: 1px solid #423534;
+}
+
+img {
+    position: absolute;
+    height: auto;
+}
+
+.chair {
+    width: 20%;
+    right: 0;
+    bottom: 0;
+}
+
+.table {
+    width: 80%;
+}
+
+.journals {
+    width: 20%;
+    bottom: 10%;
+    left: 16%;
+    cursor: pointer;
+}
+
+.lamp {
+    width: 35%;
+    left: 20%;
+}
+
+.polaroids {
+    width: 25%;
+    bottom: 8%;
+    left: 42%;
+    cursor: pointer;
+}

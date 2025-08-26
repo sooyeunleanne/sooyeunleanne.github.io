@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { PageSettingsService } from '../../services/page-settings.service';
 
 @Component({
@@ -8,9 +8,20 @@ import { PageSettingsService } from '../../services/page-settings.service';
     styleUrl: './my-room.component.css'
 })
 export class MyRoomComponent {
+  @Output() journalClicked = new EventEmitter<void>();
+  @Output() polaroidClicked = new EventEmitter<void>();
+
   constructor(private pageSettings: PageSettingsService) {}
 
   ngOnInit() {
     this.pageSettings.setPage('my-room-background', 'right');
+  }
+
+  handleJournalClick() {
+    this.journalClicked.emit();
+  }
+
+  handlePolaroidClick() {
+    this.polaroidClicked.emit();
   }
 }

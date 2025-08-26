@@ -1,0 +1,26 @@
+{
+    "2023 graduation": {
+        "image": "graduation.jpg",
+        "label": "2023 graduation"
+    },
+    "friends": {
+        "image": "friends.jpg",
+        "label": "friends"
+    },
+    "engineering pin": {
+        "image": "engineering pin.jpg",
+        "label": "engineering pin"
+    },
+    "2024 spring": {
+        "image": "2024 spring.jpg",
+        "label": "2024 spring"
+    },
+    "2025 summer": {
+        "image": "2025 summer.jpg",
+        "label": "2025 summer"
+    },
+    "dance": {
+        "image": "dance.jpg",
+        "label": "dance"
+    }
+}
