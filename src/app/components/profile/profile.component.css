@@ -15,3 +15,20 @@
 .logo {
     height: 0.9rem;
 }
+
+.tech-stack {
+    opacity: 0;
+    animation: fadeAndSlideIn forwards 2s;
+}
+
+@keyframes fadeAndSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}

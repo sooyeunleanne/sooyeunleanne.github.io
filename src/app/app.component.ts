@@ -57,8 +57,8 @@ export class AppComponent {
 
   resetCursorStyle() {
     const cursorElement = this.cursor.nativeElement;
-    cursorElement.style.backgroundColor = 'rgba(252, 255, 85, 0.3)'; // Reset to default color
-    cursorElement.style.boxShadow = '0px 0px 40px 40px rgba(252, 255, 85, 0.3)'; // Reset to default box shadow
+    cursorElement.style.backgroundColor = 'rgba(66, 200, 237, 0.3)'; // Reset to default color
+    cursorElement.style.boxShadow = '0px 0px 40px 40px rgba(66, 200, 237, 0.3)'; // Reset to default box shadow
   }
 
   ngAfterViewInit() {
