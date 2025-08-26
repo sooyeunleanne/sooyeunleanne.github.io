@@ -104,9 +104,13 @@
     .profile-description {
         width: 75%;
     }
+
+    .tech-stack {
+        font-size: 1rem;
+    }
     
     .flex-container {
-        gap: 2rem;
+        gap: 0rem;
     }
 }
 
@@ -148,6 +152,10 @@
     .logo {
         height: 0.7rem;
         margin: 0 0.1rem;
+    }
+
+    .profile-page {
+        padding-top: 5rem;
     }
 }
 

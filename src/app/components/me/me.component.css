@@ -190,6 +190,7 @@ h1 {
 
 /* Mobile devices */
 @media (max-width: 768px) {
+
     .popup {
         width: 95%;
         max-width: 95%;
@@ -236,7 +237,7 @@ h1 {
 /* Extra small devices */
 @media (max-width: 480px) {
     h1 {
-        padding-top: 2rem;
+        padding-top: 5rem;
         margin-top: 0.5rem;
         font-size: 1.8rem;
     }

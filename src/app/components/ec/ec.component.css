@@ -307,7 +307,7 @@ h1 {
 @media (max-width: 480px) {
     h1 {
         margin-left: 0.5rem;
-        padding-top: 3rem;
+        padding-top: 5rem;
         font-size: 1.8rem;
     }
     
