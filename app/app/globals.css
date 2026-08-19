@@ -67,6 +67,9 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .hero h1 { margin: 0; font-size: clamp(40px, 5.4vw, 66px); font-weight: 500; letter-spacing: -.045em; line-height: 1.02; }
 .hero-headline { margin: 14px 0 0; font-size: clamp(16px, 1.8vw, 19px); font-weight: 500; letter-spacing: -.02em; }
 .hero-interest { margin: 9px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.hero-hobbies { margin: 6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.footnote-ref { color: var(--accent); font-size: 10px; font-weight: 700; vertical-align: super; line-height: 0; margin-left: 1px; }
+.footnote-ref:hover { text-decoration: underline; }
 .hero-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
 .hero-links a {
   display: inline-flex;
@@ -473,6 +476,24 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .coming-soon { padding: 26px 28px; border: 1px dashed var(--line); border-radius: 12px; background: var(--surface); text-align: center; }
 .coming-soon-title { margin: 0; color: var(--accent); font-size: 15px; font-weight: 700; letter-spacing: -.02em; }
 .coming-soon-copy { max-width: 380px; margin: 9px auto 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+
+/* ---- Appendix ---- */
+.footnote-list { margin: 0; padding: 0; list-style: none; }
+.footnote-list li { display: flex; gap: 10px; padding-bottom: 12px; }
+.footnote-list li:last-child { padding-bottom: 0; }
+/* scroll-margin keeps the target clear of the sticky rail when jumped to. */
+.footnote-list li:target { scroll-margin-top: 24px; }
+.footnote-list li:target .footnote-marker { color: var(--accent); }
+.footnote-marker { flex: 0 0 auto; color: var(--muted); font-size: 11px; font-weight: 700; }
+.footnote-body { color: var(--muted); font-size: 12px; line-height: 1.6; }
+.footnote-label { color: var(--ink); font-weight: 600; }
+.footnote-back { color: var(--accent); margin-left: 2px; }
+.place-list { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: 8px; }
+.place { display: inline-flex; align-items: baseline; gap: 5px; padding: 4px 9px; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); color: var(--ink); font-size: 11px; }
+/* Colour emoji fall back to letter pairs on Windows; the stack keeps them legible. */
+.place-flag { font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; font-size: 12px; }
+.place-cities { color: var(--muted); }
+.footnote-outro { display: block; margin-top: 9px; }
 
 /* ---- Awards ---- */
 .award-list { margin: 0; padding: 0; list-style: none; }

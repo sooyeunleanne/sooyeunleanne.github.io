@@ -8,6 +8,7 @@ import { Projects } from "./components/sections/Projects";
 import { Extracurriculars } from "./components/sections/Extracurriculars";
 import { Awards } from "./components/sections/Awards";
 import { Blog } from "./components/sections/Blog";
+import { Appendix } from "./components/sections/Appendix";
 
 const navItems = [
   { id: "about", label: "About" },
@@ -32,6 +33,7 @@ export default function Home() {
         <Extracurriculars />
         <Awards />
         <Blog />
+        <Appendix />
         <Footer />
       </main>
     </div>

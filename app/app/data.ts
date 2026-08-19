@@ -3,8 +3,17 @@ import type { SkillIcon } from "./icons";
 export const profile = {
   name: "Leanne Kim",
   initials: "LK",
-  headline: "Systems Design Engineering @ University of Waterloo",
+  /** Split so the footnote marker can attach to the program name alone. */
+  program: "Systems Design Engineering",
+  programNote: 1,
+  school: "University of Waterloo",
   interest: "Interests in Software Engineering: Full Stack, Software Architecture, DevOps",
+  /** `note` points at an appendix entry in footnotes.ts. */
+  hobbies: [
+    { label: "reading", note: 2 },
+    { label: "swimming" },
+    { label: "travelling", note: 3 },
+  ] as { label: string; note?: number }[],
   email: "leanne.kim.tech@gmail.com",
   links: {
     linkedin: "https://www.linkedin.com/in/sooyeunleanne/",
