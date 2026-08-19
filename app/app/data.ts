@@ -76,30 +76,6 @@ export const skills: { group: string; items: { name: string; icon: SkillIcon }[]
   },
 ];
 
-export const projects = [
-  {
-    year: "2025",
-    title: "CivicLens",
-    role: "Independent project",
-    description: "An open dataset and interactive map that translates municipal budget line items into plain-language summaries for residents.",
-    tags: ["Next.js", "D3", "Open data"],
-  },
-  {
-    year: "2024",
-    title: "Ballot Buddy",
-    role: "Hackathon build, HackMIT",
-    description: "A text-message assistant that answers plain-language questions about local ballot measures using verified nonpartisan sources.",
-    tags: ["Twilio", "NLP", "Civic tech"],
-  },
-  {
-    year: "2023",
-    title: "Commute Equity Map",
-    role: "Course capstone",
-    description: "A visualization comparing public transit access across Boston neighborhoods against commute-time equity benchmarks.",
-    tags: ["Python", "GIS", "Data visualization"],
-  },
-];
-
 export const extracurriculars = [
   { title: "Co-founder, Viet Tech Network", detail: "A peer community for Vietnamese students and early-career technologists.", meta: "2022 - now" },
   { title: "Editor, The Civic Review", detail: "Student publication on technology, cities, and the public good.", meta: "2023 - now" },
