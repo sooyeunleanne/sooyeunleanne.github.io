@@ -3,7 +3,12 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # Publishing in Notion changes nothing in git, so the site needs a push that
+  # isn't a commit: this button rebuilds and redeploys on demand.
   workflow_dispatch:
+  # Safety net for a post published without pressing the button.
+  schedule:
+    - cron: "0 11 * * *"
 
 permissions:
   contents: read
@@ -31,7 +36,14 @@ jobs:
           cache-dependency-path: app/package-lock.json
 
       - run: npm ci
+
+      # prebuild pulls published posts out of Notion before next build runs.
+      # With the secrets unset the sync logs a warning and the blog builds empty
+      # rather than failing the deploy.
       - run: npm run build
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
 
       - uses: actions/configure-pages@v5
 

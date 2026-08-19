@@ -16,7 +16,7 @@ export const footnotes: Footnote[] = [
   {
     id: 1,
     label: "Systems Design Engineering",
-    body: "Cross-disciplinary engineering — electrical, mechanical, and software — with design methods and systems modelling. My specialization is Software Engineering.",
+    body: "Cross-disciplinary engineering — electrical, mechanical, and software — with design methods and systems modelling. My specialization is **Software Engineering**.",
   },
   {
     id: 2,

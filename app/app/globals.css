@@ -817,3 +817,198 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .item-bullets li, .project-blurb, .involvement-summary, .footnote-body, .award-name {
   overflow-wrap: break-word;
 }
+
+/* ============================================================
+   Blog: /blog index, post pages, and Notion prose
+   ============================================================ */
+
+/* Post pages have no section rail to navigate, so they use a top bar and a
+   single centred column rather than the home page's sidebar shell. */
+.blog-shell { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; background: var(--shell); }
+.blog-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 11px max(20px, calc((100% - 900px) / 2));
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(8px);
+}
+.blog-bar-home { display: flex; align-items: center; gap: 11px; min-width: 0; }
+.blog-bar .monogram { flex: 0 0 auto; width: 32px; height: 32px; }
+.blog-bar-name { font-size: 13px; font-weight: 600; letter-spacing: -.02em; white-space: nowrap; }
+.blog-bar-nav { display: flex; align-items: center; gap: 18px; }
+.blog-bar-nav a { color: var(--muted); font-size: 12px; transition: color .2s ease; }
+.blog-bar-nav a:hover { color: var(--accent); }
+.blog-main { flex: 1; padding: 52px 0 64px; }
+
+.post-page-head { margin-bottom: 34px; }
+.post-page-eyebrow { margin: 0 0 10px; color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.post-page-head h1 { margin: 0; font-size: clamp(26px, 4vw, 36px); font-weight: 700; letter-spacing: -.03em; line-height: 1.2; }
+.post-page-lede { max-width: 540px; margin: 14px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.post-page-meta { display: flex; align-items: center; gap: 7px; margin: 14px 0 0; color: var(--muted); font-size: 11px; }
+.post-page-meta span { color: var(--accent); }
+.post-page-head .tag-list { margin-top: 16px; }
+.post-back { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: 12px; transition: color .2s ease; }
+.post-back:hover { color: var(--accent); }
+
+/* .post / .post-list are shared with the home page's blog section. */
+.post h3 { margin: 0; }
+.post:hover h3 { color: var(--accent); transition: color .2s ease; }
+.post:hover .post-category span { transform: translateX(3px); }
+.post-summary { max-width: 560px; margin: 9px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; overflow-wrap: break-word; }
+.post .tag-list { margin-top: 12px; }
+.post-more { display: inline-block; margin-top: 18px; color: var(--accent); font-size: 12px; font-weight: 600; }
+.post-more:hover { text-decoration: underline; }
+
+.post-article { max-width: 720px; }
+.post-cover { width: 100%; height: auto; margin-bottom: 34px; border: 1px solid var(--line); border-radius: 12px; }
+
+/* ---- Notion prose ---- */
+
+.prose { color: var(--ink); font-size: 15px; line-height: 1.75; }
+.prose > *:first-child { margin-top: 0; }
+.prose p { margin: 0 0 18px; overflow-wrap: break-word; }
+.prose h2, .prose h3, .prose h4 { margin: 38px 0 12px; font-weight: 700; letter-spacing: -.02em; line-height: 1.3; scroll-margin-top: 72px; }
+.prose h2 { font-size: 22px; }
+.prose h3 { font-size: 18px; }
+.prose h4 { font-size: 15px; }
+.prose-link { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.prose-link:hover { text-decoration-thickness: 2px; }
+.prose strong { font-weight: 600; }
+.prose code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .88em;
+}
+
+.prose-ul, .prose-ol { margin: 0 0 18px; padding-left: 22px; }
+.prose-ul { list-style: none; }
+.prose-ul > li { position: relative; }
+.prose-ul > li::before { content: ""; position: absolute; left: -15px; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--bullet); }
+.prose-ol { list-style: decimal; }
+.prose-ol > li::marker { color: var(--muted); font-size: .9em; }
+.prose li { margin-bottom: 6px; }
+
+.prose-todo { margin: 0 0 18px; padding: 0; list-style: none; }
+.prose-todo li { display: flex; align-items: flex-start; gap: 9px; }
+.prose-todo-box { flex: 0 0 auto; width: 14px; height: 14px; margin-top: .35em; border: 1px solid var(--tag-border); border-radius: 3px; }
+.prose-todo li[data-checked="true"] .prose-todo-box { border-color: var(--accent); background: var(--accent); }
+.prose-todo li[data-checked="true"] .prose-todo-label { color: var(--muted); text-decoration: line-through; }
+
+.prose-quote { margin: 0 0 18px; padding: 2px 0 2px 18px; border-left: 2px solid var(--accent); color: var(--muted); font-style: italic; }
+.prose-quote p:last-child { margin-bottom: 0; }
+
+.prose-callout { display: flex; gap: 12px; margin: 0 0 20px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); font-size: 14px; }
+.prose-callout-icon { flex: 0 0 auto; font-size: 16px; line-height: 1.5; }
+.prose-callout p:last-child { margin-bottom: 0; }
+
+.prose-toggle { margin: 0 0 18px; border-bottom: 1px solid var(--line); }
+.prose-toggle > summary { padding: 11px 0; cursor: pointer; list-style: none; }
+.prose-toggle > summary::-webkit-details-marker { display: none; }
+/* The disclosure arrow is drawn rather than relying on the default marker, which
+   can't be positioned consistently across browsers. */
+.prose-toggle > summary::before { content: "▸"; display: inline-block; width: 16px; color: var(--muted); transition: transform .2s ease; }
+.prose-toggle[open] > summary::before { transform: rotate(90deg); }
+.prose-toggle > summary:hover { color: var(--accent); }
+/* A heading inside <summary> is the click target; it must not add its own gap. */
+.prose-toggle > summary h2, .prose-toggle > summary h3, .prose-toggle > summary h4 { display: inline; margin: 0; }
+.prose-toggle > .prose-nested { padding: 0 0 14px 16px; }
+
+/* Indent for anything Notion nested under a parent block. */
+.prose-nested { margin-top: 8px; padding-left: 2px; }
+.prose-nested > *:last-child { margin-bottom: 0; }
+
+.prose-code { margin: 0 0 20px; }
+.prose-code pre {
+  margin: 0;
+  padding: 16px 18px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--tile);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+.prose-code code { padding: 0; background: none; font-size: inherit; }
+.prose-code pre::before { content: attr(data-language); display: block; margin-bottom: 10px; color: var(--muted); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
+
+.prose-figure { margin: 0 0 24px; }
+/* Capped at the column but never stretched past its natural size — Notion shows
+   a small screenshot small, and upscaling one to 720px only blurs it. */
+.prose-figure img, .prose-figure video { max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; }
+.prose-figure video { width: 100%; }
+.prose figcaption { margin-top: 9px; color: var(--muted); font-size: 11px; line-height: 1.6; text-align: center; }
+
+.prose-bookmark { display: block; padding: 14px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); transition: border-color .2s ease; }
+.prose-bookmark:hover { border-color: var(--accent); }
+.prose-bookmark-label { display: block; font-size: 13px; font-weight: 600; }
+.prose-bookmark-url { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; overflow-wrap: anywhere; }
+
+.prose-equation { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.prose-equation-block { margin: 0 0 20px; padding: 14px 18px; overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--tile); text-align: center; font-size: 13px; }
+
+.prose-divider { margin: 30px 0; border: 0; border-top: 1px solid var(--line); }
+
+.prose-columns { display: grid; grid-template-columns: repeat(var(--columns, 2), minmax(0, 1fr)); gap: 26px; margin-bottom: 18px; }
+.prose-columns > div > *:last-child { margin-bottom: 0; }
+
+/* Wide tables scroll inside their own box rather than widening the page. */
+.prose-table-scroll { margin: 0 0 22px; overflow-x: auto; }
+.prose-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.prose-table th, .prose-table td { padding: 9px 13px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+.prose-table th { background: var(--tile); font-weight: 600; }
+
+/* Notion text colours. Mapped to muted, readable hues that hold up on both the
+   light and dark page backgrounds instead of Notion's own literal values. */
+.notion-gray, .notion-grey { color: var(--muted); }
+.notion-brown { color: #9a7b5f; }
+.notion-orange { color: #c47a3d; }
+.notion-yellow { color: #b3902f; }
+.notion-green { color: #559468; }
+.notion-blue { color: #4e8fb8; }
+.notion-purple { color: #8e79c4; }
+.notion-pink { color: #c2699a; }
+.notion-red { color: #cc6459; }
+.notion-gray-bg, .notion-grey-bg { background: color-mix(in srgb, var(--muted) 16%, transparent); }
+.notion-brown-bg { background: color-mix(in srgb, #9a7b5f 20%, transparent); }
+.notion-orange-bg { background: color-mix(in srgb, #c47a3d 20%, transparent); }
+.notion-yellow-bg { background: color-mix(in srgb, #b3902f 22%, transparent); }
+.notion-green-bg { background: color-mix(in srgb, #559468 20%, transparent); }
+.notion-blue-bg { background: color-mix(in srgb, #4e8fb8 20%, transparent); }
+.notion-purple-bg { background: color-mix(in srgb, #8e79c4 20%, transparent); }
+.notion-pink-bg { background: color-mix(in srgb, #c2699a 20%, transparent); }
+.notion-red-bg { background: color-mix(in srgb, #cc6459 20%, transparent); }
+/* Background colours on a callout tint the whole box, so it drops its border. */
+.prose-callout[class*="-bg"] { border-color: transparent; }
+/* Inline background spans need padding to read as a highlight rather than a
+   colour bleed at the line edges. */
+.prose span[class*="-bg"] { padding: 1px 4px; border-radius: 3px; }
+
+@media (max-width: 760px) {
+  .blog-main { padding: 34px 0 44px; }
+  .prose { font-size: 14.5px; }
+  .prose h2 { font-size: 20px; }
+  .prose h3 { font-size: 17px; }
+  /* Side-by-side columns are unreadable at phone widths. */
+  .prose-columns { grid-template-columns: 1fr; gap: 0; }
+  .prose-columns > div > *:last-child { margin-bottom: 18px; }
+}
+
+@media (max-width: 480px) {
+  .blog-bar { padding: 9px 14px; }
+  .blog-bar-nav { gap: 13px; }
+  .blog-bar-name { font-size: 12px; }
+  .post-page-head h1 { font-size: 24px; }
+  .post-summary { font-size: 11px; }
+  .prose { font-size: 14px; }
+  .prose-callout { padding: 13px 14px; }
+  .prose-code pre { padding: 13px 14px; font-size: 12px; }
+}

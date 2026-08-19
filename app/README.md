@@ -20,6 +20,17 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Blog
+
+Posts are written in Notion and synced into the site at build time. See
+[docs/blog-notion.md](docs/blog-notion.md) for the database schema, the
+integration token, and how to publish.
+
+```bash
+npm run sync:notion   # pull published posts into content/posts/
+npm run build         # runs the sync first, via prebuild
+```
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
