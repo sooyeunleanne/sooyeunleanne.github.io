@@ -18,6 +18,7 @@ export function Work() {
             title={item.title}
             org={item.org}
             location={item.location}
+            logo={item.logo}
             summary={item.summary}
             bullets={item.bullets}
             tags={item.tags}

@@ -83,6 +83,7 @@ export const work: {
   title: string;
   org: string;
   location: string;
+  logo: { src: string; width: number; height: number; scale?: number };
   summary: string[];
   bullets: string[];
   tags: string[];
@@ -93,6 +94,7 @@ export const work: {
     title: "Software Engineer Intern",
     org: "CIBC",
     location: "Toronto, ON",
+    logo: { src: "/logo/CIBC.svg.webp", width: 1280, height: 325 },
     summary: ["CI/CD automation", "Kubernetes", "Cloud infrastructure", "Release engineering"],
     bullets: [
       "Accelerated the full deployment pipeline from a **5h to 30min** process, automating CI/CD workflows across **4 environments** with GitHub Actions, Docker, and Kubernetes.",
@@ -107,6 +109,7 @@ export const work: {
     title: "Software Engineer Intern",
     org: "CI Technologies",
     location: "Vancouver, BC",
+    logo: { src: "/logo/Versaterm.png", width: 1200, height: 198 },
     summary: ["Platform development", "Data modeling", "Performance", "Mentorship"],
     bullets: [
       "Cut template setup time from **2h to 10min**, independently shipping a marketplace platform across **4 enterprise applications** in 2 months.",
@@ -122,6 +125,7 @@ export const work: {
     title: "Full Stack Developer Intern",
     org: "InvestMint",
     location: "Toronto, ON",
+    logo: { src: "/logo/InvestMint.png", width: 1048, height: 238, scale: 1.15 },
     summary: ["Full-stack development", "Fintech", "Workflow automation", "Data visualization"],
     bullets: [
       "Expedited client onboarding from **3 days to 5min**, replacing CEO-mediated emails and manual Python execution with a **self-service workflow**.",
@@ -136,6 +140,9 @@ export const work: {
     title: "Software Developer Intern",
     org: "Ministry of Transportation",
     location: "Mississauga, ON",
+    // The Ontario asset carries wide internal padding, so it needs scaling up to
+    // sit at the same optical weight as the tightly-cropped wordmarks.
+    logo: { src: "/logo/Ontario.png", width: 3600, height: 1440, scale: 1.7 },
     summary: ["Full-stack development", "Spring Boot", "Public sector", "Data pipelines"],
     bullets: [
       "Full-stack engineered **2 portal applications** for Ontario's new towing legislation, spanning frontend and backend development through launch.",

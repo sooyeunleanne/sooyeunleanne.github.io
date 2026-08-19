@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
@@ -12,6 +13,7 @@ export function ExperienceItem({
   title,
   org,
   location,
+  logo,
   summary,
   bullets,
   tags,
@@ -22,6 +24,7 @@ export function ExperienceItem({
   title: string;
   org: string;
   location: string;
+  logo: { src: string; width: number; height: number; scale?: number };
   summary: string[];
   bullets: string[];
   tags: string[];
@@ -40,8 +43,10 @@ export function ExperienceItem({
         onClick={() => setOpen((value) => !value)}
       >
         <span className="item-meta">
+          <span className="exp-logo" style={{ "--logo-scale": logo.scale ?? 0.8 } as React.CSSProperties}>
+            <Image src={logo.src} alt={`${org} logo`} width={logo.width} height={logo.height} />
+          </span>
           <span className="item-year">
-            <FontAwesomeIcon icon={seasonIcon} aria-hidden="true" />
             {term}
           </span>
           <span className="item-location">{location}</span>
