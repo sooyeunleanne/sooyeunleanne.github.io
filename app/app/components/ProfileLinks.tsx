@@ -1,25 +1,31 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faFileLines } from "@fortawesome/free-solid-svg-icons";
+import { faFileLines } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { profile } from "../data";
+import { CopyEmail } from "./CopyEmail";
 
 const links = [
-  { label: "Email", href: `mailto:${profile.email}`, icon: faEnvelope, external: false },
-  { label: "LinkedIn", href: profile.links.linkedin, icon: faLinkedin, external: true },
-  { label: "GitHub", href: profile.links.github, icon: faGithub, external: true },
-  { label: "Resume", href: profile.links.resume, icon: faFileLines, external: true },
+  { label: "LinkedIn", href: profile.links.linkedin, icon: faLinkedin },
+  { label: "GitHub", href: profile.links.github, icon: faGithub },
+  { label: "Resume", href: profile.links.resume, icon: faFileLines },
 ];
 
-/** Shared by the hero and the sidebar so the two can't drift apart. */
-export function ProfileLinks({ className }: { className: string }) {
+/**
+ * Shared by the hero and the sidebar so the two can't drift apart. The sidebar
+ * hides the email control because it prints the address in full underneath.
+ */
+export function ProfileLinks({
+  className,
+  showEmail = true,
+}: {
+  className: string;
+  showEmail?: boolean;
+}) {
   return (
     <div className={className}>
+      {showEmail && <CopyEmail email={profile.email} />}
       {links.map((link) => (
-        <a
-          key={link.label}
-          href={link.href}
-          {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-        >
+        <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={link.icon} aria-hidden="true" />
           {link.label}
         </a>

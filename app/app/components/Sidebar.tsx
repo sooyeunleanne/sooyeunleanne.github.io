@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ProfileLinks } from "./ProfileLinks";
+import { profile } from "../data";
 
 type NavItem = { id: string; label: string };
 
@@ -50,7 +51,10 @@ export function Sidebar({
         </nav>
       </div>
       <div className="sidebar-bottom">
-        <ProfileLinks className="sidebar-socials" />
+        <ProfileLinks className="sidebar-socials" showEmail={false} />
+        <a className="sidebar-email" href={`mailto:${profile.email}`}>
+          {profile.email}
+        </a>
       </div>
     </aside>
   );
