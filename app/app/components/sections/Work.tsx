@@ -1,4 +1,4 @@
-import { work } from "../../data";
+import { work } from "../../work";
 import { seasonIcons } from "../../icons";
 import { ExperienceItem } from "../ExperienceItem";
 
