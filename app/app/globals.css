@@ -289,7 +289,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
 /* Cards, matching the project and involvement treatment. */
 .work-list { display: flex; flex-direction: column; gap: 12px; }
-.post-list, .recognition-list, .activity-list { border-top: 1px solid var(--line); }
+.recognition-list, .activity-list { border-top: 1px solid var(--line); }
 .work-item { display: grid; grid-template-columns: 132px 1fr 24px; gap: 24px; padding: 20px 0 22px; border-bottom: 1px solid var(--line); }
 .item-year, .post-date, .activity-meta, .recognition > span { margin: 2px 0 0; color: var(--muted); font-size: 10px; letter-spacing: .04em; text-transform: uppercase; }
 .item-meta { display: block; }
@@ -618,7 +618,20 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .role-period { display: block; margin-top: 3px; color: var(--muted); font-size: 11px; }
 .involvement .item-bullets { margin: 16px 0 0; padding-top: 14px; border-top: 1px solid var(--line); max-width: none; }
 
-.post { display: flex; justify-content: space-between; gap: 24px; padding: 23px 0; border-bottom: 1px solid var(--line); }
+/* Cards rather than a divider list, matching .project-card / .involvement. */
+.post-list { display: flex; flex-direction: column; gap: 12px; }
+.post {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  transition: border-color .2s ease, transform .2s ease;
+}
+.post:hover { border-color: var(--accent); transform: translateY(-2px); }
+.post:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .post-date { margin-bottom: 12px; }
 .post-date span { margin: 0 5px; color: var(--accent); }
 .post h3 { font-size: 18px; }
@@ -742,7 +755,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
   .exp-header .item-meta { grid-column: 1 / -1; }
   .exp-panel-inner { padding: 0 16px 18px; }
   .skills-grid { gap: 26px; }
-  .post { display: block; }
+  .post { display: block; padding: 18px 16px; }
   .post-category { margin-top: 16px; }
   .footer { padding: 24px 0 30px; }
   .project-dialog { width: min(100% - 20px, 640px); max-height: 90vh; }
@@ -867,6 +880,77 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
 .post-article { max-width: 720px; }
 .post-cover { width: 100%; height: auto; margin-bottom: 34px; border: 1px solid var(--line); border-radius: 12px; }
+
+/* ---- In-page table of contents ----
+   Notion's right-edge rail: dashes by default, section titles on hover or
+   keyboard focus. Pinned to the viewport, not the column, so it stays put as
+   the article scrolls. Below 1200px the 900px grid leaves no room beside it, so
+   it's dropped rather than overlapped onto the text. */
+.post-toc {
+  position: fixed;
+  top: 50%;
+  right: clamp(20px, calc((100vw - 900px) / 4), 56px);
+  z-index: 15;
+  transform: translateY(-50%);
+  /* Padding is the hover target — the dashes alone are a few pixels wide. */
+  padding: 10px 4px 10px 24px;
+}
+.post-toc-rail { display: flex; flex-direction: column; align-items: flex-end; gap: 9px; margin: 0; padding: 0; list-style: none; transition: opacity .2s ease; }
+.post-toc-rail li { height: 2px; border-radius: 1px; background: var(--bullet); transition: background-color .2s ease, width .2s ease; }
+.post-toc-rail li[data-level="1"] { width: 22px; }
+.post-toc-rail li[data-level="2"] { width: 14px; }
+.post-toc-rail li[data-level="3"] { width: 9px; }
+.post-toc-rail li[data-active="true"] { background: var(--accent); }
+
+.post-toc-panel {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: max-content;
+  max-width: 230px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: 0 6px 22px rgb(0 0 0 / .07);
+  opacity: 0;
+  transform: translateY(-50%) translateX(6px);
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.post-toc-title { margin: 0 0 10px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.post-toc-panel ul { display: flex; flex-direction: column; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.post-toc-panel a {
+  display: block;
+  padding: 3px 0 3px 9px;
+  border-left: 2px solid transparent;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+  transition: color .2s ease, border-color .2s ease;
+}
+.post-toc-panel li[data-level="2"] a { padding-left: 21px; }
+.post-toc-panel li[data-level="3"] a { padding-left: 33px; font-size: 11.5px; }
+.post-toc-panel a:hover { color: var(--ink); }
+.post-toc-panel a[data-active="true"] { border-left-color: var(--accent); color: var(--ink); font-weight: 600; }
+.post-toc-panel a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+
+/* Swap rail for panel. focus-within covers keyboard users: the links stay in
+   the tab order while hidden, so tabbing into one opens the panel. */
+.post-toc:hover .post-toc-rail,
+.post-toc:focus-within .post-toc-rail { opacity: 0; }
+.post-toc:hover .post-toc-panel,
+.post-toc:focus-within .post-toc-panel { opacity: 1; transform: translateY(-50%); pointer-events: auto; }
+
+@media (max-width: 1200px) {
+  .post-toc { display: none; }
+}
+
+/* Anchor jumps from the rail feel abrupt at Notion's scale of page. Scoped to
+   blog pages so the home page's rail keeps its instant jump. */
+@media (prefers-reduced-motion: no-preference) {
+  :root:has(.blog-shell) { scroll-behavior: smooth; }
+}
 
 /* ---- Notion prose ---- */
 

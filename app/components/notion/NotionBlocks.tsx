@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Block, ListItem, Span, TodoItem } from "@/lib/notion/types";
+import { anchor } from "@/lib/notion/toc";
 import { NotionText, colorClass } from "@/components/notion/NotionText";
 
 /** Renders a post body. Server component — no interactivity beyond <details>. */
@@ -273,12 +274,4 @@ function hostname(url: string): string {
   } catch {
     return url;
   }
-}
-
-/** Stable heading id so a post's sections are linkable. */
-function anchor(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
 }

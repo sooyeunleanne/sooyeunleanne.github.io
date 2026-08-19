@@ -5,6 +5,8 @@ import { profile } from "@/data/profile";
 import { formatDate, getPost, getPostIndex } from "@/lib/posts";
 import { BlogChrome } from "@/components/blog/BlogChrome";
 import { NotionBlocks } from "@/components/notion/NotionBlocks";
+import { PostToc } from "@/components/blog/PostToc";
+import { collectHeadings } from "@/lib/notion/toc";
 
 /* Every post is known at build time, so no slug outside this list is valid —
    which is also what a static export needs in order to emit nothing else. */
@@ -66,8 +68,13 @@ export default async function PostPage(props: PageProps<"/blog/[slug]">) {
     );
   }
 
+  /* One heading is a section of one — the rail would just be a lone dash. */
+  const toc = collectHeadings(post.blocks);
+
   return (
     <BlogChrome>
+      {toc.length > 1 && <PostToc entries={toc} />}
+
       <article className="post-article">
         <header className="post-page-head">
           <Link className="post-back" href="/blog">
