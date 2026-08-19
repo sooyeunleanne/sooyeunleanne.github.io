@@ -1,14 +1,14 @@
-import { profile } from "./data";
-import { Sidebar } from "./components/Sidebar";
-import { Footer } from "./components/Footer";
-import { About } from "./components/sections/About";
-import { Skills } from "./components/sections/Skills";
-import { Work } from "./components/sections/Work";
-import { Projects } from "./components/sections/Projects";
-import { Extracurriculars } from "./components/sections/Extracurriculars";
-import { Awards } from "./components/sections/Awards";
-import { Blog } from "./components/sections/Blog";
-import { Appendix } from "./components/sections/Appendix";
+import { profile } from "@/data/profile";
+import { Sidebar } from "@/components/Sidebar";
+import { Footer } from "@/components/Footer";
+import { About } from "@/components/sections/About";
+import { Skills } from "@/components/sections/Skills";
+import { Work } from "@/components/sections/Work";
+import { Projects } from "@/components/sections/Projects";
+import { Extracurriculars } from "@/components/sections/Extracurriculars";
+import { Awards } from "@/components/sections/Awards";
+import { Blog } from "@/components/sections/Blog";
+import { Appendix } from "@/components/sections/Appendix";
 
 const navItems = [
   { id: "about", label: "About" },
