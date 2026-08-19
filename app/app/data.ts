@@ -81,9 +81,3 @@ export const posts = [
   { date: "February 02, 2025", title: "Learning to design for the question behind the question", category: "Field notes", readTime: "4 min read" },
   { date: "October 18, 2024", title: "A beginner's guide to reading a city budget", category: "Civic literacy", readTime: "8 min read" },
 ];
-
-export const recognition = [
-  { year: "2025", title: "Public Interest Technology Fellowship", issuer: "Ford Foundation" },
-  { year: "2024", title: "Dean's Global Scholarship", issuer: "Northeastern University" },
-  { year: "2023", title: "Finalist, Hult Prize Campus", issuer: "Hult International Business School" },
-];

@@ -405,6 +405,16 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
 .recognition { display: grid; grid-template-columns: 100px 1fr; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--line); }
 
+/* ---- Awards ---- */
+.award-list { margin: 0; padding: 0; list-style: none; }
+.award-list li { position: relative; padding: 0 0 16px 18px; }
+.award-list li:last-child { padding-bottom: 0; }
+.award-list li::before { content: ""; position: absolute; left: 1px; top: 7px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+.award-name { display: block; font-size: 14px; font-weight: 600; letter-spacing: -.01em; line-height: 1.45; }
+.award-amount { color: var(--accent); font-weight: 600; }
+.award-meta { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; letter-spacing: .04em; text-transform: uppercase; }
+.award-note { display: block; margin-top: 5px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+
 .footer { padding: 56px 0 48px; border-top: 1px solid var(--line); }
 .footer-email { display: inline-block; margin-top: 16px; border-bottom: 1px solid var(--ink); font-size: clamp(24px, 4vw, 43px); letter-spacing: -.04em; }
 .footer-bottom { margin-top: 80px; color: var(--muted); font-size: 10px; letter-spacing: .04em; text-transform: uppercase; }

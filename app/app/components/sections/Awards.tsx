@@ -1,4 +1,4 @@
-import { recognition } from "../../data";
+import { awards } from "../../awards";
 
 export function Awards() {
   return (
@@ -7,17 +7,20 @@ export function Awards() {
         <span className="section-number">05</span>
         <h2>Awards &amp; recognition</h2>
       </div>
-      <div className="recognition-list">
-        {recognition.map((item) => (
-          <div className="recognition" key={item.title}>
-            <span>{item.year}</span>
-            <div>
-              <h3>{item.title}</h3>
-              <p>{item.issuer}</p>
-            </div>
-          </div>
+      <ul className="award-list">
+        {awards.map((award) => (
+          <li key={award.title}>
+            <span className="award-name">
+              {award.title} <span className="award-amount">({award.amount})</span>
+            </span>
+            <span className="award-meta">
+              {award.issuer && `${award.issuer} · `}
+              {award.date}
+            </span>
+            {award.note && <span className="award-note">{award.note}</span>}
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }
