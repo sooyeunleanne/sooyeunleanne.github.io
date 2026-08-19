@@ -56,6 +56,7 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void
 export function ProjectGallery({ projects }: { projects: Project[] }) {
   const [showAll, setShowAll] = useState(false);
   const [active, setActive] = useState<Project | null>(null);
+  const [closing, setClosing] = useState(false);
   const [detailOpen, setDetailOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const detailId = useId();
@@ -74,8 +75,12 @@ export function ProjectGallery({ projects }: { projects: Project[] }) {
 
   const open = (project: Project) => {
     setDetailOpen(false); // every project opens collapsed
+    setClosing(false);
     setActive(project);
   };
+
+  // Closing runs the exit animation first; animationend tears the dialog down.
+  const requestClose = () => setClosing(true);
 
   return (
     <div className="project-gallery">
@@ -94,10 +99,25 @@ export function ProjectGallery({ projects }: { projects: Project[] }) {
       <dialog
         ref={dialogRef}
         className="project-dialog"
-        onClose={() => setActive(null)}
+        data-closing={closing}
+        onCancel={(event) => {
+          // Esc would close instantly; run the exit animation instead.
+          event.preventDefault();
+          requestClose();
+        }}
+        onAnimationEnd={(event) => {
+          if (event.animationName === "dialog-out") {
+            setActive(null);
+            setClosing(false);
+          }
+        }}
+        onClose={() => {
+          setActive(null);
+          setClosing(false);
+        }}
         onClick={(event) => {
           // The dialog element itself is the backdrop area; the panel sits inside it.
-          if (event.target === dialogRef.current) setActive(null);
+          if (event.target === dialogRef.current) requestClose();
         }}
       >
         {active && (
@@ -105,7 +125,7 @@ export function ProjectGallery({ projects }: { projects: Project[] }) {
             <button
               type="button"
               className="project-dialog-close"
-              onClick={() => setActive(null)}
+              onClick={requestClose}
               aria-label="Close"
             >
               ✕
