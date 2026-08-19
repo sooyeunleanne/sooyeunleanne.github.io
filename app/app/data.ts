@@ -1,4 +1,4 @@
-import type { SkillIcon } from "./icons";
+import type { Season, SkillIcon } from "./icons";
 
 export const profile = {
   name: "Minh Anh Nguyen",
@@ -76,27 +76,72 @@ export const skills: { group: string; items: { name: string; icon: SkillIcon }[]
   },
 ];
 
-export const work = [
+/** Bullet copy supports **bold** spans, rendered by the RichText component. */
+export const work: {
+  term: string;
+  season: Season;
+  title: string;
+  org: string;
+  location: string;
+  summary: string[];
+  bullets: string[];
+  tags: string[];
+}[] = [
   {
-    year: "2024 - now",
-    title: "Research Assistant",
-    org: "MIT Civic Data Lab",
-    description: "Building open-source tools that help communities understand local climate data and advocate for resilient infrastructure.",
-    tags: ["Python", "Data visualization", "Civic tech"],
+    term: "Jan – Apr 2026",
+    season: "winter",
+    title: "Software Engineer Intern",
+    org: "CIBC",
+    location: "Toronto, ON",
+    summary: ["CI/CD automation", "Kubernetes", "Cloud infrastructure", "Release engineering"],
+    bullets: [
+      "Accelerated the full deployment pipeline from a **5h to 30min** process, automating CI/CD workflows across **4 environments** with GitHub Actions, Docker, and Kubernetes.",
+      "Cut recurring deployment validation time by **92%**, automating release and security checks with Linux scripting.",
+      "Architected **EDIx DevOps infrastructure** across **4 environments**, provisioning ARO, PostgreSQL, SSO, SPN authentication, and DNS for production deployment.",
+    ],
+    tags: ["GitHub Actions", "Docker", "Kubernetes", "ARO", "PostgreSQL", "Linux"],
   },
   {
-    year: "2023 - 24",
-    title: "Product Design Fellow",
-    org: "Code for America",
-    description: "Designed and tested a multilingual benefits eligibility experience with residents and public service teams across three states.",
-    tags: ["Service design", "User research", "Public interest"],
+    term: "May – Aug 2025",
+    season: "summer",
+    title: "Software Engineer Intern",
+    org: "CI Technologies",
+    location: "Vancouver, BC",
+    summary: ["Platform development", "Data modeling", "Performance", "Mentorship"],
+    bullets: [
+      "Cut template setup time from **2h to 10min**, independently shipping a marketplace platform across **4 enterprise applications** in 2 months.",
+      "Unified **5 heterogeneous template schemas** into a reusable data model, enabling cross-application sharing and reducing maintenance overhead.",
+      "Reduced dashboard load time by **65%** by replacing **10K+ record queries** with 50-record pagination and caching.",
+      "Mentored **2 developers** in debugging, Git, and system design, codifying workflows into **reusable onboarding guides** for future co-ops.",
+    ],
+    tags: ["Schema design", "Caching", "Pagination", "Mentorship"],
   },
   {
-    year: "2022 - 23",
-    title: "Teaching Assistant",
-    org: "Northeastern University",
-    description: "Supported 80 students through foundations of human-centered computing, from research questions to interactive prototypes.",
-    tags: ["Mentorship", "HCI", "Curriculum"],
+    term: "Sep 2024 – Apr 2025",
+    season: "fall",
+    title: "Full Stack Developer Intern",
+    org: "InvestMint",
+    location: "Toronto, ON",
+    summary: ["Full-stack development", "Fintech", "Workflow automation", "Data visualization"],
+    bullets: [
+      "Expedited client onboarding from **3 days to 5min**, replacing CEO-mediated emails and manual Python execution with a **self-service workflow**.",
+      "Integrated InvestMint's **Python ETF recommendation engine** into a real-time portfolio dashboard for **$10K+ investment decisions**.",
+      "Built a **cash liquidity calculator** that transformed imported Excel cash-flow data into real-time asset, liability, and liquidity analysis.",
+    ],
+    tags: ["Python", "Fintech", "Real-time dashboards", "Full stack"],
+  },
+  {
+    term: "Jan – Apr 2024",
+    season: "winter",
+    title: "Software Developer Intern",
+    org: "Ministry of Transportation",
+    location: "Mississauga, ON",
+    summary: ["Full-stack development", "Spring Boot", "Public sector", "Data pipelines"],
+    bullets: [
+      "Full-stack engineered **2 portal applications** for Ontario's new towing legislation, spanning frontend and backend development through launch.",
+      "Optimized **Spring Boot data pipelines by 25%** with state management, validation, and real-time alerting to process **3K+ complaint filings** into structured PDF outputs.",
+    ],
+    tags: ["Angular", "TypeScript", "Spring Boot", "Node.js", "Oracle"],
   },
 ];
 

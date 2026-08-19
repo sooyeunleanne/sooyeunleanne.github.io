@@ -29,7 +29,10 @@ import {
   faPaperPlane,
   faRotate,
   faRoute,
+  faSeedling,
   faServer,
+  faSnowflake,
+  faSun,
   faTerminal,
   faWandMagicSparkles,
   faWind,
@@ -76,3 +79,13 @@ export const skillIcons = {
 } satisfies Record<string, IconDefinition>;
 
 export type SkillIcon = keyof typeof skillIcons;
+
+/** Co-op terms are labelled by the season they start in. */
+export const seasonIcons = {
+  winter: faSnowflake,
+  spring: faSeedling,
+  summer: faSun,
+  fall: faLeaf,
+} satisfies Record<string, IconDefinition>;
+
+export type Season = keyof typeof seasonIcons;

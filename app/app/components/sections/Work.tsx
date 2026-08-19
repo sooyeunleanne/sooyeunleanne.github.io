@@ -1,28 +1,28 @@
 import { work } from "../../data";
+import { seasonIcons } from "../../icons";
+import { ExperienceItem } from "../ExperienceItem";
 
 export function Work() {
   return (
     <section className="section content-grid" id="work">
       <div className="section-heading">
         <span className="section-number">02</span>
-        <h2>Selected work</h2>
+        <h2>Experience</h2>
       </div>
       <div className="work-list">
-        {work.map((item) => (
-          <article className="work-item" key={`${item.org}-${item.title}`}>
-            <p className="item-year">{item.year}</p>
-            <div>
-              <h3>{item.title}</h3>
-              <p className="item-org">{item.org}</p>
-              <p className="item-description">{item.description}</p>
-              <div className="tag-list">
-                {item.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
-              </div>
-            </div>
-            <span className="item-arrow" aria-hidden="true">↗</span>
-          </article>
+        {work.map((item, index) => (
+          <ExperienceItem
+            key={`${item.org}-${item.title}`}
+            term={item.term}
+            seasonIcon={seasonIcons[item.season]}
+            title={item.title}
+            org={item.org}
+            location={item.location}
+            summary={item.summary}
+            bullets={item.bullets}
+            tags={item.tags}
+            defaultOpen={index === 0}
+          />
         ))}
       </div>
     </section>
