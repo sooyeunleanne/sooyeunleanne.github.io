@@ -78,18 +78,22 @@ export function ExperienceItem({
         aria-label={`${title} at ${org}`}
         inert={!open}
       >
+        {/* The animating child must stay padding-free, so spacing lives on the
+            inner wrapper — otherwise padding holds the collapsed panel open. */}
         <div>
-          <ul className="item-bullets">
-            {bullets.map((bullet) => (
-              <li key={bullet}>
-                <RichText>{bullet}</RichText>
-              </li>
-            ))}
-          </ul>
-          <div className="tag-list">
-            {tags.map((tag) => (
-              <span key={tag}>{tag}</span>
-            ))}
+          <div className="exp-panel-inner">
+            <ul className="item-bullets">
+              {bullets.map((bullet) => (
+                <li key={bullet}>
+                  <RichText>{bullet}</RichText>
+                </li>
+              ))}
+            </ul>
+            <div className="tag-list">
+              {tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

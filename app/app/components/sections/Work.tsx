@@ -7,7 +7,7 @@ export function Work() {
     <section className="section content-grid" id="work">
       <div className="section-heading">
         <span className="section-number">02</span>
-        <h2>Experience</h2>
+        <h2>Work Experience</h2>
       </div>
       <div className="work-list">
         {work.map((item, index) => (

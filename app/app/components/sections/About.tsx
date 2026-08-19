@@ -16,7 +16,7 @@ export function About() {
       </p>
       <p className="hero-interest">{profile.interest}</p>
       <p className="hero-hobbies">
-        Outside of work:{" "}
+        Outside of Work:{" "}
         {hobbies.map((hobby, index) => (
           <Fragment key={hobby.label}>
             {index > 0 && (index === hobbies.length - 1 ? ", and " : ", ")}

@@ -19,7 +19,7 @@ export const footnotes: Footnote[] = [
   {
     id: 2,
     label: "Favourite books",
-    body: "Meditations by Marcus Aurelius, Faust by Johann Wolfgang von Goethe, The Secret by Rhonda Byrne, and Siddhartha.",
+    body: "Meditations by Marcus Aurelius, Faust by Johann Wolfgang von Goethe, The Secret by Rhonda Byrne, and Siddhartha by Herman Hesse.",
   },
   {
     id: 3,
