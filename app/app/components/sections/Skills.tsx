@@ -1,4 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { skills } from "../../data";
+import { skillIcons } from "../../icons";
 
 export function Skills() {
   return (
@@ -13,7 +15,10 @@ export function Skills() {
             <h3>{skill.group}</h3>
             <ul>
               {skill.items.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item.name}>
+                  <FontAwesomeIcon icon={skillIcons[item.icon]} aria-hidden="true" />
+                  {item.name}
+                </li>
               ))}
             </ul>
           </div>
