@@ -28,7 +28,18 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void
     <article className="project-card">
       <button type="button" className="project-card-open" onClick={onOpen}>
         <span className="project-thumb">
-          {project.image ? (
+          {project.video ? (
+            // muted + playsInline are what make autoplay permitted on mobile.
+            <video
+              src={project.video}
+              poster={project.image}
+              autoPlay
+              muted
+              loop
+              playsInline
+              aria-label={`${project.title} demo`}
+            />
+          ) : project.image ? (
             <Image
               src={project.image}
               alt={`${project.title} preview`}
@@ -131,14 +142,27 @@ export function ProjectGallery({ projects }: { projects: Project[] }) {
               ✕
             </button>
 
-            {active.image && (
+            {(active.video || active.image) && (
               <div className="project-dialog-image">
-                <Image
-                  src={active.image}
-                  alt={`${active.title} preview`}
-                  fill
-                  sizes="(max-width: 700px) 100vw, 640px"
-                />
+                {active.video ? (
+                  <video
+                    src={active.video}
+                    poster={active.image}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    controls
+                    aria-label={`${active.title} demo`}
+                  />
+                ) : (
+                  <Image
+                    src={active.image!}
+                    alt={`${active.title} preview`}
+                    fill
+                    sizes="(max-width: 700px) 100vw, 640px"
+                  />
+                )}
               </div>
             )}
 

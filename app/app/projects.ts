@@ -10,6 +10,8 @@ export type Project = {
   link?: string;
   /** Omit until a preview exists; the card falls back to a lettered tile. */
   image?: string;
+  /** Autoplaying muted demo; replaces `image`, which becomes its poster frame. */
+  video?: string;
   /** Both render inside the modal's "What I did" collapsible. */
   highlights?: string[];
   detail?: string;
@@ -25,6 +27,7 @@ export const projects: Project[] = [
     blurb: "A 750+ user game inspired by GeoGuessr, built for Waterloo students.",
     link: "https://watguessr.io/",
     image: "/logo/project-previews/watguessrio.png",
+    video: "/demo/watguessrio-demo.mp4",
     highlights: [
       "Built gameflows for singleplayer, multiplayer, and ranked modes, leveraging WebSockets for real-time connections and player state synchronization.",
       "Implemented JWT authentication and secure HTTP cookies, strengthening user security protocols.",
@@ -40,7 +43,7 @@ export const projects: Project[] = [
     stack: ["Next.js", "TypeScript", "Gemini APIs", "MongoDB Atlas", "Auth0", "ElevenLabs"],
     blurb: "An AI stylist that reads your closet and picks your outfit, shipped in 24 hours.",
     link: "https://devpost.com/software/bibbity-bibbity-boo",
-    // TODO: add public/logo/project-previews/bibbidi-bobbidi-boo.png
+    video: "/demo/bibbidi-bobbidi-boo-demo.mp4",
     highlights: [
       "Shipped an end-to-end AI platform in 24 hours, architecting a multimodal pipeline with Gemini API and ElevenLabs to power vision, virtual try-on, voice interaction, and grounded recommendations.",
       "Engineered wardrobe intelligence algorithms to rank outfits by color, texture, style, and fit while quantifying utilization through a 0–100 Closet Health score.",
@@ -54,6 +57,7 @@ export const projects: Project[] = [
     blurb: "The official AKCSE UW site, with a full admin portal for the exec team.",
     link: "https://akcseuw.ca/",
     image: "/logo/project-previews/akcseuw.png",
+    video: "/demo/akcseuw-demo.mp4",
     highlights: [
       "Led full-stack development of the Admin Portal, enabling management of team information, member settings, and event/news hashtags.",
       "Built and launched three core public pages — landing, team, and contacts — improving accessibility and community engagement.",
