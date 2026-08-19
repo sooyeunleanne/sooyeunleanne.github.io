@@ -7,7 +7,7 @@ import { Work } from "./components/sections/Work";
 import { Projects } from "./components/sections/Projects";
 import { Extracurriculars } from "./components/sections/Extracurriculars";
 import { Awards } from "./components/sections/Awards";
-import { More } from "./components/sections/More";
+import { Blog } from "./components/sections/Blog";
 
 const navItems = [
   { id: "about", label: "About" },
@@ -16,7 +16,7 @@ const navItems = [
   { id: "projects", label: "Projects" },
   { id: "extracurriculars", label: "Extracurriculars" },
   { id: "awards", label: "Awards" },
-  { id: "more", label: "More" },
+  { id: "blog", label: "Blog" },
 ];
 
 export default function Home() {
@@ -37,7 +37,7 @@ export default function Home() {
         <Projects />
         <Extracurriculars />
         <Awards />
-        <More />
+        <Blog />
         <Footer />
       </main>
     </div>

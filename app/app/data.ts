@@ -75,9 +75,3 @@ export const skills: { group: string; items: { name: string; icon: SkillIcon }[]
     ],
   },
 ];
-
-export const posts = [
-  { date: "May 14, 2025", title: "What makes a public dashboard trustworthy?", category: "Notes on civic technology", readTime: "6 min read" },
-  { date: "February 02, 2025", title: "Learning to design for the question behind the question", category: "Field notes", readTime: "4 min read" },
-  { date: "October 18, 2024", title: "A beginner's guide to reading a city budget", category: "Civic literacy", readTime: "8 min read" },
-];
