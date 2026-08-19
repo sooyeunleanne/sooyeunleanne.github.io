@@ -15,6 +15,7 @@ export function ExperienceItem({
   location,
   logo,
   summary,
+  overview,
   bullets,
   tags,
   defaultOpen = false,
@@ -26,6 +27,7 @@ export function ExperienceItem({
   location: string;
   logo: { src: string; width: number; height: number; scale?: number };
   summary: string[];
+  overview: string;
   bullets: string[];
   tags: string[];
   defaultOpen?: boolean;
@@ -55,11 +57,15 @@ export function ExperienceItem({
           <span className="exp-title">
             {title} <span className="exp-divider" aria-hidden="true">|</span> <span className="exp-org">{org}</span>
           </span>
-          <span className="exp-summary">
-            {summary.map((keyword) => (
-              <span key={keyword}>{keyword}</span>
-            ))}
-          </span>
+          {open ? (
+            <span className="exp-overview">{overview}</span>
+          ) : (
+            <span className="exp-summary">
+              {summary.map((keyword) => (
+                <span key={keyword}>{keyword}</span>
+              ))}
+            </span>
+          )}
         </span>
         <FontAwesomeIcon className="exp-chevron" icon={faChevronDown} aria-hidden="true" />
       </button>

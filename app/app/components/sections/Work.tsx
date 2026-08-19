@@ -20,6 +20,7 @@ export function Work() {
             location={item.location}
             logo={item.logo}
             summary={item.summary}
+            overview={item.overview}
             bullets={item.bullets}
             tags={item.tags}
             defaultOpen={index === 0}
