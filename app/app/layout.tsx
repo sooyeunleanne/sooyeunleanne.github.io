@@ -7,8 +7,9 @@ import "./globals.css";
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
-  title: "Minh Anh Nguyen | Academic Portfolio",
-  description: "Academic portfolio of Minh Anh Nguyen, a computer science and public policy researcher.",
+  title: "Leanne Kim | Portfolio",
+  description:
+    "Portfolio of Leanne Kim, a Systems Design Engineering student at the University of Waterloo interested in full stack, software architecture, and DevOps.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

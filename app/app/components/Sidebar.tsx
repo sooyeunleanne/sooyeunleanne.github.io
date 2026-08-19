@@ -1,20 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ProfileLinks } from "./ProfileLinks";
 
 type NavItem = { id: string; label: string };
 
 export function Sidebar({
   initials,
   name,
-  email,
-  links,
   items,
 }: {
   initials: string;
   name: string;
-  email: string;
-  links: { linkedin: string; github: string; scholar: string };
   items: NavItem[];
 }) {
   const [active, setActive] = useState(items[0]?.id);
@@ -53,14 +50,7 @@ export function Sidebar({
         </nav>
       </div>
       <div className="sidebar-bottom">
-        <a className="sidebar-contact" href={`mailto:${email}`}>
-          Say hello <span aria-hidden="true">↗</span>
-        </a>
-        <div className="sidebar-socials">
-          <a href={links.linkedin}>LinkedIn</a>
-          <a href={links.github}>GitHub</a>
-          <a href={links.scholar}>Scholar</a>
-        </div>
+        <ProfileLinks className="sidebar-socials" />
       </div>
     </aside>
   );

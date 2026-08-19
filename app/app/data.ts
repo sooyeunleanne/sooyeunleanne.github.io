@@ -1,20 +1,16 @@
 import type { SkillIcon } from "./icons";
 
 export const profile = {
-  name: "Minh Anh Nguyen",
-  initials: "MA",
-  role: "Computer Science & Public Policy",
-  location: "Boston, MA",
-  availability: "Open to research collaborations",
-  intro:
-    "I study how thoughtful technology can make public systems more legible, accessible, and human.",
-  bio:
-    "My work sits at the intersection of civic technology, machine learning, and design. I am interested in the small decisions that make complex systems feel more trustworthy.",
-  email: "hello@minhanhnguyen.com",
+  name: "Leanne Kim",
+  initials: "LK",
+  headline: "Systems Design Engineering @ University of Waterloo",
+  interest: "Interests in Software Engineering: Full Stack, Software Architecture, DevOps",
+  email: "leanne.kim.tech@gmail.com",
   links: {
-    linkedin: "https://www.linkedin.com",
-    github: "https://github.com",
-    scholar: "https://scholar.google.com",
+    linkedin: "https://www.linkedin.com/in/sooyeunleanne/",
+    github: "https://github.com/sooyeunleanne",
+    // Served from public/ so the link survives a static export to Pages.
+    resume: "/resume.pdf",
   },
 };
 
