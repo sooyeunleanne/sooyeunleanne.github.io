@@ -8,7 +8,7 @@ import { profile } from "@/data/profile";
 config.autoAddCss = false;
 
 const siteUrl = "https://sooyeunleanne.github.io";
-const title = `${profile.name} | Software Engineer`;
+const title = `${profile.name}`;
 const description = `${profile.program} student at the ${profile.school}, specializing in Software Engineering. Interested in full stack, software architecture, and DevOps.`;
 
 export const metadata: Metadata = {
