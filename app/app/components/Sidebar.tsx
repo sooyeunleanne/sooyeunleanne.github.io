@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ProfileLinks } from "./ProfileLinks";
+import { ThemeToggle } from "./ThemeToggle";
 import { profile } from "../data";
 
 type NavItem = { id: string; label: string };
@@ -38,9 +39,12 @@ export function Sidebar({
   return (
     <aside className="sidebar">
       <div className="sidebar-top">
-        <a className="monogram" href="#about" aria-label={`${name} home`}>
-          {initials}
-        </a>
+        <div className="sidebar-head">
+          <a className="monogram" href="#about" aria-label={`${name} home`}>
+            {initials}
+          </a>
+          <ThemeToggle />
+        </div>
         <nav className="sidebar-nav" aria-label="Section navigation">
           {items.map((item, index) => (
             <a key={item.id} href={`#${item.id}`} data-active={active === item.id}>
