@@ -76,12 +76,6 @@ export const skills: { group: string; items: { name: string; icon: SkillIcon }[]
   },
 ];
 
-export const extracurriculars = [
-  { title: "Co-founder, Viet Tech Network", detail: "A peer community for Vietnamese students and early-career technologists.", meta: "2022 - now" },
-  { title: "Editor, The Civic Review", detail: "Student publication on technology, cities, and the public good.", meta: "2023 - now" },
-  { title: "Volunteer, Boston Public Library", detail: "Digital literacy workshops for first-generation adult learners.", meta: "Monthly" },
-];
-
 export const posts = [
   { date: "May 14, 2025", title: "What makes a public dashboard trustworthy?", category: "Notes on civic technology", readTime: "6 min read" },
   { date: "February 02, 2025", title: "Learning to design for the question behind the question", category: "Field notes", readTime: "4 min read" },

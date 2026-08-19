@@ -1,4 +1,5 @@
-import { extracurriculars } from "../../data";
+import { involvements } from "../../extracurriculars";
+import { InvolvementItem } from "../InvolvementItem";
 
 export function Extracurriculars() {
   return (
@@ -7,15 +8,13 @@ export function Extracurriculars() {
         <span className="section-number">04</span>
         <h2>Extracurriculars</h2>
       </div>
-      <div className="activity-list">
-        {extracurriculars.map((activity) => (
-          <div className="activity" key={activity.title}>
-            <span className="activity-meta">{activity.meta}</span>
-            <div>
-              <h3>{activity.title}</h3>
-              <p>{activity.detail}</p>
-            </div>
-          </div>
+      <div className="involvement-list">
+        {involvements.map((involvement, index) => (
+          <InvolvementItem
+            key={involvement.org}
+            involvement={involvement}
+            defaultOpen={index === 0}
+          />
         ))}
       </div>
     </section>

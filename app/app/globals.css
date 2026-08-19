@@ -317,6 +317,85 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .activity { display: grid; grid-template-columns: 100px 1fr; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--line); }
 .activity p, .recognition p { margin: 5px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
 
+/* ---- Extracurriculars ---- */
+.involvement-list { display: flex; flex-direction: column; gap: 16px; }
+.involvement { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); overflow: hidden; }
+/* Flex rather than grid: the logo is optional, and a missing grid cell would
+   shift the headline and chevron into the wrong columns. */
+.involvement-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 22px;
+}
+/* Covers the whole header so the entire row toggles, while the link stays clickable above it. */
+.involvement-toggle { position: absolute; inset: 0; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; }
+.involvement-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
+.involvement-link {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--muted);
+  background: var(--surface);
+  transition: color .2s ease, border-color .2s ease;
+}
+.involvement-link svg { height: 11px; }
+.involvement-link:hover { border-color: var(--accent); color: var(--accent); }
+.involvement-logo { flex: 0 0 auto; display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 10px; background: #fff; overflow: hidden; }
+.involvement-logo img { width: 100%; height: 100%; object-fit: contain; }
+.involvement-headline { flex: 1; min-width: 0; }
+.involvement-org { display: block; font-size: 15px; font-weight: 600; letter-spacing: -.02em; line-height: 1.35; }
+.involvement-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.involvement-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(229, 91, 63, .1);
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.involvement-span { display: block; color: var(--muted); font-size: 10px; letter-spacing: .04em; text-transform: uppercase; }
+.involvement-note { display: block; margin-top: 10px; padding-left: 11px; border-left: 2px solid var(--accent); color: var(--muted); font-size: 12px; line-height: 1.5; }
+.involvement-chevron { flex: 0 0 auto; height: 12px; color: var(--muted); transition: transform .25s ease, color .2s ease; }
+.involvement-header:hover .involvement-chevron { color: var(--accent); }
+.involvement-header[data-open="true"] .involvement-chevron { transform: rotate(180deg); color: var(--accent); }
+.involvement-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+.involvement-panel[data-open="true"] { grid-template-rows: 1fr; }
+.involvement-panel > div { overflow: hidden; }
+/* Margin insets the divider from the card edges; the header supplies the gap above. */
+.involvement-panel-inner { margin: 0 22px; padding: 0 0 22px; border-top: 1px solid var(--line); }
+.involvement-summary { margin: 18px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.role-timeline { margin: 20px 0 0; padding: 0 0 0 18px; list-style: none; border-left: 1px solid var(--line); }
+.role-timeline li { position: relative; padding: 0 0 15px 14px; }
+.role-timeline li:last-child { padding-bottom: 0; }
+/* The marker straddles the rail: -18px back out to the border, then half its width. */
+.role-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -22px;
+  top: 5px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--surface);
+  border-radius: 50%;
+  background: #b6bbbc;
+}
+.role-timeline li:first-child::before { background: var(--accent); }
+.role-title { display: block; font-size: 13px; font-weight: 600; letter-spacing: -.01em; }
+.role-period { display: block; margin-top: 3px; color: var(--muted); font-size: 11px; }
+.involvement .item-bullets { margin: 20px 0 0; padding-top: 18px; border-top: 1px solid var(--line); max-width: none; }
+
 .post { display: flex; justify-content: space-between; gap: 24px; padding: 23px 0; border-bottom: 1px solid var(--line); }
 .post-date { margin-bottom: 12px; }
 .post-date span { margin: 0 5px; color: var(--accent); }
