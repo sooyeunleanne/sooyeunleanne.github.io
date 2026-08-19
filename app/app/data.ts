@@ -3,8 +3,9 @@ import type { SkillIcon } from "./icons";
 export const profile = {
   name: "Leanne Kim",
   initials: "LK",
-  /** Split so the footnote marker can attach to the program name alone. */
+  /** Split so the footnote marker and the muted specialization can be styled apart. */
   program: "Systems Design Engineering",
+  specialization: "Specialization: Software Engineering",
   programNote: 1,
   school: "University of Waterloo",
   interest: "Interests in Software Engineering: Full Stack, Software Architecture, DevOps",

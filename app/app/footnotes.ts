@@ -14,7 +14,7 @@ export const footnotes: Footnote[] = [
   {
     id: 1,
     label: "Systems Design Engineering",
-    body: "A cross-disciplinary program covering the fundamentals of electrical, mechanical, and software engineering alongside design methods and systems modelling, with four specializations to focus in.",
+    body: "A cross-disciplinary program covering the fundamentals of electrical, mechanical, and software engineering alongside design methods and systems modelling, with four specializations to focus in. I'm specializing in Software Engineering.",
   },
   {
     id: 2,

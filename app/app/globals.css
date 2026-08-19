@@ -153,6 +153,8 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .eyebrow { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .14em; line-height: 1.4; text-transform: uppercase; }
 .hero h1 { margin: 0; font-size: clamp(29px, 3.6vw, 42px); font-weight: 500; letter-spacing: -.035em; line-height: 1.1; }
 .hero-headline { margin: 14px 0 0; font-size: clamp(16px, 1.8vw, 19px); font-weight: 500; letter-spacing: -.02em; }
+/* em-based so it tracks the headline's clamp() as the viewport changes. */
+.hero-specialization { color: var(--muted); font-size: .7em; font-weight: 400; letter-spacing: 0; }
 .hero-interest { margin: 9px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
 .hero-hobbies { margin: 6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
 .footnote-ref { color: var(--accent); font-size: 10px; font-weight: 700; vertical-align: super; line-height: 0; margin-left: 1px; }
@@ -571,10 +573,10 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 /* scroll-margin keeps the target clear of the sticky rail when jumped to. */
 .footnote-list li:target { scroll-margin-top: 24px; }
 .footnote-list li:target .footnote-marker { color: var(--accent); }
-.footnote-marker { flex: 0 0 auto; color: var(--muted); font-size: 11px; font-weight: 700; }
+.footnote-marker { flex: 0 0 auto; color: var(--accent); font-size: 11px; font-weight: 700; transition: opacity .2s ease; }
+.footnote-marker:hover { text-decoration: underline; }
 .footnote-body { color: var(--muted); font-size: 12px; line-height: 1.6; }
 .footnote-label { color: var(--ink); font-weight: 600; }
-.footnote-back { color: var(--accent); margin-left: 2px; }
 .place-list { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: 8px; }
 .place { display: inline-flex; align-items: baseline; gap: 5px; padding: 4px 9px; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); color: var(--ink); font-size: 11px; }
 /* Colour emoji fall back to letter pairs on Windows; the stack keeps them legible. */
@@ -595,24 +597,46 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .footer { padding: 28px 0 34px; border-top: 1px solid var(--line); }
 .footer-bottom { color: var(--muted); font-size: 10px; letter-spacing: .04em; text-transform: uppercase; }
 
-@media (max-width: 900px) {
+/* Laptops: pull in the rail and gutters before the layout has to break. */
+@media (max-width: 1180px) {
+  :root { --sidebar-width: 228px; }
+  .sidebar { padding: 30px 22px; }
+  .content-grid { width: min(100% - 64px, 900px); }
+  .section { grid-template-columns: 150px 1fr; gap: 28px; }
+}
+
+/* Tablets: the rail becomes a sticky top bar and sections stack. */
+@media (max-width: 1000px) {
   .site-shell { display: block; }
   .sidebar {
-    position: static;
+    position: sticky;
+    top: 0;
+    z-index: 20;
     height: auto;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    gap: 28px;
-    padding: 18px 20px;
-    overflow-x: auto;
+    gap: 16px;
+    padding: 11px 20px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+    overflow: visible;
   }
-  .sidebar-top { flex-direction: row; align-items: center; gap: 24px; }
-  .sidebar-nav { flex-direction: row; gap: 4px; }
-  .sidebar-nav a { padding: 8px 10px; white-space: nowrap; }
+  .sidebar-top { flex: 1; min-width: 0; flex-direction: row; align-items: center; gap: 16px; }
+  .sidebar-head { flex: 0 0 auto; }
+  .monogram { width: 34px; height: 34px; font-size: 11px; }
+  /* Only the nav scrolls, so the monogram and toggle stay put. */
+  .sidebar-nav { flex: 1; min-width: 0; flex-direction: row; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+  .sidebar-nav::-webkit-scrollbar { display: none; }
+  .sidebar-nav a { margin: 0; padding: 7px 10px; white-space: nowrap; }
   .sidebar-nav a .nav-index { display: none; }
-  /* The hero carries the same four links a scroll above, so the rail drops them. */
+  /* The hero carries the same links a scroll above, so the bar drops them. */
   .sidebar-bottom { display: none; }
+  /* Clear the sticky bar when jumping to an anchor. */
+  .hero, .section { scroll-margin-top: 64px; }
+  .section { display: block; }
+  .section-heading { margin-bottom: 22px; }
+  .exp-panel > div { padding-left: 0; }
 }
 
 @media (max-width: 700px) {
@@ -620,7 +644,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
   .hero { padding: 44px 0 52px; }
   .hero h1 { font-size: clamp(26px, 7.2vw, 35px); }
   .hero-links { margin-top: 26px; }
-  .section { display: block; padding: 34px 0 40px; }
+  .section { padding: 34px 0 40px; }
   .section-heading { margin-bottom: 20px; }
   .work-item { grid-template-columns: 1fr 20px; gap: 14px; }
   .item-meta, .work-item > .item-year { grid-column: 1 / -1; margin-bottom: -5px; }
@@ -630,9 +654,29 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
   .item-arrow { grid-column: 2; grid-row: 2; }
   .exp-header { grid-template-columns: 1fr 20px; gap: 12px; }
   .exp-header .item-meta { grid-column: 1 / -1; }
-  .exp-panel > div { padding-left: 0; }
   .skills-grid { gap: 26px; }
   .post { display: block; }
   .post-category { margin-top: 16px; }
   .footer { padding: 24px 0 30px; }
+  .project-dialog { width: min(100% - 20px, 640px); max-height: 90vh; }
+  .project-dialog-body { padding: 18px 18px 22px; }
+  .project-dialog-head { padding-right: 34px; }
+  .involvement-header { padding: 13px 16px; gap: 12px; }
+  .involvement-panel-inner { margin: 0 16px; }
+  .involvement-logo { width: 38px; height: 38px; }
+}
+
+/* Phones: single-column cards and tighter gutters. */
+@media (max-width: 480px) {
+  .content-grid { width: min(100% - 28px, 900px); }
+  .sidebar { padding: 10px 14px; gap: 12px; }
+  .hero { padding: 34px 0 42px; }
+  .hero-links { gap: 8px; }
+  .hero-links a, .copy-email { padding: 8px 14px; }
+  .project-grid { grid-template-columns: 1fr; }
+  .involvement-org { font-size: 14px; }
+  .involvement-note { font-size: 11px; }
+  .footnote-list li { flex-direction: column; gap: 3px; }
+  .award-name { font-size: 13px; }
+  .coming-soon { padding: 22px 18px; }
 }

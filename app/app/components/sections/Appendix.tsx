@@ -10,7 +10,13 @@ export function Appendix() {
       <ol className="footnote-list">
         {footnotes.map((note) => (
           <li key={note.id} id={`note-${note.id}`}>
-            <span className="footnote-marker">[{note.id}]</span>
+            <a
+              className="footnote-marker"
+              href={`#ref-${note.id}`}
+              aria-label={`Back to note ${note.id} in the text`}
+            >
+              [{note.id}]
+            </a>
             <span className="footnote-body">
               <span className="footnote-label">{note.label}:</span>{" "}
               {note.body}
@@ -27,14 +33,7 @@ export function Appendix() {
                   ))}
                 </span>
               )}
-              {note.outro && <span className="footnote-outro">{note.outro}</span>}{" "}
-              <a
-                className="footnote-back"
-                href={`#ref-${note.id}`}
-                aria-label={`Back to note ${note.id}`}
-              >
-                ↩
-              </a>
+              {note.outro && <span className="footnote-outro">{note.outro}</span>}
             </span>
           </li>
         ))}
