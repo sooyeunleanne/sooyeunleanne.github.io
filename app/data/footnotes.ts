@@ -1,8 +1,10 @@
 export type Footnote = {
   id: number;
   label: string;
-  /** Plain prose note. */
+  /** Prose note; **bold** is rendered. */
   body?: string;
+  /** Renders as a bullet list instead of prose. */
+  items?: string[];
   /** Renders as a flag-prefixed list instead of prose. */
   places?: { flag: string; country: string; cities?: string }[];
   /** Trailing line after `places`. */
@@ -14,12 +16,17 @@ export const footnotes: Footnote[] = [
   {
     id: 1,
     label: "Systems Design Engineering",
-    body: "A cross-disciplinary program covering the fundamentals of electrical, mechanical, and software engineering alongside design methods and systems modelling, with four specializations to focus in. I'm specializing in Software Engineering.",
+    body: "Cross-disciplinary engineering — electrical, mechanical, and software — with design methods and systems modelling. My specialization is Software Engineering.",
   },
   {
     id: 2,
     label: "Favourite books",
-    body: "Meditations by Marcus Aurelius, Faust by Johann Wolfgang von Goethe, The Secret by Rhonda Byrne, and Siddhartha by Herman Hesse.",
+    items: [
+      "Meditations — Marcus Aurelius",
+      "Faust — Johann Wolfgang von Goethe",
+      "The Secret — Rhonda Byrne",
+      "Siddhartha — Hermann Hesse",
+    ],
   },
   {
     id: 3,

@@ -42,7 +42,7 @@ export function Sidebar({ name, items }: { name: string; items: NavItem[] }) {
         <nav className="sidebar-nav" aria-label="Section navigation">
           {items.map((item, index) => (
             <a key={item.id} href={`#${item.id}`} data-active={active === item.id}>
-              {/* About is 00 so the rest match the section numbers (Skills 01 …). */}
+              {/* About is 00 so the rest match the section numbers (Work 01 …). */}
               <span className="nav-index">{String(index).padStart(2, "0")}</span>
               {item.label}
             </a>

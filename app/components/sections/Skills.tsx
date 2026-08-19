@@ -1,14 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { skills } from "@/data/skills";
 import { skillIcons } from "@/lib/icons";
+import { CollapsibleSection } from "@/components/CollapsibleSection";
 
 export function Skills() {
   return (
-    <section className="section content-grid" id="skills">
-      <div className="section-heading">
-        <span className="section-number">01</span>
-        <h2>Toolkit</h2>
-      </div>
+    <CollapsibleSection id="skills" number="03" title="Toolkit">
       <div className="skills-grid">
         {skills.map((skill) => (
           <div className="skill-group" key={skill.group}>
@@ -24,6 +21,6 @@ export function Skills() {
           </div>
         ))}
       </div>
-    </section>
+    </CollapsibleSection>
   );
 }

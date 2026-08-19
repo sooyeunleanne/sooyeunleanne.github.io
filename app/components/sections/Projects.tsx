@@ -1,14 +1,11 @@
 import { projects } from "@/data/projects";
 import { ProjectGallery } from "@/components/ProjectGallery";
+import { CollapsibleSection } from "@/components/CollapsibleSection";
 
 export function Projects() {
   return (
-    <section className="section content-grid" id="projects">
-      <div className="section-heading">
-        <span className="section-number">03</span>
-        <h2>Projects</h2>
-      </div>
+    <CollapsibleSection id="projects" number="02" title="Projects">
       <ProjectGallery projects={projects} />
-    </section>
+    </CollapsibleSection>
   );
 }

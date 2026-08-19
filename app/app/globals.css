@@ -165,8 +165,25 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .hero-specialization { color: var(--muted); font-size: .7em; font-weight: 400; letter-spacing: 0; }
 .hero-interest { margin: 9px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
 .hero-hobbies { margin: 6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
-.footnote-ref { color: var(--accent); font-size: 10px; font-weight: 700; vertical-align: super; line-height: 0; margin-left: 1px; }
-.footnote-ref:hover { text-decoration: underline; }
+/* Chrome forces buttons to inline-block, so the old anchor's `line-height: 0`
+   would flatten the hit area to nothing. A line-height of 1 gives the marker a
+   real box to hover and tap; the surrounding line-height still absorbs the
+   raised superscript, so the paragraph does not reflow. */
+.footnote-ref {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  vertical-align: super;
+  line-height: 1;
+  margin-left: 1px;
+  cursor: help;
+}
+.footnote-ref:hover, .footnote-ref[aria-describedby] { text-decoration: underline; }
+.footnote-ref:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .hero-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
 .hero-links a {
   display: inline-flex;
@@ -237,9 +254,38 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 }
 
 .section { display: grid; grid-template-columns: 180px 1fr; gap: 40px; padding: 44px 0 50px; border-top: 1px solid var(--line); }
-.section-heading { display: flex; align-items: baseline; gap: 13px; height: fit-content; }
-.section-heading h2 { margin: 0; font-size: 14px; font-weight: 700; letter-spacing: -.02em; }
+.section-heading { margin: 0; height: fit-content; }
+.section-toggle {
+  display: flex;
+  align-items: baseline;
+  gap: 13px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.section-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
 .section-number { color: var(--accent); font-size: 11px; font-weight: 700; }
+.section-title { font-size: 14px; font-weight: 700; letter-spacing: -.02em; transition: color .2s ease; }
+.section-toggle:hover .section-title { color: var(--accent); }
+/* Baseline-aligning an icon drops it to the text's descender, so it is centred
+   against the line instead and pinned to the end of the heading column. */
+.section-chevron { flex: 0 0 auto; align-self: center; height: 11px; margin-left: auto; color: var(--muted); transition: transform .25s ease, color .2s ease; }
+.section-toggle:hover .section-chevron { color: var(--accent); }
+.section-toggle[aria-expanded="false"] .section-chevron { transform: rotate(-90deg); }
+
+/* Same 0fr/1fr row-track collapse the cards use. min-width keeps the grid item
+   from being sized by its widest child instead of the column. */
+.section-panel { display: grid; grid-template-rows: 1fr; min-width: 0; transition: grid-template-rows .32s ease; }
+.section-panel[data-open="false"] { grid-template-rows: 0fr; }
+.section-panel > div { min-width: 0; overflow: hidden; }
+/* Clipping is only needed while the track animates; dropping it once open lets
+   card hover lifts and focus rings show past the panel edge. */
+.section-panel[data-open="true"][data-settled="true"] > div { overflow: visible; }
 
 /* Cards, matching the project and involvement treatment. */
 .work-list { display: flex; flex-direction: column; gap: 12px; }
@@ -410,6 +456,10 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
   .project-dialog[open]::backdrop,
   .project-dialog[data-closing="true"],
   .project-dialog[data-closing="true"]::backdrop { animation-duration: .01ms; }
+  /* Likewise the section panels: `settled` waits on transitionend, so the
+     transition has to still fire — just fast enough not to be seen. */
+  .section-panel { transition-duration: .01ms; }
+  .footnote-pop { animation-duration: .01ms; }
 }
 .project-dialog-panel { position: relative; }
 .project-dialog-close {
@@ -582,23 +632,36 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .coming-soon-title { margin: 0; color: var(--accent); font-size: 15px; font-weight: 700; letter-spacing: -.02em; }
 .coming-soon-copy { max-width: 380px; margin: 9px auto 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
 
-/* ---- Appendix ---- */
-.footnote-list { margin: 0; padding: 0; list-style: none; }
-.footnote-list li { display: flex; gap: 10px; padding-bottom: 12px; }
-.footnote-list li:last-child { padding-bottom: 0; }
-/* scroll-margin keeps the target clear of the sticky rail when jumped to. */
-.footnote-list li:target { scroll-margin-top: 24px; }
-.footnote-list li:target .footnote-marker { color: var(--accent); }
-.footnote-marker { flex: 0 0 auto; color: var(--accent); font-size: 11px; font-weight: 700; transition: opacity .2s ease; }
-.footnote-marker:hover { text-decoration: underline; }
-.footnote-body { color: var(--muted); font-size: 12px; line-height: 1.6; }
-.footnote-label { color: var(--ink); font-weight: 600; }
+/* ---- Footnote popovers ---- */
+/* Portalled to the body and fixed, so no ancestor's overflow or stacking context
+   can clip it; the marker's script positions it and clamps it to the viewport. */
+.footnote-pop {
+  position: fixed;
+  z-index: 40;
+  width: max-content;
+  max-width: min(320px, calc(100vw - 24px));
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .13);
+  animation: footnote-in .16s ease both;
+}
+@keyframes footnote-in { from { opacity: 0; transform: translateY(-3px); } to { opacity: 1; transform: none; } }
+.footnote-pop[data-side="top"] { animation-name: footnote-in-above; }
+@keyframes footnote-in-above { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+.footnote-body { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.footnote-label { display: block; color: var(--ink); font-size: 12px; font-weight: 600; line-height: 1.5; }
+.footnote-items { margin: 6px 0 0; padding: 0; list-style: none; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.footnote-items li { position: relative; padding-left: 13px; }
+.footnote-items li::before { content: ""; position: absolute; left: 1px; top: 8px; width: 4px; height: 4px; border-radius: 50%; background: var(--bullet); }
+.footnote-body strong, .footnote-items strong { color: var(--ink); font-weight: 600; }
 .place-list { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: 8px; }
 .place { display: inline-flex; align-items: baseline; gap: 5px; padding: 4px 9px; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); color: var(--ink); font-size: 11px; }
 /* Colour emoji fall back to letter pairs on Windows; the stack keeps them legible. */
 .place-flag { font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; font-size: 12px; }
 .place-cities { color: var(--muted); }
-.footnote-outro { display: block; margin-top: 9px; }
+.footnote-outro { display: block; margin-top: 9px; color: var(--muted); font-size: 12px; line-height: 1.6; }
 
 /* ---- Awards ---- */
 .award-list { margin: 0; padding: 0; list-style: none; }
@@ -704,16 +767,15 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
   .hero-links { gap: 8px; }
   .hero-links a, .copy-email { padding: 8px 14px; }
   .project-grid { grid-template-columns: 1fr; }
-  .footnote-list li { flex-direction: column; gap: 3px; }
   .coming-soon { padding: 22px 18px; }
 
-  /* Type scales down a step on phones. The appendix keeps its sizes — it is
-     already the smallest text on the page. Labels at 10px are left alone too. */
+  /* Type scales down a step on phones. Footnote popovers keep their sizes — they
+     are already the smallest text on the page. Labels at 10px are left alone too. */
   .hero h1 { font-size: clamp(24px, 6.6vw, 30px); }
   .hero-headline { font-size: 15px; }
   .hero-interest, .hero-hobbies { font-size: 13px; }
   .hero-links a, .copy-email { font-size: 11px; }
-  .section-heading h2 { font-size: 13px; }
+  .section-title { font-size: 13px; }
   .exp-title { font-size: 14px; }
   .exp-summary { font-size: 10px; }
   .exp-overview { font-size: 11px; }

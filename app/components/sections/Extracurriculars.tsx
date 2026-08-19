@@ -1,13 +1,10 @@
 import { involvements } from "@/data/extracurriculars";
 import { InvolvementItem } from "@/components/InvolvementItem";
+import { CollapsibleSection } from "@/components/CollapsibleSection";
 
 export function Extracurriculars() {
   return (
-    <section className="section content-grid" id="extracurriculars">
-      <div className="section-heading">
-        <span className="section-number">04</span>
-        <h2>Extracurriculars</h2>
-      </div>
+    <CollapsibleSection id="extracurriculars" number="04" title="Extracurriculars">
       <div className="involvement-list">
         {involvements.map((involvement, index) => (
           <InvolvementItem
@@ -17,6 +14,6 @@ export function Extracurriculars() {
           />
         ))}
       </div>
-    </section>
+    </CollapsibleSection>
   );
 }

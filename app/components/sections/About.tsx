@@ -10,13 +10,12 @@ export function About() {
     <section className="hero content-grid" id="about">
       <h1>{profile.name}</h1>
       <p className="hero-headline">
-        {profile.program}{" "}
-        <span className="hero-specialization">({profile.specialization})</span>
+        {profile.program}
         <FootnoteRef id={profile.programNote} /> @ {profile.school}
       </p>
       <p className="hero-interest">{profile.interest}</p>
       <p className="hero-hobbies">
-        Outside of Work:{" "}
+        Hobbies:{" "}
         {hobbies.map((hobby, index) => (
           <Fragment key={hobby.label}>
             {index > 0 && (index === hobbies.length - 1 ? ", and " : ", ")}

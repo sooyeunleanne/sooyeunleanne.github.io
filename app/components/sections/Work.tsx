@@ -1,13 +1,10 @@
 import { work } from "@/data/work";
 import { ExperienceItem } from "@/components/ExperienceItem";
+import { CollapsibleSection } from "@/components/CollapsibleSection";
 
 export function Work() {
   return (
-    <section className="section content-grid" id="work">
-      <div className="section-heading">
-        <span className="section-number">02</span>
-        <h2>Work Experience</h2>
-      </div>
+    <CollapsibleSection id="work" number="01" title="Work Experience">
       <div className="work-list">
         {work.map((item, index) => (
           <ExperienceItem
@@ -25,6 +22,6 @@ export function Work() {
           />
         ))}
       </div>
-    </section>
+    </CollapsibleSection>
   );
 }
