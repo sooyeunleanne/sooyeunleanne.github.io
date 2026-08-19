@@ -1,21 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { ProfileLinks } from "./ProfileLinks";
 import { ThemeToggle } from "./ThemeToggle";
 import { profile } from "../data";
 
 type NavItem = { id: string; label: string };
 
-export function Sidebar({
-  initials,
-  name,
-  items,
-}: {
-  initials: string;
-  name: string;
-  items: NavItem[];
-}) {
+export function Sidebar({ name, items }: { name: string; items: NavItem[] }) {
   const [active, setActive] = useState(items[0]?.id);
 
   useEffect(() => {
@@ -41,7 +34,8 @@ export function Sidebar({
       <div className="sidebar-top">
         <div className="sidebar-head">
           <a className="monogram" href="#about" aria-label={`${name} home`}>
-            {initials}
+            {/* alt is empty because the anchor already carries the label. */}
+            <Image src="/profile-pic-sm.png" alt="" width={160} height={160} priority />
           </a>
           <ThemeToggle />
         </div>

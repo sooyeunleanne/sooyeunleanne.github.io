@@ -23,7 +23,7 @@ const navItems = [
 export default function Home() {
   return (
     <div className="site-shell">
-      <Sidebar initials={profile.initials} name={profile.name} items={navItems} />
+      <Sidebar name={profile.name} items={navItems} />
 
       <main className="main-content">
         <About />
